@@ -6,7 +6,6 @@
 [sub_resource type="Animation" id=1]
 resource_name = "andandobaixo"
 length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
@@ -40,6 +39,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "andandoladod"
 length = 0.6
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
@@ -101,7 +101,7 @@ scale = Vector2( 1.83333, 1.83333 )
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 4
-frame = 1
+frame = 16
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/andandobaixo = SubResource( 1 )
