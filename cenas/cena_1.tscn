@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://cenas/PlayerProtagonista.tscn" type="PackedScene" id=1]
+[ext_resource path="res://players/PlayerProtagonista.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/1_Room_Builder_Office/Room_Builder_Office_32x32.png" type="Texture" id=2]
 [ext_resource path="res://scripts/cena_1.gd" type="Script" id=3]
 [ext_resource path="res://assets/6_Office_Designs/parede_e_movel_cenario1.png" type="Texture" id=4]
