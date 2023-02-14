@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://players/PlayerProtagonista.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/1_Room_Builder_Office/Room_Builder_Office_32x32.png" type="Texture" id=2]
@@ -479,6 +479,9 @@ size = 18
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
+[sub_resource type="Animation" id=26]
+resource_name = "mexendo"
+
 [node name="cena_1" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -608,3 +611,38 @@ custom_fonts/font = SubResource( 25 )
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_left = 468.0
+margin_top = 68.0
+margin_right = 624.0
+margin_bottom = 217.0
+
+[node name="Name" type="RichTextLabel" parent="Control"]
+margin_left = 472.0
+margin_top = 72.0
+margin_right = 556.0
+margin_bottom = 101.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Nome Aqui..."
+
+[node name="text" type="RichTextLabel" parent="Control"]
+margin_left = 476.0
+margin_top = 100.0
+margin_right = 608.0
+margin_bottom = 206.0
+custom_colors/default_color = Color( 0.345098, 0.196078, 0.196078, 1 )
+text = "Texto..."
+
+[node name="Polygon2D" type="Polygon2D" parent="Control"]
+position = Vector2( 108.998, 48.2101 )
+scale = Vector2( 0.833336, 0.789999 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 606, 211, 600, 201, 612, 201, 609.706, 204.823 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Polygon2D"]
+anims/mexendo = SubResource( 26 )
