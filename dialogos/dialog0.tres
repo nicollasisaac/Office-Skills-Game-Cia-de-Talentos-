@@ -1,4 +1,9 @@
 [
-    {"Name": "Eli", "Text": "Olá eu sou Eli seja bem vinda ao seu novo emprego" },
-    {"Name":"Rafa","Text": "Obrigada Eli, por onde começamos?"}
+    {"Name": "Eli", "Text": "Bom dia, Rafa! Seja bem-vindo(a) ao seu primeiro dia como estagiário(a) na Cia de Skills." },
+    {"Name":"Eli","Text": "Antes que você possa começar as suas atividades na empresa, gostaria de lhe passar algumas instruções."},
+    {"Name":"Eli","Text": "Para mover-se para direita, clique na seta direita"},
+    {"Name":"Eli","Text": "Para mover-se para esquerda, clique na seta esquerda, e assim analogamente."},
+    {"Name":"Eli","Text": "Isso mesmo! Você está indo muito bem! Para finalizar, clique na tecla tab."},
+    {"Name":"Eli","Text": "Parabéns! Agora você pode viver as aventuras que lhe esperam na Cia de Skills!"},
+    
 ]

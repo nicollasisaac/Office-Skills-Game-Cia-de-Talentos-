@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var target_position = Vector2(130, 319) # Posição alvo final do NPC
+var target_position = Vector2(130, 286) # Posição alvo final do NPC
 var step = 1 # Etapa atual do movimento
 var velocity = Vector2() # Velocidade atual do NPC
 var speed = 50 # Velocidade de movimento do NPC
