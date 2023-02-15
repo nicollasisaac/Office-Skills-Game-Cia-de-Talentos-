@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Rafa"
-run/main_scene="res://cenas/tela_inicial.tscn"
+run/main_scene="res://cenas/inicial_2.tscn"
 
 [display]
 
