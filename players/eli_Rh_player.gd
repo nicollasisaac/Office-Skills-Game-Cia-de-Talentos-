@@ -5,6 +5,7 @@ var step = 1 # Etapa atual do movimento
 var velocity = Vector2() # Velocidade atual do NPC
 var speed = 50 # Velocidade de movimento do NPC
 var animation_player = null # Referência ao AnimationPlayer
+var chegou = false
 
 func _ready():
 	animation_player = get_node("anim")
@@ -24,6 +25,8 @@ func _physics_process(delta):
 		if abs(direction.y) < speed * delta:
 			direction.y = 0
 			velocity = Vector2()
+			chegou = true
+			print("chegou")
 
 	# Normalizar a direção para obter a velocidade
 	velocity = direction.normalized() * speed

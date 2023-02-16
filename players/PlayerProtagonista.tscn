@@ -102,7 +102,6 @@ scale = Vector2( 1.833, 1.833 )
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 4
-frame = 1
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/andandobaixo = SubResource( 1 )

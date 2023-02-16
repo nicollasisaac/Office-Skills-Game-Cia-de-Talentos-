@@ -1,7 +1,6 @@
 extends Node2D
 var animation_player = null # Referência ao AnimationPlayer
 
-
 func _process(delta): #ao clicar os botões aarecer o tutorial do mesmo.
 	if Input.is_action_just_pressed("pressed_enter"):
 		print("boa")
@@ -23,6 +22,8 @@ func _process(delta): #ao clicar os botões aarecer o tutorial do mesmo.
 		animation_player = get_node("bottab/enterAnim")
 		animation_player.play("pressionando")
 		$text_tutorial.text = "Utilize este botão para abrir as configurações do jogo."
+	
+	
 	
 		
 		
