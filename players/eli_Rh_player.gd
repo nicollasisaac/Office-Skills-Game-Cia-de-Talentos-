@@ -3,7 +3,7 @@ extends KinematicBody2D
 var target_position = Vector2(130, 286) # Posição alvo final do NPC
 var step = 1 # Etapa atual do movimento
 var velocity = Vector2() # Velocidade atual do NPC
-var speed = 50 # Velocidade de movimento do NPC
+var speed = 75 # Velocidade de movimento do NPC
 var animation_player = null # Referência ao AnimationPlayer
 var chegou = false
 
@@ -26,7 +26,6 @@ func _physics_process(delta):
 			direction.y = 0
 			velocity = Vector2()
 			chegou = true
-			print("chegou")
 
 	# Normalizar a direção para obter a velocidade
 	velocity = direction.normalized() * speed
