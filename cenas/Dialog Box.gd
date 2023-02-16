@@ -15,12 +15,12 @@ func _ready():
 	nextPhrase()
 	
 func _process(delta):
-#	$Indicator.visible = finished
 	if Input.is_action_just_pressed("pressed_enter"): #pressione enter para proxima frase
 		if finished:
 			nextPhrase() #proxima frase
 		else:
-			$Text.visible_characters = len($Text.text) #se texto naotiver acabado jogador pode pular o texto pressionando enter.
+			$Text.visible_characters = len($Text.text) #se texto nao tiver acabado jogador pode pular o texto pressionando enter.
+	
 	
 func getDialog() -> Array:
 	var f = File.new()
@@ -57,6 +57,12 @@ func nextPhrase() -> void:
 	finished= true
 	phraseNum += 1
 	return
+	
+
+
+	
+	
+
 	
 
 

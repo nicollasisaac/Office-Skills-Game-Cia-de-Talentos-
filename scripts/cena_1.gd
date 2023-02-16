@@ -21,7 +21,7 @@ func _process(delta): #ao clicar os botões aarecer o tutorial do mesmo.
 	
 func _physics_process(delta): #funcao que controla o a caixa de dialogo para aparecer apenas quando o jogador alcancar a posição da eli.
 	$Control.visible = false #comeca com a caixa invisivel
-	if $protagonistaPlayer.position.x >= 125: #quando jogador alcanca a osição da eli ele se torna visivel
+	if $protagonistaPlayer.position.x >= 125: #quando jogador alcanca a posição da eli ele se torna visivel
 		$Control.visible = true #visivel
 	
 	if $protagonistaPlayer.position.x >= 640: #se protagonista sair da tela trocar para a prxima cena (APENAS UM TEXTE)
