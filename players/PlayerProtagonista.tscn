@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=1]
 [ext_resource path="res://players/player.gd" type="Script" id=2]
@@ -88,6 +88,23 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "idlecima"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 49 ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "parada"
 
@@ -102,6 +119,7 @@ scale = Vector2( 1.833, 1.833 )
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 4
+frame = 49
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/andandobaixo = SubResource( 1 )
@@ -109,6 +127,7 @@ anims/andandocima = SubResource( 2 )
 anims/andandoladod = SubResource( 3 )
 anims/andandoladoe = SubResource( 4 )
 anims/idle = SubResource( 7 )
+anims/idlecima = SubResource( 8 )
 anims/parada = SubResource( 5 )
 
 [node name="collision" type="CollisionShape2D" parent="."]

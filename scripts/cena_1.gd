@@ -27,6 +27,8 @@ func _physics_process(delta): #funcao que controla o a caixa de dialogo para apa
 	if $protagonistaPlayer.position.x >= 640: #se protagonista sair da tela trocar para a prxima cena (APENAS UM TEXTE)
 		get_tree().change_scene("res://cenas/cena_2.tscn")#trocar para cena 2
 	
+#	if $protagonistaPlayer.position.x >130:
+		
 		
 		
 		

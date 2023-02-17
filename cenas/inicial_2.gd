@@ -16,7 +16,6 @@ func _process(delta): #movimentar Rafa
 
 	if position.x != 1: #movimentar rafa
 		$RafaProtagonista/AnimationPlayer.play("andarembora")
-		print("funciona")
 		
 	if  position.x < 0: #parar assim que sair da tela
 		speed = 0
