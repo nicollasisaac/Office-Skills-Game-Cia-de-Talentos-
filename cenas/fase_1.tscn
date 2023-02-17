@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://fontes/VT323-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/characters/Eli.png" type="Texture" id=7]
 [ext_resource path="res://cenas/eli_Rh_player.gd" type="Script" id=8]
+[ext_resource path="res://cenas/Dialog Box.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.125, 49 )
@@ -208,6 +209,23 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=13]
 font_data = ExtResource( 6 )
 
+[sub_resource type="Animation" id=22]
+resource_name = "movendo"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.45, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
+}
+
 [node name="fase_1" type="Node2D"]
 
 [node name="cenario" type="Control" parent="."]
@@ -339,3 +357,38 @@ valign = 1
 [node name="dialogo_1" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="Dialog Box" type="ColorRect" parent="dialogo_1"]
+margin_left = 474.0
+margin_top = 204.0
+margin_right = 633.0
+margin_bottom = 354.0
+color = Color( 0.223529, 0.25098, 0.27451, 1 )
+script = ExtResource( 9 )
+dialogPath = "res://dialogos/dialog1.tres"
+
+[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog Box"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 88.0
+margin_bottom = 33.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+
+[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog Box"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 153.0
+margin_bottom = 138.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+
+[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog Box"]
+position = Vector2( 5, -3.99999 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140 )
+
+[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog Box/Indicator"]
+autoplay = "movendo"
+anims/movendo = SubResource( 22 )
+
+[node name="Timer" type="Timer" parent="dialogo_1/Dialog Box"]
+one_shot = true
