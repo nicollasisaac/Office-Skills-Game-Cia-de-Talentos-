@@ -3,7 +3,10 @@ extends ColorRect
 export var dialogPath = "" #usada para obter o arquivo json que contem o dialogo que precisamos
 export(float) var textSpeed = 0.05 #velocidade do texto
 
+
+
 var dialog
+
 
 var phraseNum = 0
 var finished = false
@@ -13,6 +16,7 @@ func _ready():
 	dialog = getDialog()
 	assert(dialog, "Dialogo nao achado") #garantir que funçao funcionou
 	nextPhrase()
+		
 	
 func _process(delta):
 	if Input.is_action_just_pressed("pressed_enter"): #pressione enter para proxima frase
