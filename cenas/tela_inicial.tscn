@@ -74,7 +74,7 @@ texture_pressed = ExtResource( 3 )
 expand = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 3.0
 
 [node name="RafaProtagonista" type="Sprite" parent="."]
 position = Vector2( 317, 215 )

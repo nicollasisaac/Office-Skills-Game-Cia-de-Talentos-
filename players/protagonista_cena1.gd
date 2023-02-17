@@ -44,11 +44,17 @@ func _physics_process(delta):
 func _update_movement(delta):
 # _update_movemento é uma função que atualiza a velocidade do personagem de acordo com a entrada do jogador (se eles estão pressionando "move_right" ou "move_left")
 	velocity.x = 0
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right"): #moverdireita
 		velocity.x += speed
 		troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left"): #mover esquerda
 		velocity.x -= speed
+		troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+	if Input.is_action_pressed("ui_up"): #mover cima
+		velocity.y -= speed
+		troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+	if Input.is_action_pressed("ui_down"): #mover baixo
+		velocity.y += speed
 		troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
 
 		
@@ -69,6 +75,10 @@ func _set_animation():
 		anim = "andandoladod"
 	elif velocity.x < 0: #se estiver se movimentando para a esquerda ativara a animação
 		anim = "andandoladoe"
+	elif velocity.y < 0:
+		anim = "andandocima"
+	elif velocity.y > 0:
+		anim = "andandobaixo"
 		
 	if step == 1: #quando ele estiver se movimentando sozinhono inicio ativara a animação
 		anim = "andandoladod"
