@@ -1,5 +1,0 @@
-extends KinematicBody2D
-
-
-		
-	

@@ -24,8 +24,9 @@ func _physics_process(delta): #funcao que controla o a caixa de dialogo para apa
 	if $protagonistaPlayer.position.x >= 125: #quando jogador alcanca a posição da eli ele se torna visivel
 		$Control.visible = true #visivel
 	
+	#trocar para fase 1
 	if $protagonistaPlayer.position.x >= 640: #se protagonista sair da tela trocar para a prxima cena (APENAS UM TEXTE)
-		get_tree().change_scene("res://cenas/cena_2.tscn")#trocar para cena 2
+		get_tree().change_scene("res://cenas/fase_1.tscn")
 	
 #	if $protagonistaPlayer.position.x >130:
 		
