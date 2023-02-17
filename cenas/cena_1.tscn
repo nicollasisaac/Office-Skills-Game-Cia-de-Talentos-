@@ -542,10 +542,8 @@ shape = SubResource( 28 )
 position = Vector2( 57.5, 295 )
 shape = SubResource( 29 )
 
-[node name="protagonistaPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 19, 320 )
-
 [node name="player" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 280, 88 )
 
 [node name="Sprite" type="Sprite" parent="player"]
@@ -565,6 +563,9 @@ anims/idle = SubResource( 16 )
 [node name="collision" type="CollisionShape2D" parent="player"]
 position = Vector2( 0, 4 )
 shape = SubResource( 11 )
+
+[node name="protagonistaPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 19, 320 )
 
 [node name="eli_Rh_player" type="KinematicBody2D" parent="."]
 position = Vector2( 224, 152 )
