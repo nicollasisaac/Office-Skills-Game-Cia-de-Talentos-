@@ -354,10 +354,9 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=23]
 resource_name = "idle"
 length = 0.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -368,10 +367,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=24]
 resource_name = "pressionando"
 length = 0.3
 tracks/0/type = "value"
@@ -384,7 +383,39 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 7, 23, 7 ]
+"values": [ 2, 58, 2 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "idle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "pressionando"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 59, 3 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -420,9 +451,10 @@ tracks/0/keys = {
 "values": [ 0, 16, 0 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=17]
 resource_name = "idle"
 length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -433,10 +465,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=18]
 resource_name = "pressionando"
 length = 0.3
 tracks/0/type = "value"
@@ -449,39 +481,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 3, 59, 3 ]
-}
-
-[sub_resource type="Animation" id=23]
-resource_name = "idle"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2 ]
-}
-
-[sub_resource type="Animation" id=24]
-resource_name = "pressionando"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 2, 58, 2 ]
+"values": [ 7, 23, 7 ]
 }
 
 [sub_resource type="DynamicFont" id=25]
@@ -509,42 +509,41 @@ tracks/0/keys = {
 [node name="cena_1" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="screenLogoCena1" type="Sprite" parent="."]
+[node name="cenario" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="screenLogoCena1" type="Sprite" parent="cenario"]
 position = Vector2( 319, 188 )
 scale = Vector2( 0.621018, 0.621018 )
 texture = ExtResource( 5 )
 
-[node name="cenárioScreen" type="TileMap" parent="."]
+[node name="cenárioScreen" type="TileMap" parent="cenario"]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 65538, 7, 0, 131074, 4, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 3, 0, 196610, 4, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 3, 0, 196617, 2, 0, 196618, 2, 0, 262146, 4, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 2, 0, 262154, 2, 0, 327682, 4, 0, 327683, 3, 0, 327684, 3, 0, 327685, 2, 0, 327686, 3, 0, 327687, 2, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 393216, 1, 0, 393217, 1, 0, 393218, 3, 0, 393219, 2, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 2, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 458752, 2, 0, 458753, 3, 0, 458754, 3, 0, 458755, 2, 0, 458756, 3, 0, 458757, 3, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 8, 0, 458764, 8, 0, 458765, 8, 0, 458766, 8, 0, 458767, 8, 0, 458768, 8, 0, 458769, 8, 0, 458770, 8, 0, 458771, 8, 0, 524288, 2, 0, 524289, 3, 0, 524290, 3, 0, 524291, 2, 0, 524292, 3, 0, 524293, 3, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 3, 0, 524299, 9, 0, 524300, 9, 0, 524301, 9, 0, 524302, 9, 0, 524303, 9, 0, 524304, 9, 0, 524305, 9, 0, 524306, 9, 0, 524307, 9, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 2, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 2, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 720907, 10, 0, 720908, 10, 0, 720909, 10, 0, 720910, 10, 0, 720911, 10, 0, 720912, 10, 0, 720913, 10, 0, 720914, 10, 0, 720915, 10, 0 )
 
-[node name="protagonistaPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 19, 320 )
+[node name="paredesInvisiveis" type="StaticBody2D" parent="cenario"]
 
-[node name="Paredes" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
 position = Vector2( 0, 288 )
 shape = SubResource( 5 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
 position = Vector2( 321, 358 )
 shape = SubResource( 27 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
 position = Vector2( 394.5, 294 )
 shape = SubResource( 28 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
 position = Vector2( 57.5, 295 )
 shape = SubResource( 29 )
 
-[node name="paredeEMovelCenario1" type="Sprite" parent="."]
-position = Vector2( 187.917, 203 )
-scale = Vector2( 1.79167, 1.79167 )
-texture = ExtResource( 4 )
+[node name="protagonistaPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 19, 320 )
 
 [node name="player" type="KinematicBody2D" parent="."]
 position = Vector2( 280, 88 )
@@ -589,42 +588,11 @@ anims/idle = SubResource( 10 )
 position = Vector2( 0, 4 )
 shape = SubResource( 11 )
 
-[node name="botenter" type="Sprite" parent="."]
-position = Vector2( 421, 129 )
-scale = Vector2( 2.3125, 2.3125 )
-texture = ExtResource( 17 )
-hframes = 4
-vframes = 8
-frame = 7
+[node name="botTutorials" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="enterAnim" type="AnimationPlayer" parent="botenter"]
-anims/idle = SubResource( 17 )
-anims/pressionando = SubResource( 18 )
-
-[node name="bottab" type="Sprite" parent="."]
-position = Vector2( 420, 165 )
-scale = Vector2( 2.57813, 2.46875 )
-texture = ExtResource( 17 )
-hframes = 4
-vframes = 8
-
-[node name="enterAnim" type="AnimationPlayer" parent="bottab"]
-anims/idle = SubResource( 19 )
-anims/pressionando = SubResource( 20 )
-
-[node name="botdireita" type="Sprite" parent="."]
-position = Vector2( 439, 200 )
-scale = Vector2( 2.375, 2.375 )
-texture = ExtResource( 9 )
-hframes = 8
-vframes = 14
-frame = 3
-
-[node name="enterAnim" type="AnimationPlayer" parent="botdireita"]
-anims/idle = SubResource( 21 )
-anims/pressionando = SubResource( 22 )
-
-[node name="botesquerda" type="Sprite" parent="."]
+[node name="botesquerda" type="Sprite" parent="botTutorials"]
 position = Vector2( 404, 200 )
 scale = Vector2( 2.375, 2.375 )
 texture = ExtResource( 9 )
@@ -632,11 +600,46 @@ hframes = 8
 vframes = 14
 frame = 2
 
-[node name="enterAnim" type="AnimationPlayer" parent="botesquerda"]
+[node name="enterAnim" type="AnimationPlayer" parent="botTutorials/botesquerda"]
 anims/idle = SubResource( 23 )
 anims/pressionando = SubResource( 24 )
 
-[node name="text_tutorial" type="Label" parent="."]
+[node name="botdireita" type="Sprite" parent="botTutorials"]
+position = Vector2( 439, 200 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 9 )
+hframes = 8
+vframes = 14
+frame = 3
+
+[node name="enterAnim" type="AnimationPlayer" parent="botTutorials/botdireita"]
+anims/idle = SubResource( 21 )
+anims/pressionando = SubResource( 22 )
+
+[node name="bottab" type="Sprite" parent="botTutorials"]
+position = Vector2( 420, 165 )
+scale = Vector2( 2.57813, 2.46875 )
+texture = ExtResource( 17 )
+hframes = 4
+vframes = 8
+
+[node name="enterAnim" type="AnimationPlayer" parent="botTutorials/bottab"]
+anims/idle = SubResource( 19 )
+anims/pressionando = SubResource( 20 )
+
+[node name="botenter" type="Sprite" parent="botTutorials"]
+position = Vector2( 421, 129 )
+scale = Vector2( 2.3125, 2.3125 )
+texture = ExtResource( 17 )
+hframes = 4
+vframes = 8
+frame = 7
+
+[node name="enterAnim" type="AnimationPlayer" parent="botTutorials/botenter"]
+anims/idle = SubResource( 17 )
+anims/pressionando = SubResource( 18 )
+
+[node name="text_tutorial" type="Label" parent="botTutorials"]
 margin_left = 467.0
 margin_top = 114.0
 margin_right = 625.0
@@ -648,11 +651,11 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Control" type="Control" parent="."]
+[node name="dialogo" type="Control" parent="."]
 margin_right = 15.0
 margin_bottom = 15.0
 
-[node name="Dialog Box" type="ColorRect" parent="Control"]
+[node name="Dialog Box" type="ColorRect" parent="dialogo"]
 margin_left = 468.0
 margin_top = 68.0
 margin_right = 624.0
@@ -661,28 +664,33 @@ color = Color( 0.223529, 0.25098, 0.27451, 1 )
 script = ExtResource( 11 )
 dialogPath = "res://dialogos/dialog0.tres"
 
-[node name="Name" type="RichTextLabel" parent="Control/Dialog Box"]
+[node name="Name" type="RichTextLabel" parent="dialogo/Dialog Box"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 88.0
 margin_bottom = 33.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Text" type="RichTextLabel" parent="Control/Dialog Box"]
+[node name="Text" type="RichTextLabel" parent="dialogo/Dialog Box"]
 margin_left = 8.0
 margin_top = 32.0
 margin_right = 140.0
 margin_bottom = 138.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Indicator" type="Polygon2D" parent="Control/Dialog Box"]
+[node name="Indicator" type="Polygon2D" parent="dialogo/Dialog Box"]
 position = Vector2( 4, 4.78266 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140 )
 
-[node name="poligono" type="AnimationPlayer" parent="Control/Dialog Box/Indicator"]
+[node name="poligono" type="AnimationPlayer" parent="dialogo/Dialog Box/Indicator"]
 autoplay = "movendo"
 anims/movendo = SubResource( 26 )
 
-[node name="Timer" type="Timer" parent="Control/Dialog Box"]
+[node name="Timer" type="Timer" parent="dialogo/Dialog Box"]
 one_shot = true
+
+[node name="paredeEMovelCenario1" type="Sprite" parent="."]
+position = Vector2( 187.917, 203 )
+scale = Vector2( 1.79167, 1.79167 )
+texture = ExtResource( 4 )

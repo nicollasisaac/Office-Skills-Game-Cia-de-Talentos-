@@ -11,7 +11,7 @@ func _on_botao_enter_pressed(): #ativar timer e ativar o _process(rafa andar)
 	set_process(true) #comecar process
 	
 func _process(delta): #movimentar Rafa
-	var speed = -120
+	var speed = -140
 	$RafaProtagonista.position.x += speed * delta
 
 	if position.x != 1: #movimentar rafa
