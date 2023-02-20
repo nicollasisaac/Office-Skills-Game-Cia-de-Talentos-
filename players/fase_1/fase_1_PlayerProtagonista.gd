@@ -1,19 +1,19 @@
 extends KinematicBody2D
 
 var speedauto = 50
-var speed = 115
+var speed = 100
 # "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo
 var velocity = Vector2()
 # "velocity" é uma variável que armazena a velocidade atual do objeto na direção x 
 
-
-var target_position = Vector2(130, 286) # Posição alvo final do NPC
+var target_position = Vector2(136, 177) # Posição alvo final do NPC
 var step = 1 # Etapa atual do movimento
 var animation_player = null # Referência ao AnimationPlayer
 var chegou = false #utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
 var troca = false #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
 
 func _ready():
+	var area = get_node("cenario/icone_mesa/Area2D")
 	Global.desbloquear_movimentos()
 	animation_player = get_node("anim")
 	if not animation_player:
@@ -24,8 +24,6 @@ func _physics_process(delta):
 	_update_movement(delta)
 	_set_animation()
 	
-	var posicao_cima = $sprite.position.x
-	
 	# Calcular a direção do movimento
 	var direction = Vector2()
 	if step == 1:
@@ -33,15 +31,15 @@ func _physics_process(delta):
 		if abs(direction.x) < speedauto * delta:
 			step = 2
 			direction.x = 0
-			chegou = true #utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
+			chegou = true 
+			#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
 
 	# Normalizar a direção para obter a velocidade
 	velocity = direction.normalized() * speedauto
 
 	# Executar o movimento com move_and_slide
 	move_and_slide(velocity, Vector2(0, -1))
-		
-	
+
 func _update_movement(delta):
 	velocity.x = 0
 	if not Global.bloqueio:
@@ -59,16 +57,14 @@ func _update_movement(delta):
 			troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
   
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
 
 func _set_animation():
 #set_animationpermite é uma função para controlar as animações, isto inclui configurar a velocidade, pausar ou continuar a animação.
 	var anim = "idle"
 	
-	if chegou == true: #chegou na eli entao olhara para cima
+	if position.x >= 260: #chegou na eli entao olhara para cima
 		anim = "idlecima"
-	
-	if troca == true: #saiu da eli entao idle volta a ser para baixo
+	else:
 		anim = "idle"
 	
 	if velocity.x > 0: #se estiver se movimentando para direita ativara a animação
@@ -85,3 +81,4 @@ func _set_animation():
 	
 	if $anim.assigned_animation != anim:
 		$anim.play(anim)
+

@@ -1,15 +1,19 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=2]
-[ext_resource path="res://players/fase_1/fase_1_PlayerProtagonista.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=3]
 [ext_resource path="res://assets/buttons/Keyboard Letters and Symbols.png" type="Texture" id=4]
 [ext_resource path="res://scripts/fase_1/tutorial2.gd" type="Script" id=5]
 [ext_resource path="res://assets/fontes/VT323-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/characters/Eli.png" type="Texture" id=7]
-[ext_resource path="res://players/fase_1/eli_Rh_player.gd" type="Script" id=8]
-[ext_resource path="res://scripts/fase_1/Dialog Box.gd" type="Script" id=9]
+[ext_resource path="res://players/fase_1/eli_rh_player_fase1.gd" type="Script" id=8]
+[ext_resource path="res://scripts/fase_1/fase_1_DialogBox.gd" type="Script" id=9]
 [ext_resource path="res://scripts/fase_1/fase_1.gd" type="Script" id=10]
+[ext_resource path="res://players/fase_1/fase_1_PlayerProtagonista.gd" type="Script" id=11]
+[ext_resource path="res://assets/6_Office_Designs/cenario_fase1_objects.png" type="Texture" id=12]
+[ext_resource path="res://assets/6_Office_Designs/office design objects.png" type="Texture" id=13]
+[ext_resource path="res://assets/4_Modern_Office_singles/48x48/Modern_Office_Singles_48x48_155.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.125, 49 )
@@ -27,16 +31,18 @@ extents = Vector2( 220.75, 6.25 )
 extents = Vector2( 203.25, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 6.75, 46.5 )
+extents = Vector2( 12, 46.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 64.625, 20.75 )
+extents = Vector2( 15.0626, 20.75 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 52 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 54.5, 39.25 )
+extents = Vector2( 62, 47.9999 )
+
+[sub_resource type="RectangleShape2D" id=32]
 
 [sub_resource type="Animation" id=15]
 resource_name = "andandobaixo"
@@ -140,8 +146,116 @@ tracks/0/keys = {
 "values": [ 13, 45, 13, 31 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=20]
-height = 12.0
+[sub_resource type="CapsuleShape2D" id=31]
+radius = 11.0
+
+[sub_resource type="Animation" id=23]
+resource_name = "andandobaixo"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "andandocima"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "andandoladod"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "andandoladoe"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "idle"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "idlecima"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 49 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "parada"
+
+[sub_resource type="CapsuleShape2D" id=30]
+radius = 11.0
 
 [sub_resource type="Animation" id=9]
 resource_name = "idleCima"
@@ -269,11 +383,11 @@ position = Vector2( 443, 9.99998 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
-position = Vector2( 246.75, 50.5 )
+position = Vector2( 249, 50.4999 )
 shape = SubResource( 6 )
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
-position = Vector2( 388.375, 55 )
+[node name="mesa01" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
+position = Vector2( 337.875, 55 )
 shape = SubResource( 7 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
@@ -284,29 +398,33 @@ position = Vector2( -18, 3 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
-position = Vector2( 138.5, 85.75 )
+position = Vector2( 140, 87.9998 )
 shape = SubResource( 14 )
+
+[node name="mesa02" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
+position = Vector2( 408.938, 55.9998 )
+shape = SubResource( 7 )
+
+[node name="icone_mesa" type="Polygon2D" parent="cenario"]
+visible = false
+position = Vector2( 264, 137 )
+texture = ExtResource( 13 )
+polygon = PoolVector2Array( 145, 133, 139.973, 133, 135, 133, 140, 140 )
+
+[node name="Area2D" type="Area2D" parent="cenario/icone_mesa"]
+monitoring = false
+
+[node name="collision" type="CollisionShape2D" parent="cenario/icone_mesa/Area2D"]
+position = Vector2( 140, 135 )
+shape = SubResource( 32 )
 
 [node name="Personagens" type="Node2D" parent="."]
 
-[node name="protagonistaPlayer" parent="Personagens" instance=ExtResource( 3 )]
-position = Vector2( 1, 176 )
-script = null
-
 [node name="eli_Rh_player" type="KinematicBody2D" parent="Personagens"]
-position = Vector2( 224, 152 )
+position = Vector2( 8, 191 )
 script = ExtResource( 8 )
 
-[node name="Eli" type="Sprite" parent="Personagens/eli_Rh_player"]
-position = Vector2( 82, 86 )
-scale = Vector2( 1.9165, 1.9165 )
-texture = ExtResource( 7 )
-hframes = 16
-vframes = 4
-frame = 13
-
-[node name="eliAnim" type="AnimationPlayer" parent="Personagens/eli_Rh_player/Eli"]
-root_node = NodePath("../..")
+[node name="anim" type="AnimationPlayer" parent="Personagens/eli_Rh_player"]
 anims/andandobaixo = SubResource( 15 )
 anims/andandocima = SubResource( 16 )
 anims/andandoladod = SubResource( 17 )
@@ -314,9 +432,41 @@ anims/andandoladoe = SubResource( 18 )
 anims/idle = SubResource( 19 )
 anims/idleMovendo = SubResource( 21 )
 
+[node name="Eli" type="Sprite" parent="Personagens/eli_Rh_player"]
+position = Vector2( 0.000999928, -0.000984192 )
+scale = Vector2( 2.41658, 2.41658 )
+texture = ExtResource( 7 )
+hframes = 16
+vframes = 4
+frame = 12
+
 [node name="collision" type="CollisionShape2D" parent="Personagens/eli_Rh_player"]
-position = Vector2( 81, 91 )
-shape = SubResource( 20 )
+position = Vector2( 0, 5 )
+shape = SubResource( 31 )
+
+[node name="fase1_rafa_protagonista" type="KinematicBody2D" parent="Personagens"]
+position = Vector2( -5, 207 )
+script = ExtResource( 11 )
+
+[node name="sprite" type="Sprite" parent="Personagens/fase1_rafa_protagonista"]
+position = Vector2( 5.002, -5.002 )
+scale = Vector2( 2.24983, 2.24983 )
+texture = ExtResource( 3 )
+hframes = 16
+vframes = 4
+
+[node name="anim" type="AnimationPlayer" parent="Personagens/fase1_rafa_protagonista"]
+anims/andandobaixo = SubResource( 23 )
+anims/andandocima = SubResource( 24 )
+anims/andandoladod = SubResource( 25 )
+anims/andandoladoe = SubResource( 26 )
+anims/idle = SubResource( 27 )
+anims/idlecima = SubResource( 28 )
+anims/parada = SubResource( 29 )
+
+[node name="collision" type="CollisionShape2D" parent="Personagens/fase1_rafa_protagonista"]
+position = Vector2( 5, -3 )
+shape = SubResource( 30 )
 
 [node name="botTutoriais" type="Control" parent="."]
 margin_right = 40.0
@@ -395,3 +545,17 @@ anims/movendo = SubResource( 22 )
 
 [node name="Timer" type="Timer" parent="dialogo_1/Dialog Box"]
 one_shot = true
+
+[node name="CenarioFase1Objects" type="Sprite" parent="."]
+visible = false
+position = Vector2( 321.5, 179.5 )
+scale = Vector2( 1.01094, 0.997253 )
+texture = ExtResource( 12 )
+
+[node name="papel_trabalho" type="Sprite" parent="."]
+visible = false
+position = Vector2( 350, 223 )
+scale = Vector2( 0.416665, 0.416667 )
+texture = ExtResource( 14 )
+
+[connection signal="body_entered" from="cenario/icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]

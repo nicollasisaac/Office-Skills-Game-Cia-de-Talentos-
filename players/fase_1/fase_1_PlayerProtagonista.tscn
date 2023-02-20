@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=1]
 [ext_resource path="res://players/cena_1/protagonista_cena1.gd" type="Script" id=2]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "andandobaixo"
 length = 0.6
@@ -120,7 +119,6 @@ scale = Vector2( 1.833, 1.833 )
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 4
-frame = 48
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/andandobaixo = SubResource( 1 )

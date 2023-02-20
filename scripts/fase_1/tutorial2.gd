@@ -1,8 +1,10 @@
 extends Control
 
-var animation_player = null # Referência ao AnimationPlayer
+# Referência ao AnimationPlayer
+var animation_player = null
 
-func _process(delta): #ao clicar os botões aarecer o tutorial do mesmo.
+#ao clicar os botões aarecer o tutorial do mesmo.
+func _process(delta): 
 	if Input.is_action_just_pressed("ui_up"):
 		animation_player = get_node("botcima/cimaAnim")
 		animation_player.play("pressCima")
