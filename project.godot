@@ -13,6 +13,10 @@ config_version=4
 config/name="Rafa"
 run/main_scene="res://cenas/tela_inicial.tscn"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [display]
 
 window/size/width=640

@@ -39,6 +39,8 @@ func getDialog() -> Array:
 func nextPhrase() -> void:
 	if phraseNum >= len(dialog): #se comrimento for >= ao comprimento do dialogo exclua caixa de dialogo e retorne.
 		queue_free()
+		Global.desbloquear_movimentos()
+		Global.acionar_movimento_eli()
 		return
 	
 	finished = false
@@ -57,12 +59,3 @@ func nextPhrase() -> void:
 	finished= true
 	phraseNum += 1
 	return
-	
-
-
-	
-	
-
-	
-
-

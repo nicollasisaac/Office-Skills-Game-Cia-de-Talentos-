@@ -42,16 +42,21 @@ func _physics_process(delta):
 		
 	
 func _update_movement(delta):
-# _update_movemento é uma função que atualiza a velocidade do personagem de acordo com a entrada do jogador (se eles estão pressionando "move_right" ou "move_left")
 	velocity.x = 0
-	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
-		troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
-		troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-
-		
+	if not Global.bloqueio:
+		if Input.is_action_pressed("move_right") and chegou == true: #moverdireita
+			velocity.x += speed
+			troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+		if Input.is_action_pressed("move_left") and chegou == true: #mover esquerda
+			velocity.x -= speed
+			troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+		if Input.is_action_pressed("ui_up") and chegou == true: #mover cima
+			velocity.y -= speed
+			troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+		if Input.is_action_pressed("ui_down") and chegou == true: #mover baixo
+			velocity.y += speed
+			troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+  
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 
@@ -69,6 +74,10 @@ func _set_animation():
 		anim = "andandoladod"
 	elif velocity.x < 0: #se estiver se movimentando para a esquerda ativara a animação
 		anim = "andandoladoe"
+	elif velocity.y < 0:
+		anim = "andandocima"
+	elif velocity.y > 0:
+		anim = "andandobaixo"
 		
 	if step == 1: #quando ele estiver se movimentando sozinhono inicio ativara a animação
 		anim = "andandoladod"
