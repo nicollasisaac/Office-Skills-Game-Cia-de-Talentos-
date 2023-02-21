@@ -21,11 +21,12 @@ func _process(delta):
 	elif Global.final_dialogo == true:
 		$cenario/icone_mesa.visible = true
 		icone_mesa_area2d.monitoring = true
+		Global.final_dialogo = false
 	
-
 # Define as variáveis para os nós da cena que serão utilizados
 onready var rafaposition = get_node("Personagens/fase1_rafa_protagonista")
 onready var icone_mesa = get_node("cenario/icone_mesa")
+onready var dialogo1 = get_node("dialogo_1/Dialog1")
 
 # Chamada quando um corpo entra na Área2D
 func _on_Area2D_body_entered(body):
@@ -36,4 +37,6 @@ func _on_Area2D_body_entered(body):
 	icone_mesa_area2d.monitoring = false
 	rafaposition.position.x = 367
 	rafaposition.position.y = 266
+	Global.step2_eli = true
 	$papel_trabalho.visible = true
+	

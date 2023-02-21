@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var target_position = Vector2(302, 222) # Posição alvo final do NPC
+var target_position = Vector2(302, 250) # Posição alvo final do NPC
 var step = 1 # Etapa atual do movimento
 var velocity = Vector2() # Velocidade atual do NPC
 var speed = 60 # Velocidade de movimento do NPC
@@ -44,6 +44,13 @@ func _physics_process(delta):
 		if abs(direction.y) < speed * delta:
 			position.y = 222 # Parar no y = 222
 			chegou = true
+	
+	if Global.step2_eli == true:
+		direction = Vector2(0, 250 - position.y)
+		if abs(direction.y) < speed * delta:
+			position.y = 250
+			Global.step2_eli = false
+
 
 	# Definir a velocidade atual do NPC com base na direção e na velocidade máxima
 	velocity = direction.normalized() * speed

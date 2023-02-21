@@ -20,3 +20,5 @@ var final_dialogo = false
 
 func final_dialogo1():
 	final_dialogo = true
+	
+var step2_eli = false

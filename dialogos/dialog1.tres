@@ -1,13 +1,11 @@
-[
-    {"Name": "Eli", "Text": "Aqui na Cia de Skills, nós presamos o bom convívio entre os funcionários." },
-    {"Name":"Eli","Text": "Por conta disso gostaríamos de treinar suas habilidades em gestões de conflito."},
-    {"Name":"Eli","Text": "Durante seus dias de trabalho, ocorreram situações problemas nas quais você deverá realizar escolhas."},
-    {"Name":"Eli","Text": "E, a partir delas você lidará com diferentes consequências."},
-    {"Name":"Eli","Text": "No entanto, apenas uma das decisões lhe permitirá seguir adiante no seu dia."},
-    {"Name":"Eli","Text": "Caso sua escolha não seja a melhor forma de lidar com o conflito"},
-    {"Name":"Eli","Text": "você retornará na fase e lhe serão apresentados conteúdos externos que podem ajudar-lhe na tomada dessas decisões."},
-    {"Name":"Eli","Text": "Você pode retornar na fase quantas vezes forem necessárias. O importante é que você aprenda!"},
-    {"Name":"Eli","Text": "Agora que você está apto para começar seu dia de trabalho na Cia de Skills! Estas são as atividades que você terá para hoje."},
-
-    
+[    
+    {"Name": "Eli", "Text": "Oi pessoal, eu sou a Eli e sou responsável pelo treinamento aqui na Cia de Skills!"},    
+    {"Name": "Eli", "Text": "Nós aqui na empresa valorizamos muito o bom convívio entre os funcionários, afinal, passamos mais tempo aqui do que em casa!"},    
+    {"Name":"Eli","Text": "Por isso, queremos treinar suas habilidades em gestão de conflitos. Você já sabe, né? É melhor prevenir do que remediar!"},    
+    {"Name":"Eli","Text": "Durante o seu dia de trabalho, você irá se deparar com situações desafiadoras nas quais precisará tomar decisões difíceis."},    
+    {"Name":"Eli","Text": "Mas não se preocupe! Nós criamos um ambiente seguro para que você possa praticar suas habilidades sem medo de errar."},    
+    {"Name":"Eli","Text": "Lembre-se: apenas uma decisão correta permitirá que você prossiga no seu dia. Então, escolha sabiamente!"},    
+    {"Name":"Eli","Text": "Mas, se por acaso você escolher a opção errada, não tem problema! Você pode voltar e tentar de novo quantas vezes precisar. Afinal, estamos aqui para aprender!"},    
+    {"Name":"Eli","Text": "Além disso, se você precisar de ajuda, oferecemos conteúdos externos para ajudá-lo a tomar as melhores decisões."},    
+    {"Name":"Eli","Text": "Agora que você está pronto para começar o seu dia na Cia de Skills, vamos ver quais atividades teremos hoje?"},
 ]

@@ -511,7 +511,7 @@ valign = 1
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Dialog Box" type="ColorRect" parent="dialogo_1"]
+[node name="Dialog1" type="ColorRect" parent="dialogo_1"]
 margin_left = 474.0
 margin_top = 204.0
 margin_right = 633.0
@@ -520,30 +520,30 @@ color = Color( 0.223529, 0.25098, 0.27451, 1 )
 script = ExtResource( 9 )
 dialogPath = "res://dialogos/dialog1.tres"
 
-[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog Box"]
+[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog1"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 88.0
 margin_bottom = 33.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog Box"]
+[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog1"]
 margin_left = 8.0
 margin_top = 32.0
 margin_right = 153.0
 margin_bottom = 138.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog Box"]
+[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog1"]
 position = Vector2( 5, -3.99999 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140 )
 
-[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog Box/Indicator"]
+[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog1/Indicator"]
 autoplay = "movendo"
 anims/movendo = SubResource( 22 )
 
-[node name="Timer" type="Timer" parent="dialogo_1/Dialog Box"]
+[node name="Timer" type="Timer" parent="dialogo_1/Dialog1"]
 one_shot = true
 
 [node name="CenarioFase1Objects" type="Sprite" parent="."]
