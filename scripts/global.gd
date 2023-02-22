@@ -22,4 +22,13 @@ func final_dialogo1():
 	final_dialogo = true
 	
 var step2_eli = false
-var dialog2 = false
+var final_dialog2 = false
+var step3_eli = false
+
+var decisao1 = false
+
+var npc_thomas_active = false
+var dialogo3_thomas = false
+
+var show_dialog3 = false
+var show_desicion = false

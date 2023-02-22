@@ -15,6 +15,7 @@ func _ready():
 func _physics_process(delta):
 	# Calcular a direção do movimento
 	var direction = Vector2()
+	
 	if step == 1:
 		direction = Vector2(216 - position.x, 0)
 		if abs(direction.x) < speed * delta:
@@ -49,8 +50,35 @@ func _physics_process(delta):
 		direction = Vector2(0, 250 - position.y)
 		if abs(direction.y) < speed * delta:
 			position.y = 250
+			step = 0
 			Global.step2_eli = false
-
+	
+	if Global.step3_eli == true:
+		direction = Vector2(0, 317 - position.y)
+		if abs(direction.y) < speed * delta:
+			position.y = 317
+			step = 6
+			Global.step2_eli = false
+	
+	if step == 6:
+		direction = Vector2(70 - position.x, 0)
+		if abs(direction.x) < speed * delta:
+			position.x = 70
+			step = 7
+	
+	if step == 7:
+		direction = Vector2(0, 194 - position.y)
+		if abs(direction.y) < speed * delta:
+			position.y = 194
+			step = 8
+	
+	if step == 8:
+		direction = Vector2(3 - position.x, 0)
+		if abs(direction.x) < speed * delta:
+			position.x = 3
+			Global.decisao1 = true
+			step = 0
+	
 
 	# Definir a velocidade atual do NPC com base na direção e na velocidade máxima
 	velocity = direction.normalized() * speed
