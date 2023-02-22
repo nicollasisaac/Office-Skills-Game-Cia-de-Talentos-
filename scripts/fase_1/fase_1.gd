@@ -41,6 +41,7 @@ func _process(delta):
 	
 	if Global.show_desicion == true:
 		$quest_decision.visible = true
+		Global.show_desicion = false
 	
 # Define as variáveis para os nós da cena que serão utilizados
 onready var rafaposition = get_node("Personagens/fase1_rafa_protagonista")
@@ -70,5 +71,4 @@ func _on_button_quiz_pressed():
 
 func _on_button_quiz2_pressed():
 	$quest_decision.visible = false
-	$quest_decision/Control.visible = false
 	$final_decision.visible = true
