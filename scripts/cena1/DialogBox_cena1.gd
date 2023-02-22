@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta):
 	# Se o botão "Enter" for pressionado, vá para a próxima frase ou termine a atual
-	if Input.is_action_just_pressed("pressed_enter"):
+	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
 			nextPhrase()
 		else:

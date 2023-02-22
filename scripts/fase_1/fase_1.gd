@@ -39,4 +39,6 @@ func _on_Area2D_body_entered(body):
 	rafaposition.position.y = 266
 	Global.step2_eli = true
 	$papel_trabalho.visible = true
+	$dialogo_2.visible = true
+	Global.dialog2 = true
 	

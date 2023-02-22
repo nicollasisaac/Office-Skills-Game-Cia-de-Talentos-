@@ -1,9 +1,11 @@
 [
-    {"Name": "Eli", "Text": "Bom dia, Rafa! Seja bem-vindo(a) ao seu primeiro dia como estagiário(a) na Cia de Skills." },
-    {"Name":"Eli","Text": "Antes que você possa começar as suas atividades na empresa, gostaria de lhe passar algumas instruções."},
-    {"Name":"Eli","Text": "Para mover-se para direita, clique na seta direita"},
-    {"Name":"Eli","Text": "Para mover-se para esquerda, clique na seta esquerda, e assim analogamente."},
-    {"Name":"Eli","Text": "Isso mesmo! Você está indo muito bem! Para finalizar, clique na tecla tab."},
-    {"Name":"Eli","Text": "Parabéns! Agora você pode viver as aventuras que lhe esperam na Cia de Skills!"},
-    
+    {"Name": "Eli", "Text": "Ei, Rafa! Hoje é o seu primeiro dia aqui na Office Skills, certo?"},
+    {"Name":"Eli","Text": "Antes de começarmos a trabalhar, preciso passar algumas instruções básicas."},
+    {"Name":"Eli","Text": "é tipo um tutorial de jogo, só que aqui é a vida real!"},
+    {"Name":"Eli","Text": "Use as setas ou as teclas A, S, D e W para se movimentar pelo escritório, mas cuidado pra não bater em ninguém!"},
+    {"Name":"Eli","Text": "E se quiser pular mensagem (e quem não quer, né?)"},
+    {"Name":"Eli","Text":"é só apertar a barra de espaço. Vai ser bem útil se precisar pular alguma mensagem no caminho."},
+    {"Name":"Eli","Text": "Lembra daqueles jogos onde você tem um ajudante? Então, eu serei a sua ajudante aqui na empresa!"},
+    {"Name":"Eli","Text": "Qualquer dúvida, é só me chamar que eu estarei pronta pra ajudar."},
+    {"Name":"Eli","Text": "E aí, prontx para começar a aventura? Vamos lá! Me acompanhe!!"}
 ]

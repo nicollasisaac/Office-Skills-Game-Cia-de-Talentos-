@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/6_Office_Designs/cenario_fase1_objects.png" type="Texture" id=12]
 [ext_resource path="res://assets/6_Office_Designs/office design objects.png" type="Texture" id=13]
 [ext_resource path="res://assets/4_Modern_Office_singles/48x48/Modern_Office_Singles_48x48_155.png" type="Texture" id=14]
+[ext_resource path="res://scripts/fase_1/fase_1_dialog2.gd" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.125, 49 )
@@ -341,6 +342,23 @@ tracks/0/keys = {
 "values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
 }
 
+[sub_resource type="Animation" id=33]
+resource_name = "movendo"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.45, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
+}
+
 [node name="fase_1" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -557,5 +575,45 @@ visible = false
 position = Vector2( 350, 223 )
 scale = Vector2( 0.416665, 0.416667 )
 texture = ExtResource( 14 )
+
+[node name="dialogo_2" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Dialog2" type="ColorRect" parent="dialogo_2"]
+margin_left = 474.0
+margin_top = 204.0
+margin_right = 633.0
+margin_bottom = 354.0
+color = Color( 0.223529, 0.25098, 0.27451, 1 )
+script = ExtResource( 15 )
+dialogPath = "res://dialogos/dialog2.tres"
+
+[node name="Name" type="RichTextLabel" parent="dialogo_2/Dialog2"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 88.0
+margin_bottom = 33.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+
+[node name="Text" type="RichTextLabel" parent="dialogo_2/Dialog2"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 153.0
+margin_bottom = 138.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+
+[node name="Indicator" type="Polygon2D" parent="dialogo_2/Dialog2"]
+position = Vector2( 5, -3.99999 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140 )
+
+[node name="poligono" type="AnimationPlayer" parent="dialogo_2/Dialog2/Indicator"]
+autoplay = "movendo"
+anims/movendo = SubResource( 33 )
+
+[node name="Timer" type="Timer" parent="dialogo_2/Dialog2"]
+one_shot = true
 
 [connection signal="body_entered" from="cenario/icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]
