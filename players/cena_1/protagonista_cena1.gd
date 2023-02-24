@@ -1,17 +1,26 @@
 extends KinematicBody2D
 
+# "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem
 var speedauto = 50
 var speed = 115
-# "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo
+
+# Velocity é uma variável que armazena a velocidade atual do objeto na direção x 
 var velocity = Vector2()
-# "velocity" é uma variável que armazena a velocidade atual do objeto na direção x 
 
+# Posição alvo final do NPC
+var target_position = Vector2(130, 286) 
 
-var target_position = Vector2(130, 286) # Posição alvo final do NPC
-var step = 1 # Etapa atual do movimento
-var animation_player = null # Referência ao AnimationPlayer
-var chegou = false #utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
-var troca = false #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+# Etapa atual do movimento
+var step = 1 
+
+# Referência ao AnimationPlayer
+var animation_player = null 
+
+# Utilizada para falar que ele chegou na eli e ativar a animação
+var chegou = false
+
+# Utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. 
+var troca = false 
 
 func _ready():
 	Global.desbloquear_movimentos()
@@ -45,42 +54,41 @@ func _physics_process(delta):
 func _update_movement(delta):
 	velocity.x = 0
 	if not Global.bloqueio:
-		if Input.is_action_pressed("move_right") and chegou == true: #moverdireita
+		if Input.is_action_pressed("move_right") and chegou == true: 
 			velocity.x += speed
-			troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-		if Input.is_action_pressed("move_left") and chegou == true: #mover esquerda
+			troca = true 
+		if Input.is_action_pressed("move_left") and chegou == true: 
 			velocity.x -= speed
-			troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-		if Input.is_action_pressed("ui_up") and chegou == true: #mover cima
+			troca = true 
+		if Input.is_action_pressed("ui_up") and chegou == true: 
 			velocity.y -= speed
-			troca = true #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+			troca = true 
 		if Input.is_action_pressed("ui_down") and chegou == true: #mover baixo
 			velocity.y += speed
-			troca = true ##utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+			troca = true
   
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
 
 func _set_animation():
-#set_animationpermite é uma função para controlar as animações, isto inclui configurar a velocidade, pausar ou continuar a animação.
+# set_animationpermite é uma função para controlar as animações, isto inclui configurar a velocidade, pausar ou continuar a animação.
 	var anim = "idle"
 	
-	if chegou == true: #chegou na eli entao olhara para cima
+	if chegou == true: 
 		anim = "idlecima"
 	
-	if troca == true: #saiu da eli entao idle volta a ser para baixo
+	if troca == true: 
 		anim = "idle"
 	
-	if velocity.x > 0: #se estiver se movimentando para direita ativara a animação
+	if velocity.x > 0: 
 		anim = "andandoladod"
-	elif velocity.x < 0: #se estiver se movimentando para a esquerda ativara a animação
+	elif velocity.x < 0: 
 		anim = "andandoladoe"
 	elif velocity.y < 0:
 		anim = "andandocima"
 	elif velocity.y > 0:
 		anim = "andandobaixo"
 		
-	if step == 1: #quando ele estiver se movimentando sozinhono inicio ativara a animação
+	if step == 1: 
 		anim = "andandoladod"
 	
 	if $anim.assigned_animation != anim:

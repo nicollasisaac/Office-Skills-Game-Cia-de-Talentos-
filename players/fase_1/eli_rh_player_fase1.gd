@@ -22,25 +22,25 @@ func _physics_process(delta):
 			position.x = 216 # Parar no x = 214
 			step = 2
 
-	elif step == 2:
+	if step == 2:
 		direction = Vector2(0, 302 - position.y)
 		if abs(direction.y) < speed * delta:
 			position.y = 302 # Parar no y = 302
 			step = 3
 
-	elif step == 3:
+	if step == 3:
 		direction = Vector2(286 - position.x, 0)
 		if abs(direction.x) < speed * delta:
 			position.x = 286 # Parar no x = 214
 			step = 4
 			
-	elif step == 4:
+	if step == 4:
 		direction = Vector2(302 - position.x, 0)
 		if abs(direction.x) < speed * delta:
 			position.x = 302 # Parar no x = 302
 			step = 5
 			
-	elif step == 5:
+	if step == 5:
 		direction = Vector2(0, 222 - position.y)
 		if abs(direction.y) < speed * delta:
 			position.y = 222 # Parar no y = 222

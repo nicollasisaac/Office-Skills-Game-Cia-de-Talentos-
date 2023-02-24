@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Rafa"
+config/name="Office Skills"
 run/main_scene="res://cenas/tela_inicial.tscn"
 
 [autoload]

@@ -13,7 +13,6 @@ var chegou = false #utilizada para falar que ele chegou na eli e ativar a anima�
 var troca = false #utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
 
 func _ready():
-	var area = get_node("cenario/icone_mesa/Area2D")
 	Global.desbloquear_movimentos()
 	animation_player = get_node("anim")
 	if not animation_player:
@@ -21,7 +20,7 @@ func _ready():
 
 func _physics_process(delta):
 # "_physics_process" é uma função responsável por atualizar a movimentação do personagem 
-	_update_movement(delta)
+	_update_movement()
 	_set_animation()
 	
 	# Calcular a direção do movimento
@@ -40,7 +39,7 @@ func _physics_process(delta):
 	# Executar o movimento com move_and_slide
 	move_and_slide(velocity, Vector2(0, -1))
 
-func _update_movement(delta):
+func _update_movement():
 	velocity.x = 0
 	if not Global.bloqueio:
 		if Input.is_action_pressed("move_right") and chegou == true: #moverdireita

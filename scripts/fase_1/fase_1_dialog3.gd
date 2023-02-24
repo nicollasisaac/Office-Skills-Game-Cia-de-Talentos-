@@ -12,6 +12,7 @@ var phraseNum = 0
 
 func _ready():
 	phraseNum = 0
+	
 	# Configurando o tempo de espera do Timer
 	$Timer.wait_time = textSpeed
 	

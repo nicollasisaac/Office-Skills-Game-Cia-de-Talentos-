@@ -2,31 +2,39 @@ extends Node2D
 
 var animation_player = null
 
-func _ready(): #rafa se movimentar enquanto parada na tela
-#	$KinematicBody2D/RafaProtagonista/AnimationPlayer.play("olharlados")
-	set_process(false) #iniciar sem rodar a função _process para rafa ficar parada
+func _ready(): 
+	#iniciar sem rodar a função _process para rafa ficar parada
+	set_process(false) 
 
-func _on_botao_enter_pressed(): #ativar timer e ativar o _process(rafa andar)
-	$Timer.start() #comecar timer
-	set_process(true) #comecar process
-	
-func _process(delta): #movimentar Rafa
+# ativar timer e ativar o _process(rafa andar)
+func _on_botao_enter_pressed():
+	$Timer.start() 
+	#comecar process
+	set_process(true)
+
+# loop para movimentação da rafa
+func _process(delta):
+	#movimentar Rafa 
 	var speed = -140
 	$RafaProtagonista.position.x += speed * delta
 
-	if position.x != 1: #movimentar rafa
+	if position.x != 1:
 		$RafaProtagonista/AnimationPlayer.play("andarembora")
 		
-	if  position.x < 0: #parar assim que sair da tela
+		#parar assim que sair da tela
+	if  position.x < 0:
 		speed = 0
 
-func _input(event): #trocar de tela ao clicar "enter" no teclado
+# trocar de tela ao clicar "enter" no teclado
+func _input(event):
 	if event is InputEventKey:
 		if event.scancode == KEY_ENTER:
 			if event.pressed:
 				_on_botao_enter_pressed()
 
-func _on_Timer_timeout(): #quando timer finalizar executar função (trocar para proxima tela)
+# função timer
+func _on_Timer_timeout(): 
+	#quando timer finalizar executar função (trocar para proxima tela)
 	get_tree().change_scene("res://cenas/cena_1.tscn")
 	
 
