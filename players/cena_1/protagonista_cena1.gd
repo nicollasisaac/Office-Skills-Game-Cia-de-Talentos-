@@ -2,9 +2,11 @@ extends KinematicBody2D
 
 # "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
 var speedauto = 50
+
+# "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo / "speed" is an integer variables of the player speed in pixels  per second.
 var speed = 115
 
-# Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocitu of the object on direction x.
+# Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocity of the object on direction x.
 var velocity = Vector2()
 
 # Posição alvo final do NPC / NPC target position
@@ -22,15 +24,15 @@ var arrived = false
 # Utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / As soon as a key is pressed idle is set to looking down.
 var change = false 
 
+#Desbloquea movimentos do jogador. / Unlocks player movements.
 func _ready():
-	#desbloquea movimentos do jogador. / Unlocks player movements.
 	Global.desbloquear_movimentos()
 	animation_player = get_node("anim")
 	if not animation_player:
 		print("AnimationPlayer não encontrado")
 
-func _physics_process(delta):
 # "_physics_process" é uma função responsável por atualizar a movimentação do personagem / "_physics_process" is the function responsible to update character movement.
+func _physics_process(delta):
 	_update_movement(delta)
 	_set_animation()
 	
@@ -71,8 +73,8 @@ func _update_movement(delta):
   
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
-func _set_animation():
 # set_animationpermite é uma função para controlar as animações. / set_animationpermite is a function to control animations. 
+func _set_animation():
 	var anim = "idle"
 	
 	if arrived == true: 
@@ -81,6 +83,7 @@ func _set_animation():
 	if change == true: 
 		anim = "idle"
 	
+		#Ativar devidas animações durante movimentação do personagem. / Activates correct animation during character movement.
 	if velocity.x > 0: 
 		anim = "andandoladod"
 	elif velocity.x < 0: 
@@ -90,6 +93,7 @@ func _set_animation():
 	elif velocity.y > 0:
 		anim = "andandobaixo"
 		
+	#Ativar movimentação durante movimento automático no inicio da fase. / Acvtivates movement during auto move when level starts.
 	if step == 1: 
 		anim = "andandoladod"
 	

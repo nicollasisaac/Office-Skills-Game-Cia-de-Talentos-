@@ -8,6 +8,8 @@ export(float) var textSpeed = 0.05
 
 var dialog
 var phraseNum = 0
+
+# Texto encerrado / Text finished.
 var finished = false
 
 func _ready():
@@ -24,10 +26,11 @@ func _ready():
 	nextPhrase()
 	
 func _process(delta):
-	# Verificando se o jogador pressionou a tecla "enter"
+	# Verificando se o jogador pressionou a tecla "enter" / Check if wnter key is pressed.
 	if Input.is_action_just_pressed("ui_accept") :
 		if finished:
-			nextPhrase() # Exibindo a próxima frase
+			# Exibindo a próxima frase /  Display the next sentence
+			nextPhrase() 
 		else:
 			$Text.visible_characters = len($Text.text) # Se o texto ainda não terminou, o jogador pode pular para o fim do diálogo pressionando "enter"
 	
@@ -35,26 +38,26 @@ func _process(delta):
 func getDialog() -> Array:
 	var f = File.new()
 	
-	# Verificando se o arquivo especificado existe
+	# Verificando se o arquivo especificado existe / Checks if specified file exists.
 	assert(f.file_exists(dialogPath), "Caminho do arquivo não existe")
 	
-	# Abrindo o arquivo especificado
+	# Abrindo o arquivo especificado / Opens specified file.
 	f.open(dialogPath, File.READ)
 	
-	# Obtendo os dados do arquivo em formato de texto
+	# Obtendo os dados do arquivo em formato de texto / Obtains file data in text format.
 	var json = f.get_as_text()
 	
-	# Convertendo o texto em uma variável utilizável (neste caso, uma matriz)
+	# Convertendo o texto em uma variável utilizável (neste caso, uma matriz) / Converts text in usable variable.
 	var output = parse_json(json)
 	
-	# Verificando se a variável de saída é uma matriz, caso contrário, retornando uma lista vazia
+	# Verificando se a variável de saída é uma matriz, caso contrário, retornando uma lista vazia. / Checks if the output variable is an array, if not, returns an empty list.
 	if typeof(output) == TYPE_ARRAY:
 		return output
 	else:
 		return[]
 		
 func nextPhrase() -> void:
-	# Verificando se todas as frases do diálogo foram exibidas
+	# Verificando se todas as frases do diálogo foram exibidas / Checks if all dialog phrases were displayed.
 	if phraseNum >= len(dialog):
 		Global.desbloquear_movimentos()
 		Global.final_dialogo1()
@@ -67,7 +70,7 @@ func nextPhrase() -> void:
 	
 	$Text.visible_characters = 0
 	
-	# Exibindo a frase letra por letra com um tempo de espera
+	# Exibindo a frase letra por letra com um tempo de espera / Displays phrase letter by letter with a wait time.
 	while $Text.visible_characters < len($Text.text):
 		$Text.visible_characters += 1
 		

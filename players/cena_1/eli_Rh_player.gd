@@ -16,7 +16,7 @@ var speed = 100
 # Referência ao AnimationPlayer / AnimationPlayer reference 
 var animation_player = null 
 
-#Variavel para quando jogador alcança o destino / VAriable for when pleayer reaches destimation
+#Variavel para quando jogador alcança o destino / Variable for when pleayer reaches destination
 var arrived = false
 
 func _ready():

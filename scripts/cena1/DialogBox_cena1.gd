@@ -8,6 +8,8 @@ export(float) var textSpeed = 0.05
 # Define as variáveis dialog, phraseNum e finished / Sets variables dialog, phraseNum and finished
 var dialog
 var phraseNum = 0
+
+# Texto encerrado / Text finished.
 var finished = false
 
 func _ready():

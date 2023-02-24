@@ -1,31 +1,31 @@
 extends KinematicBody2D
 
-# 'speedauto' é a variavel que armazena a velocidade do movimento pré-definido dos personagens. 
+# "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
 var speedauto = 80
 
-# "velocity" é uma variável que armazena a velocidade atual do objeto na direção x 
+# Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocity of the object on direction x." é uma variável que armazena a velocidade atual do objeto na direção x 
 var velocity = Vector2()
 
-# Etapa atual do movimento
+# Etapa atual do movimento / Movement current step.
 var step = 0
 
-# Referência ao AnimationPlayer
+# Referência ao AnimationPlayer / AnimationPlayer Reference
 var animation_player = null 
 
-# Chamar animação.
+# Chamar animação. / Call animation.
 func _ready():
 	animation_player = get_node("anim")
 	if not animation_player:
 		print("AnimationPlayer não encontrado")
 
-#Função para a movimentação do personagem.
+#Função para a movimentação do personagem. / Character movement function.
 func _physics_process(delta):
 	_set_animation()
 	if Global.npc_thomas_active == true:
 		step = 1
 		Global.npc_thomas_active = false
 		
-	# Calcular a direção do movimento baseada no passo("step") atual.
+	# Calcular a direção do movimento baseada no passo("step") atual. / Calculates direction based on current step.
 	var direction = Vector2()
 	
 	if step == 1:
@@ -79,17 +79,17 @@ func _physics_process(delta):
 			Global.show_desicion = true
 			step = 0
 
-	# Normalizar a direção para obter a velocidade
+	# Normalizar a direção para obter a velocidade / Normalize direction to obtain speed
 	velocity = direction.normalized() * speedauto
 
-	# Executar o movimento com move_and_slide
+	# Executar o movimento com move_and_slide / Runs movement with move_and_slide.
 	move_and_slide(velocity, Vector2(0, -1))
 
 
 func _set_animation():
 	var anim = "idle"
 	
-	#Ativar devidas animações durante movimentação do personagem.
+	#Ativar devidas animações durante movimentação do personagem. / Activates correct animation during character movement.
 	if velocity.x > 0: 
 		anim = "andandoladod"
 	elif velocity.x < 0: 

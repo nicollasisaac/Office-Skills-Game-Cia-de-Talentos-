@@ -1,9 +1,9 @@
 extends Control
 
-# Referência ao AnimationPlayer
+# Referência ao AnimationPlayer / AnimatioPlayer reference
 var animation_player = null
 
-#ao clicar os botões aarecer o tutorial do mesmo.
+#ao clicar os botões aparecer o tutorial do mesmo. / show button tutorial when pressing.
 func _process(delta): 
 	if Input.is_action_just_pressed("ui_up"):
 		animation_player = get_node("botcima/cimaAnim")

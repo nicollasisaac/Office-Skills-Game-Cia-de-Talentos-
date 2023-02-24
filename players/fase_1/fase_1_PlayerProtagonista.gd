@@ -1,42 +1,42 @@
 extends KinematicBody2D
 
-# 'speedauto' é a variavel que armazena a velocidade do movimento pré-definido dos personagens. 
+# "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
 var speedauto = 50
 
-# "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo
+# "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo / "speed" is an integer variables of the player speed in pixels  per second.
 var speed = 100
 
-# "velocity" é uma variável que armazena a velocidade atual do objeto na direção x 
+# Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocity of the object on direction x.
 var velocity = Vector2()
 
-# Posição alvo final do NPC
+# Posição alvo final do NPC / NPC target position
 var target_position = Vector2(136, 177) 
 
-# Etapa atual do movimento
+# Etapa atual do movimento / Movement current step.
 var step = 1
 
-# Referência ao AnimationPlayer
+# Referência ao AnimationPlayer / AnimationPlayer Reference
 var animation_player = null 
 
-#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
+# Utilizada para falar que ele chegou na eli e ativar a animação / Used to say characher reached Eli and activates animation.
 var arrived = false 
 
-#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+# Utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / As soon as a key is pressed idle is set to looking down.
 var change = false 
 
-#Liberar movimentos do jogador e chamar animações.
+#Desbloquea movimentos do jogador. / Unlocks player movements.
 func _ready():
 	Global.desbloquear_movimentos()
 	animation_player = get_node("anim")
 	if not animation_player:
 		print("AnimationPlayer não encontrado")
 
-# "_physics_process" é uma função responsável por atualizar a movimentação do personagem 
+# "_physics_process" é uma função responsável por atualizar a movimentação do personagem / "_physics_process" is the function responsible to update character movement.
 func _physics_process(delta):
 	_update_movement()
 	_set_animation()
 	
-	# Calcular a direção do movimento
+	# Calcular a direção do movimento / Calculate ovement direction.
 	var direction = Vector2()
 	if step == 1:
 		direction = Vector2(target_position.x - position.x, 0)
@@ -46,51 +46,52 @@ func _physics_process(delta):
 			arrived = true 
 			#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
 
-	# Normalizar a direção para obter a velocidade
+	# Normalizar a direção para obter a velocidade / Normalize direction to obtain speed.
 	velocity = direction.normalized() * speedauto
 
-	# Executar o movimento com move_and_slide
+	# Executar o movimento com move_and_slide / Execute movement with moce_and_slide.
 	move_and_slide(velocity, Vector2(0, -1))
 
+#Movimentar personagem para as quatro direções após a animação.	/ Move character to all 4 directions after animation.
 func _update_movement():
 	velocity.x = 0
 	if not Global.bloqueio:
-		#moverdireita
+		#moverdireita / moveright
 		if Input.is_action_pressed("move_right") and arrived == true: 
 			velocity.x += speed
 			change = true
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. 
-		#mover esquerda
+			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
+		#moveresquerda / moveleft
 		if Input.is_action_pressed("move_left") and arrived == true: 
 			velocity.x -= speed
 			change = true
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-		#mover cima
+			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
+		#movercima / moveup
 			velocity.y -= speed
 		if Input.is_action_pressed("ui_up") and arrived == true: 
 			change = true 
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
-		#mover baixo
+			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
+		#moverbaixo / movedown
 		if Input.is_action_pressed("ui_down") and arrived == true: 
 			velocity.y += speed
 			change = true 
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo.
+			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
   
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
-#set_animationpermite é uma função para controlar as animações, isto inclui configurar a velocidade, pausar ou continuar a animação.
+# set_animationpermite é uma função para controlar as animações. / set_animationpermite is a function to control animations. 
 func _set_animation():
 	
-	#Variável de animação.
+	#Variável de animação. / Animation variable 
 	var anim = "idle"
 	
-	#Quando personagem chegar na eli animação de olhar para cima.
+	#Quando personagem chegar na eli animação de olhar para cima. / When player reaches Eli, look up animation.
 	if position.x >= 260: 
 		anim = "idlecima"
 	else:
 		anim = "idle"
 	
-	#Ativar devidas animações durante movimentação do personagem.
+	#Ativar devidas animações durante movimentação do personagem. / Activates correct animation during character movement.
 	if velocity.x > 0: 
 		anim = "andandoladod"
 	elif velocity.x < 0: 
@@ -100,7 +101,7 @@ func _set_animation():
 	elif velocity.y > 0:
 		anim = "andandobaixo"
 	
-	#Ativar movimentação durante movimento automático no inicio da fase.
+	#Ativar movimentação durante movimento automático no inicio da fase. / Acvtivates movement during auto move when level starts.
 	if step == 1:
 		anim = "andandoladod"
 	
