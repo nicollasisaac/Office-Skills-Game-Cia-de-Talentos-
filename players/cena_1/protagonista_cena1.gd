@@ -1,82 +1,84 @@
 extends KinematicBody2D
 
-# "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem
+# "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
 var speedauto = 50
 var speed = 115
 
-# Velocity é uma variável que armazena a velocidade atual do objeto na direção x 
+# Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocitu of the object on direction x.
 var velocity = Vector2()
 
-# Posição alvo final do NPC
+# Posição alvo final do NPC / NPC target position
 var target_position = Vector2(130, 286) 
 
-# Etapa atual do movimento
+# Etapa atual do movimento / Movement current step.
 var step = 1 
 
-# Referência ao AnimationPlayer
+# Referência ao AnimationPlayer / AnimationPlayer Reference
 var animation_player = null 
 
-# Utilizada para falar que ele chegou na eli e ativar a animação
-var chegou = false
+# Utilizada para falar que ele chegou na eli e ativar a animação / Used to say characher reached Eli and activates animation.
+var arrived = false
 
-# Utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. 
-var troca = false 
+# Utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / As soon as a key is pressed idle is set to looking down.
+var change = false 
 
 func _ready():
+	#desbloquea movimentos do jogador. / Unlocks player movements.
 	Global.desbloquear_movimentos()
 	animation_player = get_node("anim")
 	if not animation_player:
 		print("AnimationPlayer não encontrado")
 
 func _physics_process(delta):
-# "_physics_process" é uma função responsável por atualizar a movimentação do personagem 
+# "_physics_process" é uma função responsável por atualizar a movimentação do personagem / "_physics_process" is the function responsible to update character movement.
 	_update_movement(delta)
 	_set_animation()
 	
-	var posicao_cima = $sprite.position.x
+	var pos_up = $sprite.position.x
 	
-	# Calcular a direção do movimento
+	# Calcular a direção do movimento / Calculate ovement direction.
 	var direction = Vector2()
 	if step == 1:
 		direction = Vector2(target_position.x - position.x, 0)
 		if abs(direction.x) < speedauto * delta:
 			step = 2
 			direction.x = 0
-			chegou = true #utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
+			#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima / As soon as he reacher Eli activates line 61 .
+			arrived = true 
 
-	# Normalizar a direção para obter a velocidade
+	# Normalizar a direção para obter a velocidade / Normalize direction to obtain speed.
 	velocity = direction.normalized() * speedauto
 
-	# Executar o movimento com move_and_slide
+	# Executar o movimento com move_and_slide / Execute movement with moce_and_slide.
 	move_and_slide(velocity, Vector2(0, -1))
 		
-	
+#Movimentar personagem para as quatro direções após a animação.	/ Move character to all 4 directions after animation.
 func _update_movement(delta):
 	velocity.x = 0
 	if not Global.bloqueio:
-		if Input.is_action_pressed("move_right") and chegou == true: 
+		if Input.is_action_pressed("move_right") and arrived == true: 
 			velocity.x += speed
-			troca = true 
-		if Input.is_action_pressed("move_left") and chegou == true: 
+			change = true 
+		if Input.is_action_pressed("move_left") and arrived == true: 
 			velocity.x -= speed
-			troca = true 
-		if Input.is_action_pressed("ui_up") and chegou == true: 
+			change = true 
+		if Input.is_action_pressed("ui_up") and arrived == true: 
 			velocity.y -= speed
-			troca = true 
-		if Input.is_action_pressed("ui_down") and chegou == true: #mover baixo
+			change = true 
+		if Input.is_action_pressed("ui_down") and arrived == true: 
 			velocity.y += speed
-			troca = true
+			change = true
   
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func _set_animation():
-# set_animationpermite é uma função para controlar as animações, isto inclui configurar a velocidade, pausar ou continuar a animação.
+# set_animationpermite é uma função para controlar as animações. / set_animationpermite is a function to control animations. 
 	var anim = "idle"
 	
-	if chegou == true: 
+	if arrived == true: 
 		anim = "idlecima"
 	
-	if troca == true: 
+	if change == true: 
 		anim = "idle"
 	
 	if velocity.x > 0: 

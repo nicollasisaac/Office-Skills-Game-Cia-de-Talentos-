@@ -7,7 +7,11 @@ export var dialogPath = ""
 export(float) var textSpeed = 0.05
 
 var dialog
+
+# Texto encerrado
 var finished = false
+
+#Numero da frase
 var phraseNum = 0
 
 func _ready():

@@ -1,12 +1,24 @@
 extends KinematicBody2D
 
-var target_position = Vector2(302, 250) # Posição alvo final do NPC
-var step = 1 # Etapa atual do movimento
-var velocity = Vector2() # Velocidade atual do NPC
-var speed = 60 # Velocidade de movimento do NPC
-var animation_player = null # Referência ao AnimationPlayer
-var chegou = false
+# Posição alvo final do NPC
+var target_position = Vector2(302, 250) 
 
+# Etapa atual do movimento
+var step = 1 
+
+# Velocidade atual do NPC
+var velocity = Vector2() 
+
+# Velocidade de movimento do NPC
+var speed = 60 
+
+# Referência ao AnimationPlayer
+var animation_player = null 
+
+#Variavel para quando personagem chegar no ponto desejado.
+var arrived = false
+
+#Chamando a animação do personagem.
 func _ready():
 	animation_player = get_node("anim")
 	if not animation_player:
@@ -16,35 +28,41 @@ func _physics_process(delta):
 	# Calcular a direção do movimento
 	var direction = Vector2()
 	
+	#Rota pré-definida da personagem Eli.
 	if step == 1:
 		direction = Vector2(216 - position.x, 0)
 		if abs(direction.x) < speed * delta:
-			position.x = 216 # Parar no x = 214
+			# Parar no x = 214
+			position.x = 216 
 			step = 2
 
 	if step == 2:
 		direction = Vector2(0, 302 - position.y)
 		if abs(direction.y) < speed * delta:
-			position.y = 302 # Parar no y = 302
+			# Parar no y = 302
+			position.y = 302 
 			step = 3
 
 	if step == 3:
 		direction = Vector2(286 - position.x, 0)
 		if abs(direction.x) < speed * delta:
-			position.x = 286 # Parar no x = 214
+			# Parar no x = 214
+			position.x = 286 
 			step = 4
 			
 	if step == 4:
 		direction = Vector2(302 - position.x, 0)
 		if abs(direction.x) < speed * delta:
-			position.x = 302 # Parar no x = 302
+			# Parar no x = 302
+			position.x = 302 
 			step = 5
 			
 	if step == 5:
 		direction = Vector2(0, 222 - position.y)
 		if abs(direction.y) < speed * delta:
-			position.y = 222 # Parar no y = 222
-			chegou = true
+			# Parar no y = 222
+			position.y = 222 
+			arrived = true
 	
 	if Global.step2_eli == true:
 		direction = Vector2(0, 250 - position.y)

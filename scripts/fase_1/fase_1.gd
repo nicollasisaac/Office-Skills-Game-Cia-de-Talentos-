@@ -2,7 +2,7 @@ extends Node2D
 
 # Define as variáveis para os nós da cena que serão utilizados
 onready var positionRafa = get_node("Personagens/fase1_rafa_protagonista")
-onready var icone_mesa_area2d = get_node("cenario/icone_mesa/Area2D")
+onready var icon_table_area2d = get_node("cenario/icone_mesa/Area2D")
 
 # Configurações que são executadas logo quando a cena é iniciada
 onready var http_request = HTTPRequest.new()
@@ -11,7 +11,7 @@ onready var video_player = get_node("right_decision/video_conteudo")
 func _ready():
 	# Caixa de texto não está visível ao iniciar cena
 	$dialogo_1.visible = false 
-	icone_mesa_area2d.monitoring = false
+	icon_table_area2d.monitoring = false
 	
 	# variáveis fase 1 - dialogo
 	Global.final_dialogo = false
@@ -38,7 +38,7 @@ func _process(delta):
 	
 	if Global.final_dialogo == true:
 		$cenario/icone_mesa.visible = true
-		icone_mesa_area2d.monitoring = true
+		icon_table_area2d.monitoring = true
 		Global.final_dialogo = false
 	
 	if 	Global.final_dialog2 == true:
@@ -87,17 +87,18 @@ func _on_right_pressed():
 	$quest_decision.visible = false
 	$right_decision.visible = true
 
+# Botão "incorreto pressionado".
 func _on_wrong_pressed():
 	$quest_decision.visible = false
 	$wrong_decision.visible = true
 
+#Botão de proximafase pressionado. [WIP]
 func _on_next_phase_pressed():
-	pass # Replace with function body.
+	pass 
 
-
+#Botão de retorno a fase pressionado.
 func _on_back_phase_pressed():
 	get_tree().reload_current_scene()
-
 
 
 func _on_back_decision_pressed():

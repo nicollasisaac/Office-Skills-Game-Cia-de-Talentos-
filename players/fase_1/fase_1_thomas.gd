@@ -1,22 +1,31 @@
 extends KinematicBody2D
 
+# 'speedauto' é a variavel que armazena a velocidade do movimento pré-definido dos personagens. 
 var speedauto = 80
+
+# "velocity" é uma variável que armazena a velocidade atual do objeto na direção x 
 var velocity = Vector2()
 
+# Etapa atual do movimento
 var step = 0
+
+# Referência ao AnimationPlayer
 var animation_player = null 
 
+# Chamar animação.
 func _ready():
 	animation_player = get_node("anim")
 	if not animation_player:
 		print("AnimationPlayer não encontrado")
 
+#Função para a movimentação do personagem.
 func _physics_process(delta):
 	_set_animation()
 	if Global.npc_thomas_active == true:
 		step = 1
 		Global.npc_thomas_active = false
 		
+	# Calcular a direção do movimento baseada no passo("step") atual.
 	var direction = Vector2()
 	
 	if step == 1:
@@ -76,12 +85,14 @@ func _physics_process(delta):
 	# Executar o movimento com move_and_slide
 	move_and_slide(velocity, Vector2(0, -1))
 
+
 func _set_animation():
 	var anim = "idle"
 	
-	if velocity.x > 0: #se estiver se movimentando para direita ativara a animação
+	#Ativar devidas animações durante movimentação do personagem.
+	if velocity.x > 0: 
 		anim = "andandoladod"
-	elif velocity.x < 0: #se estiver se movimentando para a esquerda ativara a animação
+	elif velocity.x < 0: 
 		anim = "andandoladoe"
 	elif velocity.y < 0:
 		anim = "andandocima"

@@ -1,9 +1,9 @@
 extends ColorRect
 
-# Usada para obter o arquivo json que contém o diálogo que precisamos
+# Define a variável dialogPath que será usada para obter o arquivo JSON que contém o diálogo que precisamos / Sets the variable dialogPath used to obtain the JSON file which contains the dialog.
 export var dialogPath = ""
 
-# Velocidade do texto
+# Define a velocidade do texto que será usada / Sets text speed.
 export(float) var textSpeed = 0.05
 
 var dialog
@@ -11,16 +11,16 @@ var phraseNum = 0
 var finished = false
 
 func _ready():
-	# Configurando o tempo de espera do Timer
+	# Define o tempo de espera do timer com a velocidade do texto / Sets timer wait time with text speed.
 	$Timer.wait_time = textSpeed
 	
-	# Obtendo o diálogo do arquivo especificado
+	# Obtém o diálogo / Obtains dialog
 	dialog = getDialog()
 	
-	# Garantindo que o diálogo foi obtido com sucesso
+	# Garante que a função getDialog funcionou / Ensures getDialog function worked
 	assert(dialog, "Diálogo não encontrado")
 	
-	# Exibindo a primeira frase do diálogo
+	# Inicia a próxima frase / Starts next phrase
 	nextPhrase()
 	
 func _process(delta):
