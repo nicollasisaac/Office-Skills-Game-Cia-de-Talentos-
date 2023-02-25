@@ -5,9 +5,6 @@ onready var positionRafa = get_node("Personagens/fase1_rafa_protagonista")
 onready var icon_table_area2d = get_node("cenario/icone_mesa/Area2D")
 
 # Configurações que são executadas logo quando a cena é iniciada / Configs executed as soon as scene starts.
-onready var http_request = HTTPRequest.new()
-onready var video_player = get_node("right_decision/video_conteudo")
-
 func _ready():
 	# Caixa de texto não está visível ao iniciar cena / Dialog Box notvisible when scene starts.
 	$dialogo_1.visible = false 
@@ -101,7 +98,7 @@ func _on_next_phase_pressed():
 func _on_back_phase_pressed():
 	get_tree().reload_current_scene()
 
-
+#Botão de retorno a decisão pressionado. / Return button pressed.
 func _on_back_decision_pressed():
 	$quest_decision.visible = true
 	$wrong_decision.visible = false

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
-var speedauto = 50
+var speedAuto = 50
 
 # "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo / "speed" is an integer variables of the player speed in pixels  per second.
 var speed = 100
@@ -40,14 +40,14 @@ func _physics_process(delta):
 	var direction = Vector2()
 	if step == 1:
 		direction = Vector2(target_position.x - position.x, 0)
-		if abs(direction.x) < speedauto * delta:
+		if abs(direction.x) < speedAuto * delta:
 			step = 2
 			direction.x = 0
 			arrived = true 
 			#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
 
 	# Normalizar a direção para obter a velocidade / Normalize direction to obtain speed.
-	velocity = direction.normalized() * speedauto
+	velocity = direction.normalized() * speedAuto
 
 	# Executar o movimento com move_and_slide / Execute movement with moce_and_slide.
 	move_and_slide(velocity, Vector2(0, -1))
@@ -60,22 +60,21 @@ func _update_movement():
 		if Input.is_action_pressed("move_right") and arrived == true: 
 			velocity.x += speed
 			change = true
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
+		
 		#moveresquerda / moveleft
 		if Input.is_action_pressed("move_left") and arrived == true: 
 			velocity.x -= speed
 			change = true
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
+		
 		#movercima / moveup
-			velocity.y -= speed
 		if Input.is_action_pressed("ui_up") and arrived == true: 
+			velocity.y -= speed
 			change = true 
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
+		
 		#moverbaixo / movedown
 		if Input.is_action_pressed("ui_down") and arrived == true: 
 			velocity.y += speed
 			change = true 
-			#utilizada para falar que a partir do momento em que alguma seta for clicada o idle volta a ser olhando para baixo. / when arrow key pressed idle is now looking down
   
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 

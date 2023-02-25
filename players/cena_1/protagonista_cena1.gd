@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
-var speedauto = 50
+var speedAuto = 50
 
 # "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo / "speed" is an integer variables of the player speed in pixels  per second.
 var speed = 115
@@ -42,14 +42,14 @@ func _physics_process(delta):
 	var direction = Vector2()
 	if step == 1:
 		direction = Vector2(target_position.x - position.x, 0)
-		if abs(direction.x) < speedauto * delta:
+		if abs(direction.x) < speedAuto * delta:
 			step = 2
 			direction.x = 0
 			#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima / As soon as he reacher Eli activates line 61 .
 			arrived = true 
 
 	# Normalizar a direção para obter a velocidade / Normalize direction to obtain speed.
-	velocity = direction.normalized() * speedauto
+	velocity = direction.normalized() * speedAuto
 
 	# Executar o movimento com move_and_slide / Execute movement with moce_and_slide.
 	move_and_slide(velocity, Vector2(0, -1))

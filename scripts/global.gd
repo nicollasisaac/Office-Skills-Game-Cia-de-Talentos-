@@ -9,10 +9,9 @@ func bloquear_movimentos():
 func desbloquear_movimentos():
 	bloqueio = false
 
-# váriaveis da cena um
+# váriaveis da cena 1
 var bloqueio = true
 var movimento_2_eli = false
-
 # função que aciona o movimento da eli
 func acionar_movimento_eli():
 	movimento_2_eli = true

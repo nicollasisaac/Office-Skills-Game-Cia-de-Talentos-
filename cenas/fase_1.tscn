@@ -45,7 +45,7 @@ extents = Vector2( 203.25, 5.5 )
 extents = Vector2( 12, 46.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 15.0626, 34.9374 )
+extents = Vector2( 15.0626, 30.5311 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 52 )
@@ -57,7 +57,7 @@ extents = Vector2( 61, 39.9999 )
 extents = Vector2( 4.00014, 16 )
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 20.125, 2.5 )
+extents = Vector2( 12.1248, 2.5 )
 
 [sub_resource type="RectangleShape2D" id=32]
 
@@ -273,6 +273,7 @@ resource_name = "parada"
 
 [sub_resource type="CapsuleShape2D" id=30]
 radius = 11.0
+height = 14.0
 
 [sub_resource type="Animation" id=34]
 resource_name = "andandobaixo"
@@ -544,7 +545,7 @@ position = Vector2( 249, 50.4999 )
 shape = SubResource( 6 )
 
 [node name="mesa01" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
-position = Vector2( 337.875, 53.8749 )
+position = Vector2( 337.875, 49.4686 )
 shape = SubResource( 7 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
@@ -567,7 +568,7 @@ position = Vector2( 356.001, 87.9998 )
 shape = SubResource( 42 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
-position = Vector2( 364.125, 104 )
+position = Vector2( 372.125, 104 )
 shape = SubResource( 43 )
 
 [node name="icone_mesa" type="Polygon2D" parent="cenario"]
@@ -630,7 +631,7 @@ anims/idlecima = SubResource( 28 )
 anims/parada = SubResource( 29 )
 
 [node name="collision" type="CollisionShape2D" parent="Personagens/fase1_rafa_protagonista"]
-position = Vector2( 5, -3 )
+position = Vector2( 5, 1 )
 shape = SubResource( 30 )
 
 [node name="fase1_thomas" type="KinematicBody2D" parent="Personagens"]
