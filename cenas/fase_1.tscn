@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=2]
@@ -30,10 +30,13 @@
 extents = Vector2( 15.125, 49 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 294, 10 )
+extents = Vector2( 305, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 14.25, 70.25 )
+
+[sub_resource type="CircleShape2D" id=44]
+radius = 16.1246
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 222.375, 9.12524 )
@@ -525,12 +528,20 @@ position = Vector2( 11.125, -69 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
-position = Vector2( 346, -76 )
+position = Vector2( 335, -76 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
 position = Vector2( 14.25, 118.75 )
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
+position = Vector2( 44.9996, 163 )
+shape = SubResource( 44 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
+position = Vector2( 443.001, 148 )
+shape = SubResource( 44 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="cenario/CenarioCena2/paredesInvisiveis"]
 position = Vector2( 246.375, 172.125 )
