@@ -16,6 +16,7 @@ run/main_scene="res://cenas/tela_inicial.tscn"
 [autoload]
 
 Global="*res://scripts/global.gd"
+PausaGlobal="*res://cenas/pausa_global.tscn"
 
 [display]
 
