@@ -14,9 +14,7 @@ func _ready():
 	Global.final_dialogo = false
 
 	# variáveis fase 1 - animação / Phase 1 variables - animation
-	Global.step2_eli = false
-	Global.step3_eli = false
-	Global.npc_thomas_active = false
+	Global.npc_thomas_active = true
 
 	# variáveis fase 1 - animação / Phase 1 variables - dialog
 	Global.final_dialogo = false
@@ -42,7 +40,6 @@ func _process(delta):
 	if 	Global.final_dialog2 == true:
 		$objects_cenario/papel_trabalho1.visible = true
 		$dialogo_2.visible = false
-		Global.step3_eli = true
 		Global.final_dialog2 = false
 	
 	if Global.decisao1 == true:
@@ -73,12 +70,12 @@ func _on_Area2D_body_entered(body):
 	$dialogo_2.visible = true
 
 # Quando a pessoa clicar em "trabalhar" o Thomas aparecerá / When player presses "trabalhar" Thomas comes in scene.
-func _on_button_quiz_pressed():
-	$quest_work.visible = false
-	$objects_cenario/papel_trabalho1.visible = false
-	$objects_cenario/papel_trabalho2.visible = true
-	Global.npc_thomas_active = true
-	Global.dialogo3_thomas = true
+#func _on_button_quiz_pressed():
+	#$quest_work.visible = false
+	#$objects_cenario/papel_trabalho1.visible = false
+	#$objects_cenario/papel_trabalho2.visible = false
+	#Global.npc_thomas_active = true
+	#Global.dialogo3_thomas = true
 
 # Se a pessoa clicar na opção certa o usuário será levado para tela de feedback / When player presses correct answers, feedback is displayed.
 func _on_right_pressed():
@@ -92,7 +89,8 @@ func _on_wrong_pressed():
 
 #Botão de proximafase pressionado. [WIP] / Next level button [WIP]
 func _on_next_phase_pressed():
-	get_tree().change_scene("res://cenas/fase_2.tscn")
+	pass
+	#get_tree().change_scene("res://cenas/fase_2.tscn")
 
 #Botão de retorno a fase pressionado. / Return button pressed.
 func _on_back_phase_pressed():
