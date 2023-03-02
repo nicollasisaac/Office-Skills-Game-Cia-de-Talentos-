@@ -1,6 +1,6 @@
 extends Node2D
 
-# Referência ao AnimationPlayer/ AnimationPlayer referece
+# Referência ao AnimationPlayer/ AnimationPlayer reference
 var animation_player = null 
 
 # ao clicar os botões aparecer o tutorial do mesmo e ativar animação na imagem. / Activate tutorial and animations when pressing movement keys.

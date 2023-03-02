@@ -1,7 +1,6 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://players/cena_1/PlayerProtagonista.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/1_Room_Builder_Office/Room_Builder_Office_32x32.png" type="Texture" id=2]
 [ext_resource path="res://scripts/cena1/cena_1.gd" type="Script" id=3]
 [ext_resource path="res://assets/6_Office_Designs/parede_e_movel_cenario1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=5]
@@ -12,163 +11,8 @@
 [ext_resource path="res://assets/fontes/VT323-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://scripts/cena1/DialogBox_cena1.gd" type="Script" id=11]
 [ext_resource path="res://assets/aúdios/music_2_cena1.mp3" type="AudioStream" id=12]
+[ext_resource path="res://mapas/cena112.png" type="Texture" id=13]
 [ext_resource path="res://assets/buttons/Keyboard Extras.png" type="Texture" id=17]
-
-[sub_resource type="TileSet" id=1]
-0/name = "Room_Builder_Office_32x32.png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 352, 160, 32, 32 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "Room_Builder_Office_32x32.png 1"
-1/texture = ExtResource( 2 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 384, 160, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "Room_Builder_Office_32x32.png 2"
-2/texture = ExtResource( 2 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 384, 192, 32, 32 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-3/name = "Room_Builder_Office_32x32.png 3"
-3/texture = ExtResource( 2 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 352, 192, 32, 32 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
-3/z_index = 0
-4/name = "Room_Builder_Office_32x32.png 4"
-4/texture = ExtResource( 2 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 320, 160, 32, 32 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
-4/z_index = 0
-5/name = "Room_Builder_Office_32x32.png 5"
-5/texture = ExtResource( 2 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 320, 192, 32, 32 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
-5/z_index = 0
-6/name = "Room_Builder_Office_32x32.png 6"
-6/texture = ExtResource( 2 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 416, 256, 32, 32 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
-6/z_index = 0
-7/name = "Room_Builder_Office_32x32.png 7"
-7/texture = ExtResource( 2 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 448, 256, 32, 32 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
-7/z_index = 0
-8/name = "Room_Builder_Office_32x32.png 8"
-8/texture = ExtResource( 2 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 256, 352, 32, 32 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shape_offset = Vector2( 0, 0 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
-8/z_index = 0
-9/name = "Room_Builder_Office_32x32.png 9"
-9/texture = ExtResource( 2 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 256, 384, 32, 32 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shape_offset = Vector2( 0, 0 )
-9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
-9/z_index = 0
-10/name = "Room_Builder_Office_32x32.png 10"
-10/texture = ExtResource( 2 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 256, 32, 32, 32 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shape_offset = Vector2( 0, 0 )
-10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
-10/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 9, 61 )
@@ -180,10 +24,19 @@ extents = Vector2( 319, 9 )
 extents = Vector2( 232, 8 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 36, 10 )
+extents = Vector2( 177.5, 54 )
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 50.5, 5.5 )
+extents = Vector2( 83.375, 45.1875 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 29, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 18.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 52, 30.5 )
 
 [sub_resource type="Animation" id=12]
 resource_name = "andandobaixo"
@@ -518,37 +371,52 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="screenLogoCena1" type="Sprite" parent="cenario"]
-position = Vector2( 319, 188 )
-scale = Vector2( 0.621018, 0.621018 )
+position = Vector2( 319.019, 188 )
+scale = Vector2( 0.621056, 0.621018 )
 texture = ExtResource( 5 )
 
-[node name="cenárioScreen" type="TileMap" parent="cenario"]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 65538, 7, 0, 131074, 4, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 3, 0, 196610, 4, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 3, 0, 196617, 2, 0, 196618, 2, 0, 262146, 4, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 2, 0, 262154, 2, 0, 327682, 4, 0, 327683, 3, 0, 327684, 3, 0, 327685, 2, 0, 327686, 3, 0, 327687, 2, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 393216, 1, 0, 393217, 1, 0, 393218, 3, 0, 393219, 2, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 2, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 458752, 2, 0, 458753, 3, 0, 458754, 3, 0, 458755, 2, 0, 458756, 3, 0, 458757, 3, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 8, 0, 458764, 8, 0, 458765, 8, 0, 458766, 8, 0, 458767, 8, 0, 458768, 8, 0, 458769, 8, 0, 458770, 8, 0, 458771, 8, 0, 524288, 2, 0, 524289, 3, 0, 524290, 3, 0, 524291, 2, 0, 524292, 3, 0, 524293, 3, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 3, 0, 524299, 9, 0, 524300, 9, 0, 524301, 9, 0, 524302, 9, 0, 524303, 9, 0, 524304, 9, 0, 524305, 9, 0, 524306, 9, 0, 524307, 9, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 2, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 2, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 720907, 10, 0, 720908, 10, 0, 720909, 10, 0, 720910, 10, 0, 720911, 10, 0, 720912, 10, 0, 720913, 10, 0, 720914, 10, 0, 720915, 10, 0 )
+[node name="Cena112" type="Sprite" parent="cenario"]
+position = Vector2( 321.5, 134 )
+scale = Vector2( 1.00469, 1 )
+texture = ExtResource( 13 )
 
 [node name="paredesInvisiveis" type="StaticBody2D" parent="cenario"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
-position = Vector2( 0, 288 )
+position = Vector2( -8, 88 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
-position = Vector2( 321, 358 )
+position = Vector2( 323, 56 )
 shape = SubResource( 27 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
-position = Vector2( 408, 294 )
+position = Vector2( 405, 315 )
 shape = SubResource( 28 )
 
 [node name="collisionRafa" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
-position = Vector2( 140, 288 )
+position = Vector2( 178.5, 197 )
 shape = SubResource( 31 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
-position = Vector2( 57.5, 295 )
+position = Vector2( 538.25, 238.188 )
 shape = SubResource( 29 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
+position = Vector2( 693, 84 )
+shape = SubResource( 29 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
+position = Vector2( 403, 89.5 )
+shape = SubResource( 32 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
+position = Vector2( 630.5, 194 )
+shape = SubResource( 33 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
+position = Vector2( 226, 278.5 )
+shape = SubResource( 34 )
 
 [node name="player" type="KinematicBody2D" parent="."]
 visible = false
@@ -559,7 +427,7 @@ scale = Vector2( 1.833, 1.833 )
 texture = ExtResource( 7 )
 hframes = 16
 vframes = 4
-frame = 12
+frame = 44
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
 anims/andandobaixo = SubResource( 12 )
@@ -573,7 +441,7 @@ position = Vector2( 0, 4 )
 shape = SubResource( 11 )
 
 [node name="eli_Rh_player" type="KinematicBody2D" parent="."]
-position = Vector2( 233, 153 )
+position = Vector2( 311, 280 )
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="eli_Rh_player"]
@@ -592,14 +460,14 @@ anims/andandoladoe = SubResource( 9 )
 anims/idle = SubResource( 10 )
 
 [node name="protagonistaPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 19, 320 )
+position = Vector2( 79, 116 )
 
 [node name="botTutorials" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="botesquerda" type="Sprite" parent="botTutorials"]
-position = Vector2( 404, 200 )
+position = Vector2( 264, 341.75 )
 scale = Vector2( 2.375, 2.375 )
 texture = ExtResource( 9 )
 hframes = 8
@@ -611,7 +479,7 @@ anims/idle = SubResource( 23 )
 anims/pressionando = SubResource( 24 )
 
 [node name="botdireita" type="Sprite" parent="botTutorials"]
-position = Vector2( 439, 200 )
+position = Vector2( 299, 341.75 )
 scale = Vector2( 2.375, 2.375 )
 texture = ExtResource( 9 )
 hframes = 8
@@ -623,7 +491,7 @@ anims/idle = SubResource( 21 )
 anims/pressionando = SubResource( 22 )
 
 [node name="bottab" type="Sprite" parent="botTutorials"]
-position = Vector2( 420, 165 )
+position = Vector2( 352, 342 )
 scale = Vector2( 2.57813, 2.46875 )
 texture = ExtResource( 17 )
 hframes = 4
@@ -634,7 +502,7 @@ anims/idle = SubResource( 19 )
 anims/pressionando = SubResource( 20 )
 
 [node name="botenter" type="Sprite" parent="botTutorials"]
-position = Vector2( 421, 129 )
+position = Vector2( 207, 342 )
 scale = Vector2( 2.3125, 2.3125 )
 texture = ExtResource( 17 )
 hframes = 4
@@ -646,10 +514,10 @@ anims/idle = SubResource( 17 )
 anims/pressionando = SubResource( 18 )
 
 [node name="text_tutorial" type="Label" parent="botTutorials"]
-margin_left = 467.0
-margin_top = 114.0
-margin_right = 625.0
-margin_bottom = 216.0
+margin_left = 382.0
+margin_top = 319.0
+margin_right = 636.0
+margin_bottom = 352.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 25 )
@@ -658,14 +526,16 @@ valign = 1
 autowrap = true
 
 [node name="dialogo" type="Control" parent="."]
-margin_right = 15.0
-margin_bottom = 15.0
+margin_left = -472.0
+margin_top = 132.0
+margin_right = -457.0
+margin_bottom = 147.0
 
 [node name="Dialog Box" type="ColorRect" parent="dialogo"]
-margin_left = 468.0
-margin_top = 68.0
-margin_right = 624.0
-margin_bottom = 217.0
+margin_left = 480.0
+margin_top = 31.0
+margin_right = 636.0
+margin_bottom = 180.0
 color = Color( 0.223529, 0.25098, 0.27451, 1 )
 script = ExtResource( 11 )
 dialogPath = "res://dialogos/dialog0.tres"
@@ -685,7 +555,7 @@ margin_bottom = 138.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
 [node name="Indicator" type="Polygon2D" parent="dialogo/Dialog Box"]
-position = Vector2( 4, 4.78266 )
+position = Vector2( 4, 5 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140 )
 
@@ -697,6 +567,7 @@ anims/movendo = SubResource( 26 )
 one_shot = true
 
 [node name="paredeEMovelCenario1" type="Sprite" parent="."]
+visible = false
 position = Vector2( 187.917, 203 )
 scale = Vector2( 1.79167, 1.79167 )
 texture = ExtResource( 4 )

@@ -18,7 +18,6 @@
 [ext_resource path="res://assets/Ui/main_background_quiz.jpg" type="Texture" id=16]
 [ext_resource path="res://assets/4_Modern_Office_singles/48x48/Modern_Office_Singles_48x48_154.png" type="Texture" id=17]
 [ext_resource path="res://players/fase_1/fase_1_thomas.gd" type="Script" id=18]
-[ext_resource path="res://assets/characters/Character_017.png" type="Texture" id=19]
 [ext_resource path="res://scripts/fase_1/fase_1_dialog3.gd" type="Script" id=20]
 [ext_resource path="res://assets/Ui/decision1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Ui/acertou_conteúdo.png" type="Texture" id=22]
@@ -277,6 +276,9 @@ resource_name = "parada"
 [sub_resource type="CapsuleShape2D" id=30]
 radius = 11.0
 height = 14.0
+
+[sub_resource type="StreamTexture" id=45]
+load_path = "res://.import/Character_001.png-637a9cb821e8be1f60a74d083c762262.stex"
 
 [sub_resource type="Animation" id=34]
 resource_name = "andandobaixo"
@@ -652,7 +654,7 @@ script = ExtResource( 18 )
 [node name="sprite" type="Sprite" parent="Personagens/fase1_thomas"]
 position = Vector2( 5.50201, -7.50201 )
 scale = Vector2( 2.45816, 2.45816 )
-texture = ExtResource( 19 )
+texture = SubResource( 45 )
 hframes = 16
 vframes = 4
 
@@ -666,7 +668,7 @@ anims/idlecima = SubResource( 39 )
 anims/parada = SubResource( 40 )
 
 [node name="collision" type="CollisionShape2D" parent="Personagens/fase1_thomas"]
-position = Vector2( 5, -3 )
+position = Vector2( 5, 1 )
 shape = SubResource( 30 )
 
 [node name="botTutoriais" type="Control" parent="."]
