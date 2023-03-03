@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://assets/Ui/main_background_quiz.jpg" type="Texture" id=16]
 [ext_resource path="res://assets/4_Modern_Office_singles/48x48/Modern_Office_Singles_48x48_154.png" type="Texture" id=17]
 [ext_resource path="res://players/fase_1/fase_1_thomas.gd" type="Script" id=18]
+[ext_resource path="res://assets/Ui/fundo alto direita vermelho.jpeg" type="Texture" id=19]
 [ext_resource path="res://scripts/fase_1/fase_1_dialog3.gd" type="Script" id=20]
 [ext_resource path="res://assets/Ui/decision1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Ui/acertou_conteúdo.png" type="Texture" id=22]
@@ -278,7 +279,7 @@ radius = 11.0
 height = 14.0
 
 [sub_resource type="StreamTexture" id=45]
-load_path = "res://.import/Character_001.png-637a9cb821e8be1f60a74d083c762262.stex"
+load_path = "res://.import/Character_017.png-64bb3e1e5eb7ae6fccedd42fc6387343.stex"
 
 [sub_resource type="Animation" id=34]
 resource_name = "andandobaixo"
@@ -510,11 +511,10 @@ script = ExtResource( 10 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="FundoJogo21" type="Sprite" parent="cenario"]
-position = Vector2( 319.607, 181 )
-rotation = -6.28319
+[node name="FundoAltoDireitaVermelho" type="Sprite" parent="cenario"]
+position = Vector2( 321, 184 )
 scale = Vector2( 0.623815, 0.61 )
-texture = ExtResource( 2 )
+texture = ExtResource( 19 )
 
 [node name="CenarioCena2" type="Sprite" parent="cenario"]
 position = Vector2( 321.5, 179 )
@@ -633,6 +633,7 @@ scale = Vector2( 2.24983, 2.24983 )
 texture = ExtResource( 3 )
 hframes = 16
 vframes = 4
+frame = 49
 
 [node name="anim" type="AnimationPlayer" parent="Personagens/fase1_rafa_protagonista"]
 anims/andandobaixo = SubResource( 23 )
@@ -648,7 +649,7 @@ position = Vector2( 5, 1 )
 shape = SubResource( 30 )
 
 [node name="fase1_thomas" type="KinematicBody2D" parent="Personagens"]
-position = Vector2( 655, 161 )
+position = Vector2( 658, 159 )
 script = ExtResource( 18 )
 
 [node name="sprite" type="Sprite" parent="Personagens/fase1_thomas"]

@@ -10,7 +10,7 @@ var speed = 115
 var velocity = Vector2()
 
 # Posição alvo final do NPC / NPC target position
-var target_position = Vector2(130, 286) 
+var target_position = Vector2(380, 286) 
 
 # Etapa atual do movimento / Movement current step.
 var step = 1 
@@ -78,7 +78,7 @@ func _set_animation():
 	var anim = "idle"
 	
 	if arrived == true: 
-		anim = "idlecima"
+		anim = "idle"
 	
 	if change == true: 
 		anim = "idle"

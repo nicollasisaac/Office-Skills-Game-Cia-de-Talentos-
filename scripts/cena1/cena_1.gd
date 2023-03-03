@@ -26,7 +26,7 @@ func _process(delta):
 # func que controla a caixa de dialogo para aparecer apenas quando o jogador alcancar a posição da eli / Activates dialog box when player reaches Eli.
 func _physics_process(delta): 
 	$dialogo.visible = false 
-	if $protagonistaPlayer.position.x >= 125: 
+	if $protagonistaPlayer.position.x >= 360: 
 		$dialogo.visible = true 
 	
 	# trocar para fase 1 / changes to phase 1

@@ -1,9 +1,9 @@
 [gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://players/cena_1/PlayerProtagonista.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Ui/fundo baixo esquerda vermelho.jpeg" type="Texture" id=2]
 [ext_resource path="res://scripts/cena1/cena_1.gd" type="Script" id=3]
 [ext_resource path="res://assets/6_Office_Designs/parede_e_movel_cenario1.png" type="Texture" id=4]
-[ext_resource path="res://assets/Ui/fundo jogo 2.1.png" type="Texture" id=5]
 [ext_resource path="res://assets/characters/Eli.png" type="Texture" id=6]
 [ext_resource path="res://assets/characters/Character_040.png" type="Texture" id=7]
 [ext_resource path="res://players/cena_1/eli_Rh_player.gd" type="Script" id=8]
@@ -370,10 +370,10 @@ script = ExtResource( 3 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="screenLogoCena1" type="Sprite" parent="cenario"]
-position = Vector2( 319.019, 188 )
-scale = Vector2( 0.621056, 0.621018 )
-texture = ExtResource( 5 )
+[node name="FundoBaixoEsquerdaVermelho" type="Sprite" parent="cenario"]
+position = Vector2( 321.01, 186 )
+scale = Vector2( 0.628887, 0.621018 )
+texture = ExtResource( 2 )
 
 [node name="Cena112" type="Sprite" parent="cenario"]
 position = Vector2( 321.5, 134 )
@@ -403,7 +403,7 @@ position = Vector2( 538.25, 238.188 )
 shape = SubResource( 29 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
-position = Vector2( 693, 84 )
+position = Vector2( 695, 80 )
 shape = SubResource( 29 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="cenario/paredesInvisiveis"]
@@ -445,7 +445,7 @@ position = Vector2( 311, 280 )
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="eli_Rh_player"]
-position = Vector2( 0, -1 )
+position = Vector2( 9.996, -6.004 )
 scale = Vector2( 1.833, 1.833 )
 texture = ExtResource( 6 )
 hframes = 16
@@ -459,8 +459,12 @@ anims/andandoladod = SubResource( 8 )
 anims/andandoladoe = SubResource( 9 )
 anims/idle = SubResource( 10 )
 
+[node name="collision2" type="CollisionShape2D" parent="eli_Rh_player"]
+position = Vector2( 8.99597, -2.004 )
+shape = SubResource( 11 )
+
 [node name="protagonistaPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79, 116 )
+position = Vector2( 71, 113 )
 
 [node name="botTutorials" type="Control" parent="."]
 margin_right = 40.0
