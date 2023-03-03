@@ -4,7 +4,7 @@ extends KinematicBody2D
 var speedAuto = 50
 
 # "speed" é uma variável inteira que armazena a velocidade do player em pixels por segundo / "speed" is an integer variables of the player speed in pixels  per second.
-var speed = 115
+var speed = 55
 
 # Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocity of the object on direction x.
 var velocity = Vector2()

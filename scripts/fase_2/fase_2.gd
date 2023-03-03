@@ -2,80 +2,49 @@ extends Node2D
 
 # Define as variáveis para os nós da cena que serão utilizados / Sets variables for used nodes.
 onready var positionRafa = get_node("Personagens/fase1_rafa_protagonista")
+onready var positionAndre = get_node("Personagens/fase2_andre")
 onready var icon_table_area2d = get_node("cenario/icone_mesa/Area2D")
 
 # Configurações que são executadas logo quando a cena é iniciada / Configs executed as soon as scene starts.
 func _ready():
 	# Caixa de texto não está visível ao iniciar cena / Dialog Box notvisible when scene starts.
 	$dialogo_1.visible = false 
-	icon_table_area2d.monitoring = false
 	
-	# variáveis fase 1 - dialogo / Phase 1 variables - dialog
-	Global.final_dialogo = false
-
-	# variáveis fase 1 - animação / Phase 1 variables - animation
-	Global.npc_thomas_active = true
-
-	# variáveis fase 1 - animação / Phase 1 variables - dialog
-	Global.final_dialogo = false
-	Global.final_dialog2 = false
-	Global.dialogo3_thomas = false
+	# variáveis fase 2 - animação / Phase 2 variables - dialog
+	Global.npc_thomas_active = false
 	Global.show_dialog3 = false
 	
 # Executa a cada quadro renderizado / Runs each frame
 func _process(delta):
-	if Global.final_dialogo == false:
 		# Se o personagem chegar na posição da cadeira, caixa de texto aparecerá iniciando o diálogo / When character reaches seat position, dialog box now visible and conversation starts.
-		if positionRafa.position.x >= 260 && positionRafa.position.y <= 280:
-			# Caixa de texto se torna visível / Dialog box now visible.
-			$dialogo_1.visible = true 
-		else:
-			$dialogo_1.visible = false	
-	
-	if Global.final_dialogo == true:
-		$cenario/icone_mesa.visible = true
-		icon_table_area2d.monitoring = true
-		Global.final_dialogo = false
-	
-	if 	Global.final_dialog2 == true:
-		$objects_cenario/papel_trabalho1.visible = true
-		$dialogo_2.visible = false
-		Global.final_dialog2 = false
-	
+	if positionRafa.position.x >= 450 && positionRafa.position.y <= 130:
+		# Caixa de texto se torna visível / Dialog box now visible.
+		#Global.bloquear_movimentos()
+		Global.show_dialog3 = true 
+		Global.npc_thomas_active == true
+	elif positionRafa.position.x >= 450 && positionRafa.position.y <= 130 && Global.show_dialog3 == false:
+		$Personagens/fase2_andre.move_local_x(1)
+	else:
+		Global.show_dialog3 = false
+		
 	if Global.decisao1 == true:
 		$quest_work.visible = true
-		$Personagens/eli_Rh_player.visible = false
 		Global.decisao1 = false
 	
 	if Global.show_dialog3 == true:
-		$dialogo_3.visible = true
+		$dialogo_1.visible = true
 	
 	if Global.show_desicion == true:
 		$quest_decision.visible = true
 		Global.show_desicion = false
-	
+		
+	if positionRafa.position.x <= 513 && positionRafa.position.y >= 120 && Global.show_dialog3 == true:
+		$botTutoriais/textTutorial.text = " "
+		
 # Define as variáveis para os nós da cena que serão utilizados / Sets variables for used nodes.
 onready var rafaposition = get_node("Personagens/fase1_rafa_protagonista")
-onready var icone_mesa = get_node("cenario/icone_mesa")
+onready var andreposition = get_node("Personagens/fase2_andre")
 onready var dialogo1 = get_node("dialogo_1/Dialog1")
-
-# Chamada quando um corpo entra na Área2D / Runs when body enters 2D Area.
-func _on_Area2D_body_entered(body):
-	# Define a visibilidade de objetos específicos da cena / Sets especific object visibility on scene.
-	$objects_cenario/CenarioFase1Objects.visible = true
-	Global.bloquear_movimentos()
-	rafaposition.position.x = 367
-	rafaposition.position.y = 266
-	Global.step2_eli = true
-	$dialogo_2.visible = true
-
-# Quando a pessoa clicar em "trabalhar" o Thomas aparecerá / When player presses "trabalhar" Thomas comes in scene.
-#func _on_button_quiz_pressed():
-	#$quest_work.visible = false
-	#$objects_cenario/papel_trabalho1.visible = false
-	#$objects_cenario/papel_trabalho2.visible = false
-	#Global.npc_thomas_active = true
-	#Global.dialogo3_thomas = true
 
 # Se a pessoa clicar na opção certa o usuário será levado para tela de feedback / When player presses correct answers, feedback is displayed.
 func _on_right_pressed():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cena112.png-4dee8d3fd8bde09ff15051069fb918e3.stex"
+path="res://.import/CenaFase3.png-5e8a5bcfc487bfb8933b1be4087a62df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mapas/cena112.png"
-dest_files=[ "res://.import/cena112.png-4dee8d3fd8bde09ff15051069fb918e3.stex" ]
+source_file="res://assets/mapas/CenaFase3.png"
+dest_files=[ "res://.import/CenaFase3.png-5e8a5bcfc487bfb8933b1be4087a62df.stex" ]
 
 [params]
 

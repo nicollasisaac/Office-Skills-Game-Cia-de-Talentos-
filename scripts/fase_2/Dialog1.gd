@@ -13,6 +13,8 @@ var phraseNum = 0
 var finished = false
 
 func _ready():
+	
+	finished = true
 	# Define o tempo de espera do timer com a velocidade do texto / Sets timer wait time with text speed.
 	$Timer.wait_time = textSpeed
 	
@@ -59,9 +61,9 @@ func getDialog() -> Array:
 func nextPhrase() -> void:
 	# Verificando se todas as frases do diálogo foram exibidas / Checks if all dialog phrases were displayed.
 	if phraseNum >= len(dialog):
-		Global.desbloquear_movimentos()
-		Global.final_dialogo1()
 		queue_free()
+		Global.desbloquear_movimentos()
+		Global.show_dialog3 = false
 		return
 	
 	finished = false
@@ -77,6 +79,6 @@ func nextPhrase() -> void:
 		$Timer.start()
 		yield($Timer,"timeout")
 	
-	finished= true
+	finished = true
 	phraseNum += 1
 	return

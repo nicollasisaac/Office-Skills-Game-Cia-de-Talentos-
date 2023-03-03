@@ -43,9 +43,8 @@ func _physics_process(delta):
 		if abs(direction.x) < speedAuto * delta:
 			step = 2
 			direction.x = 0
-			arrived = true 
-			#utilizada para falar que ele chegou na eli e ativar a animação da linha 61 de olhar para cima
-
+			arrived = true
+			
 	# Normalizar a direção para obter a velocidade / Normalize direction to obtain speed.
 	velocity = direction.normalized() * speedAuto
 
