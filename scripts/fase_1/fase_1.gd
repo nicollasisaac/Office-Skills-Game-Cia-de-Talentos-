@@ -106,6 +106,6 @@ func _on_back_decision_pressed():
 	$quest_decision.visible = true
 	$wrong_decision.visible = false
 
-# texto com link conectado que leva para o conteúdo
+# Texto com link conectado que leva para o conteúdo / Text with a connected link that takes to the content
 func _on_LinkButton_pressed():
 	OS.shell_open("https://youtu.be/htZ0jU5tVWQ")

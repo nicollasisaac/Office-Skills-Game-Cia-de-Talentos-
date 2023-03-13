@@ -5,75 +5,55 @@ onready var botaoReiniciar = $Reiniciar #botão reiniciar
 onready var texRect = $TextureRect #textura transparente
 onready var sliderVolume = $Volume #barra de volume
 onready var valorVolume = $ValorVolume #porcentagem do volume
-#onready var textoVolume = $VolumeTexto #texto de volume
 
 func _ready():
-# Configurações que são executadas logo quando a cena é iniciada / Configs executed as soon as scene starts.
+# Botões do menu ficam invisíveis quando o códidgo é executado inicialmente / Buttons stay invisible when the code is executed initialy
 	botaoContinuar.visible = false
 	botaoReiniciar.visible = false
 	texRect.visible = false
 	sliderVolume.visible = false
 	valorVolume.visible = false
-	#textoVolume.visible = false
 
 func _input(event: InputEvent):
-	
-	if event.is_action_pressed("press_tab"): #quando aperta o tab
+	# Quando a tecla "TAB" é apertada os botões do menu aparecem / When the key "TAB" is pressed the menu buttons appear
+	if event.is_action_pressed("press_tab"):
+		# O jogo é pausado / The game pauses
 		get_tree().paused = !get_tree().paused 
-		#o jogo pausa 
 		botaoContinuar.visible = !botaoContinuar.visible
 		botaoReiniciar.visible = !botaoReiniciar.visible
 		texRect.visible = !texRect.visible
-		#os botões e a textura aparecem
 		sliderVolume.visible = !sliderVolume.visible
-		#A barra de volume aparece
-		#textoVolume.visible = !textoVolume.visible
-		#o texto de volume sai da tela
 		valorVolume.visible = !valorVolume.visible
 	
 func _on_Continuar_pressed(): 
-#se o continuar for apertado
+# Se "continuar" for apertado a tela de pause some / If "continuar" is pressed the pause screen disappears
 	get_tree().paused = false
-	#o jogo sai do pause
 	botaoContinuar.visible = false
-	#o continuar sai da tela
 	botaoReiniciar.visible = false
-	#o reiniciar sai da tela
 	texRect.visible = false
-	#a textura sai da tela
 	sliderVolume.visible = false
-	#o volume sai da tela
-	#textoVolume.visible = false
-	#o texto de volume sai da tela
 	valorVolume.visible = false
+	# Efeito sonoro do botão quando pressionado / Button sound effect when pressed
 	$AudioStreamPlayer.play()
 
-
+# Se "reiniciar" for apertado o jogador é retornado à tela inicial e o menu de pause some / If "reiniciar" is pressed the player is returned to the start screen and the pause menu disappears
 func _on_Reiniciar_pressed():
-#se o reiniciar for apertado
 	get_tree().change_scene("res://cenas/tela_inicial.tscn")
-	#aparece a tela inicial
 	get_tree().paused = false
-	#o jogo sai do pause
 	botaoContinuar.visible = false
-	#o continuar sai da tela
 	botaoReiniciar.visible = false
-	#o reiniciar sai da tela
 	texRect.visible = false
-	#a textura sai da tela
 	sliderVolume.visible = false
-	#o volume sai da tela
-	#textoVolume.visible = false
-	#o texto de volume sai da tela
 	valorVolume.visible = false
+	# Efeito sonoro do botão quando pressionado / Button spund effect when pressed
 	$AudioStreamPlayer.play()
 	
-# 
+# Altera o texto de porcentagem do volume / Changes the volume percentage text
 func _on_Volume_value_changed(value):
 	set_bus_volume(0, value)
 	$ValorVolume.text = "%d%%" % (value * 100)
 	
-#
+# Altera o volume do jogo / Changes the game volume
 func set_bus_volume(bus_index: int, value: float):
 	AudioServer.set_bus_volume_db(bus_index, linear2db(value))
 	AudioServer.set_bus_mute(bus_index, value < 0.01)

@@ -19,7 +19,6 @@ func _process(delta):
 		# Se o personagem chegar na posição da cadeira, caixa de texto aparecerá iniciando o diálogo / When character reaches seat position, dialog box now visible and conversation starts.
 	if positionRafa.position.x >= 450 && positionRafa.position.y <= 130:
 		# Caixa de texto se torna visível / Dialog box now visible.
-		#Global.bloquear_movimentos()
 		Global.show_dialog3 = true 
 		Global.npc_thomas_active == true
 		Global.bloquear_movimentos()
@@ -57,7 +56,7 @@ func _on_wrong_pressed():
 	$quest_decision.visible = false
 	$wrong_decision.visible = true
 
-#Botão de proximafase pressionado. [WIP] / Next level button [WIP]
+# Botão de proximafase pressionado. [WIP] / Next level button [WIP]
 func _on_next_phase_pressed():
 	pass
 	#get_tree().change_scene("res://cenas/fase_2.tscn")
@@ -66,11 +65,11 @@ func _on_next_phase_pressed():
 func _on_back_phase_pressed():
 	get_tree().reload_current_scene()
 
-#Botão de retorno a decisão pressionado. / Return button pressed.
+# Botão de retorno a decisão pressionado. / Return button pressed.
 func _on_back_decision_pressed():
 	$quest_decision.visible = true
 	$wrong_decision.visible = false
 	
-# texto com link conectado que leva para o conteúdo
+# Texto com link conectado que leva para o conteúdo / Text with a connected link that takes to the content
 func _on_LinkButton_pressed():
 	OS.shell_open("https://www.youtube.com/watch?v=BtahWGGipqg")
