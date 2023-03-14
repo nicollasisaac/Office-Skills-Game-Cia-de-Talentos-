@@ -36,10 +36,6 @@ func _physics_process(delta):
 	_update_movement(delta)
 	_set_animation()
 	
-	var pos_up = $sprite.position.x
-	
-	print(position.x)
-	
 	# Calcular a direção do movimento / Calculate ovement direction.
 	var direction = Vector2()
 	if stepRafa == 1:

@@ -34,8 +34,6 @@ func _physics_process(delta):
 	# Calcular a direção do movimento / Calculate movement direction
 	var direction = Vector2()
 	
-	print(position.x)
-	print(position.y)
 	# Etapas de animação/ Animation steps
 	if stepEli == 1:
 		direction = Vector2(target_positionEli.x - position.x, 0)

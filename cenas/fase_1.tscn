@@ -788,6 +788,7 @@ margin_right = 633.0
 margin_bottom = 354.0
 color = Color( 0.223529, 0.25098, 0.27451, 1 )
 script = ExtResource( 15 )
+dialogPath = "res://dialogos/dialog2.tres"
 
 [node name="Name" type="RichTextLabel" parent="dialogo_2/Dialog2"]
 margin_left = 4.0
