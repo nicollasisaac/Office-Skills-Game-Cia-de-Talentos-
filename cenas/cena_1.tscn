@@ -446,8 +446,8 @@ position = Vector2( 311, 280 )
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="eli_Rh_player"]
-position = Vector2( 9.996, -6.004 )
-scale = Vector2( 1.833, 1.833 )
+position = Vector2( 9.5, -10.508 )
+scale = Vector2( 2.20833, 2.20833 )
 texture = ExtResource( 6 )
 hframes = 16
 vframes = 4
@@ -519,12 +519,12 @@ anims/idle = SubResource( 17 )
 anims/pressionando = SubResource( 18 )
 
 [node name="text_tutorial" type="Label" parent="botTutorials"]
+visible = false
 margin_left = 382.0
 margin_top = 319.0
 margin_right = 636.0
 margin_bottom = 352.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 25 )
 align = 1
 valign = 1

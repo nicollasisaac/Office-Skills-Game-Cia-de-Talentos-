@@ -42,3 +42,11 @@ func _on_Timer_timeout():
 	
 
 	
+
+
+func _on_btn_controles_pressed():
+	$exemplo_button_sobre.visible = true
+
+
+func _on_btn_sobre_pressed():
+	$exemplo_button_sobre.visible = true

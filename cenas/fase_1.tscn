@@ -1,6 +1,7 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Ui/chat_decision.png" type="Texture" id=2]
 [ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=3]
 [ext_resource path="res://assets/buttons/Keyboard Letters and Symbols.png" type="Texture" id=4]
 [ext_resource path="res://scripts/botTutoriais.gd" type="Script" id=5]
@@ -18,7 +19,6 @@
 [ext_resource path="res://players/fase_1/fase_1_thomas.gd" type="Script" id=18]
 [ext_resource path="res://assets/Ui/fundo alto direita vermelho.jpeg" type="Texture" id=19]
 [ext_resource path="res://scripts/fase_1/fase_1_dialog3.gd" type="Script" id=20]
-[ext_resource path="res://assets/Ui/decision1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Ui/acertou_conteúdo.png" type="Texture" id=22]
 [ext_resource path="res://assets/Ui/back_transparent.png" type="Texture" id=23]
 [ext_resource path="res://assets/Ui/errou_conteúdo.png" type="Texture" id=24]
@@ -389,9 +389,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=40]
 resource_name = "parada"
 
-[sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 6 )
-
 [sub_resource type="Animation" id=9]
 resource_name = "idleCima"
 length = 0.5
@@ -690,9 +687,7 @@ margin_top = 207.0
 margin_right = 629.0
 margin_bottom = 353.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 13 )
-text = "Vá até a Eli."
+text = "Va até a Eli."
 
 [node name="botTutoriais" type="Control" parent="."]
 margin_right = 40.0
@@ -728,8 +723,6 @@ margin_top = 6.0
 margin_right = 430.0
 margin_bottom = 46.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 13 )
 align = 1
 valign = 1
 
@@ -926,18 +919,26 @@ margin_right = 640.0
 margin_bottom = 360.0
 
 [node name="blush" type="TextureRect" parent="quest_decision"]
-margin_left = -1.0
-margin_top = -2.0
-margin_right = 639.0
-margin_bottom = 362.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 648.0
+margin_bottom = 376.0
 texture = ExtResource( 23 )
+expand = true
 
-[node name="main" type="TextureRect" parent="quest_decision"]
-margin_left = 80.0
-margin_top = 40.0
-margin_right = 558.0
-margin_bottom = 312.0
-texture = ExtResource( 21 )
+[node name="sprite" type="Sprite" parent="quest_decision"]
+position = Vector2( 88.0001, 40 )
+scale = Vector2( 6.45816, 6.45816 )
+texture = SubResource( 45 )
+hframes = 16
+vframes = 4
+
+[node name="chat" type="TextureRect" parent="quest_decision"]
+margin_left = 22.0
+margin_top = 16.0
+margin_right = 634.0
+margin_bottom = 364.0
+texture = ExtResource( 2 )
 expand = true
 
 [node name="quiz" type="Control" parent="quest_decision"]
@@ -966,7 +967,6 @@ margin_right = 480.0
 margin_bottom = 296.0
 
 [node name="right_decision" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

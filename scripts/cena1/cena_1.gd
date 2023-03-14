@@ -39,6 +39,7 @@ func _physics_process(delta):
 		$botTutorials/botesquerda.visible = true
 		$botTutorials/botdireita.visible = true
 		$botTutorials/bottab.visible = true
+		$botTutorials/text_tutorial.visible = true
 		
 	# trocar para fase 1 / changes to phase 1
 	if $protagonistaPlayer.position.x >= 640: 
