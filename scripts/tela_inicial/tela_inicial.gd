@@ -50,3 +50,7 @@ func _on_btn_controles_pressed():
 
 func _on_btn_sobre_pressed():
 	$exemplo_button_sobre.visible = true
+
+
+func _on_btn_fases_pressed():
+	$exemplo_button_sobre.visible = true

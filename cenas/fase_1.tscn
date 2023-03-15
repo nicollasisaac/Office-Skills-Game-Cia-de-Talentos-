@@ -967,6 +967,7 @@ margin_right = 480.0
 margin_bottom = 296.0
 
 [node name="right_decision" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

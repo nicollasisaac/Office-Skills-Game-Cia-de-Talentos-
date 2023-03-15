@@ -121,11 +121,19 @@ position = Vector2( 322, 179.5 )
 scale = Vector2( 1.01563, 1.02473 )
 texture = ExtResource( 9 )
 
+[node name="btn_fases" type="Button" parent="."]
+margin_left = 538.0
+margin_top = 164.0
+margin_right = 615.0
+margin_bottom = 187.0
+rect_pivot_offset = Vector2( -25, -158 )
+text = "fases"
+
 [node name="btn_sobre2" type="Button" parent="."]
-margin_left = 16.0
-margin_top = 11.0
-margin_right = 93.0
-margin_bottom = 34.0
+margin_left = 7.0
+margin_top = 55.0
+margin_right = 84.0
+margin_bottom = 78.0
 rect_pivot_offset = Vector2( -25, -158 )
 text = "Sobre"
 
@@ -133,4 +141,5 @@ text = "Sobre"
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="btn_controles" to="." method="_on_btn_controles_pressed"]
 [connection signal="pressed" from="btn_sobre" to="." method="_on_btn_sobre_pressed"]
+[connection signal="pressed" from="btn_fases" to="." method="_on_btn_fases_pressed"]
 [connection signal="pressed" from="btn_sobre2" to="." method="_on_btn_sobre_pressed"]
