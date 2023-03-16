@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/tela_inicial/tela_inicial.gd" type="Script" id=1]
 [ext_resource path="res://assets/Ui/inicio_novo.png" type="Texture" id=2]
@@ -9,6 +9,12 @@
 [ext_resource path="res://assets/aúdios/music_1_menu.mp3" type="AudioStream" id=7]
 [ext_resource path="res://assets/aúdios/botão tela inicial.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/Ui/back_transparent.png" type="Texture" id=9]
+[ext_resource path="res://assets/buttons/sobrenosbot.png" type="Texture" id=10]
+[ext_resource path="res://assets/buttons/sobrennosbotp.png" type="Texture" id=11]
+[ext_resource path="res://assets/buttons/controlesbot.png" type="Texture" id=12]
+[ext_resource path="res://assets/buttons/controlesbotp.png" type="Texture" id=13]
+[ext_resource path="res://assets/buttons/sairbot.png" type="Texture" id=14]
+[ext_resource path="res://assets/buttons/sairbotp.png" type="Texture" id=15]
 
 [sub_resource type="Animation" id=4]
 resource_name = "Idle"
@@ -68,10 +74,10 @@ scale = Vector2( 0.631678, 0.618333 )
 texture = ExtResource( 2 )
 
 [node name="botao_enter" type="TextureButton" parent="."]
-margin_left = 452.0
-margin_top = 266.0
-margin_right = 634.0
-margin_bottom = 340.0
+margin_left = 454.0
+margin_top = 282.0
+margin_right = 636.0
+margin_bottom = 356.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 expand = true
@@ -100,21 +106,6 @@ autoplay = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
-[node name="btn_controles" type="Button" parent="."]
-margin_left = 538.0
-margin_top = 234.0
-margin_right = 615.0
-margin_bottom = 257.0
-text = "Controles"
-
-[node name="btn_sobre" type="Button" parent="."]
-margin_left = 538.0
-margin_top = 200.0
-margin_right = 615.0
-margin_bottom = 223.0
-rect_pivot_offset = Vector2( -25, -158 )
-text = "Sobre"
-
 [node name="exemplo_button_sobre" type="Sprite" parent="."]
 visible = false
 position = Vector2( 322, 179.5 )
@@ -129,17 +120,35 @@ margin_bottom = 187.0
 rect_pivot_offset = Vector2( -25, -158 )
 text = "fases"
 
-[node name="btn_sobre2" type="Button" parent="."]
-margin_left = 7.0
-margin_top = 55.0
-margin_right = 84.0
-margin_bottom = 78.0
-rect_pivot_offset = Vector2( -25, -158 )
-text = "Sobre"
+[node name="botsobre" type="TextureButton" parent="."]
+margin_left = 1.0
+margin_top = 288.0
+margin_right = 118.0
+margin_bottom = 328.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+
+[node name="botcontroles" type="TextureButton" parent="."]
+margin_left = 1.0
+margin_top = 321.0
+margin_right = 118.0
+margin_bottom = 361.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+
+[node name="botsair" type="TextureButton" parent="."]
+visible = false
+margin_left = 1.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+expand = true
 
 [connection signal="pressed" from="botao_enter" to="." method="_on_botao_enter_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="btn_controles" to="." method="_on_btn_controles_pressed"]
-[connection signal="pressed" from="btn_sobre" to="." method="_on_btn_sobre_pressed"]
 [connection signal="pressed" from="btn_fases" to="." method="_on_btn_fases_pressed"]
-[connection signal="pressed" from="btn_sobre2" to="." method="_on_btn_sobre_pressed"]
+[connection signal="pressed" from="botsobre" to="." method="_on_botsobre_pressed"]
+[connection signal="pressed" from="botcontroles" to="." method="_on_botcontroles_pressed"]
+[connection signal="pressed" from="botsair" to="." method="_on_botsair_pressed"]
