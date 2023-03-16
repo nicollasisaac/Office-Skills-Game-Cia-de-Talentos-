@@ -28,7 +28,7 @@ func _ready():
 func _process(delta):
 	if Global.final_dialogo == false:
 		# Se o personagem chegar na posição da cadeira, caixa de texto aparecerá iniciando o diálogo / When character reaches seat position, dialog box now visible and conversation starts.
-		if positionRafa.position.x >= 260 && positionRafa.position.y <= 280:
+		if positionRafa.position.x >= 260 && positionRafa.position.y >= 250:
 			# Caixa de texto se torna visível / Dialog box now visible.
 			$dialogo_1.visible = true 
 		else:
@@ -38,6 +38,7 @@ func _process(delta):
 		$cenario/icone_mesa.visible = true
 		icon_table_area2d.monitoring = true
 		Global.final_dialogo = false
+
 	
 	if 	Global.final_dialog2 == true:
 		$objects_cenario/papel_trabalho1.visible = true
@@ -46,6 +47,7 @@ func _process(delta):
 		Global.final_dialog2 = false
 	
 	if Global.decisao1 == true:
+		$cenario/icone_mesa.visible = false
 		$quest_work.visible = true
 		$Personagens/eli_Rh_player.visible = false
 		Global.decisao1 = false

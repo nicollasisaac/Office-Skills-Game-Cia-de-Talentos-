@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fontes/VT323-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/explicação1.gd" type="Script" id=2]
 [ext_resource path="res://assets/Ui/fundo alto direita vermelho.jpeg" type="Texture" id=3]
 [ext_resource path="res://assets/buttons/jogarbotp.png" type="Texture" id=4]
 [ext_resource path="res://assets/buttons/jogarbot.png" type="Texture" id=5]
+[ext_resource path="res://assets/Ui/telaconteudos2.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -29,39 +30,44 @@ position = Vector2( 319.5, 181 )
 scale = Vector2( 0.625977, 0.603333 )
 texture = ExtResource( 3 )
 
+[node name="Telaconteudos2" type="Sprite" parent="FundoAltoDireitaVermelho"]
+position = Vector2( -3.99377, -6.62982 )
+scale = Vector2( 1.70495, 1.75619 )
+texture = ExtResource( 6 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 21.0
-margin_top = 10.0
-margin_right = 513.0
-margin_bottom = 79.0
+margin_left = 85.0
+margin_top = 22.0
+margin_right = 577.0
+margin_bottom = 91.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Fase 1 - Competição."
+text = "Fase 1"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 15.0
+margin_left = 40.0
 margin_top = 110.0
-margin_right = 575.0
+margin_right = 600.0
 margin_bottom = 145.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Deseja saber mais sobre o tema da fase ?"
 
 [node name="LinkButton" type="LinkButton" parent="."]
-margin_left = 14.0
-margin_top = 143.0
-margin_right = 520.0
-margin_bottom = 191.0
+margin_left = 40.0
+margin_top = 139.0
+margin_right = 546.0
+margin_bottom = 187.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Clique aqui para acessar o conteúdo."
 underline = 1
 
 [node name="Button" type="TextureButton" parent="."]
-margin_left = 510.0
-margin_top = 289.0
-margin_right = 607.0
-margin_bottom = 342.0
+margin_left = 522.0
+margin_top = 282.0
+margin_right = 619.0
+margin_bottom = 335.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 expand = true

@@ -2,7 +2,11 @@ extends Node2D
 
 func _ready():
 	pass # Replace with function body.
-
+	
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene("res://cenas/fase_1.tscn")
+		
 # Texto com link conectado que leva para o conteúdo / Text with a connected link that takes to the content
 func _on_LinkButton_pressed():
 	OS.shell_open("https://youtu.be/rU65XnlVI6s")

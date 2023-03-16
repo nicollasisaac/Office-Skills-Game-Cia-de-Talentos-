@@ -635,7 +635,7 @@ anims/cimabaixo = SubResource( 48 )
 [node name="Personagens" type="Node2D" parent="."]
 
 [node name="eli_Rh_player" type="KinematicBody2D" parent="Personagens"]
-position = Vector2( 4, 194 )
+position = Vector2( 2, 184 )
 script = ExtResource( 8 )
 
 [node name="anim" type="AnimationPlayer" parent="Personagens/eli_Rh_player"]

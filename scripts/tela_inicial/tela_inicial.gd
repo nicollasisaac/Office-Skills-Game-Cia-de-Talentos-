@@ -53,7 +53,7 @@ func _on_botsobre_pressed():
 	$exemplo_button_sobre.visible = true
 	$botsair.visible = true
 
-
 func _on_botsair_pressed():
-	pass
+	$exemplo_button_sobre.visible = false
+	$botsair.visible = false 
 
