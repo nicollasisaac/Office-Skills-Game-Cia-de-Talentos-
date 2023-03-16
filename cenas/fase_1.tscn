@@ -623,7 +623,7 @@ scale = Vector2( 6.48295, 6.94925 )
 monitoring = false
 
 [node name="collision" type="CollisionShape2D" parent="cenario/icone_mesa/Area2D"]
-position = Vector2( 140, 136 )
+position = Vector2( 139.533, 139.491 )
 shape = SubResource( 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cenario/icone_mesa"]
