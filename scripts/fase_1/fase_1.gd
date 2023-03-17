@@ -34,20 +34,19 @@ func _process(delta):
 		else:
 			$dialogo_1.visible = false	
 	
-	if Global.final_dialogo == true:
+	if Global.icone_mesa == true:
 		$cenario/icone_mesa.visible = true
 		icon_table_area2d.monitoring = true
-		Global.final_dialogo = false
+		Global.icone_mesa = false
 
-	
 	if 	Global.final_dialog2 == true:
+		$cenario/icone_mesa.visible = false
 		$objects_cenario/papel_trabalho1.visible = true
 		$dialogo_2.visible = false
 		Global.step3_eli = true
 		Global.final_dialog2 = false
 	
 	if Global.decisao1 == true:
-		$cenario/icone_mesa.visible = false
 		$quest_work.visible = true
 		$Personagens/eli_Rh_player.visible = false
 		Global.decisao1 = false

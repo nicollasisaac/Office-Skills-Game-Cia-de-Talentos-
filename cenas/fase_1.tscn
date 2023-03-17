@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/chat_decision.png" type="Texture" id=2]
@@ -527,6 +527,11 @@ tracks/0/keys = {
 "values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
 }
 
+[sub_resource type="DynamicFont" id=49]
+size = 18
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
 [sub_resource type="DynamicFont" id=47]
 size = 30
 font_data = ExtResource( 6 )
@@ -968,26 +973,39 @@ expand = true
 margin_right = 40.0
 margin_bottom = 40.0
 
+[node name="pergunta" type="Label" parent="quest_decision/quiz"]
+margin_left = 104.0
+margin_top = 110.0
+margin_right = 553.0
+margin_bottom = 221.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 49 )
+text = "O Thomas lhe pediu ajuda, porém você está com a sua
+lista de tarefas cheia. 
+Qual a melhor resolução de conflito nessa situação? 
+"
+
 [node name="wrong" type="Button" parent="quest_decision/quiz"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 160.0
-margin_top = 152.0
-margin_right = 488.0
-margin_bottom = 192.0
+margin_left = 104.0
+margin_top = 179.0
+margin_right = 880.0
+margin_bottom = 219.0
+text = "Você sugere uma troca de atividades, na qual o Thomas realiza as suas tarefas em troca da ajuda que você irá oferecer. "
+align = 2
 
 [node name="right" type="Button" parent="quest_decision/quiz"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 160.0
-margin_top = 200.0
-margin_right = 488.0
-margin_bottom = 240.0
+margin_left = 153.0
+margin_top = 226.0
+margin_right = 481.0
+margin_bottom = 266.0
 
 [node name="wrong2" type="Button" parent="quest_decision/quiz"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 152.0
-margin_top = 256.0
-margin_right = 480.0
-margin_bottom = 296.0
+margin_left = 149.0
+margin_top = 288.0
+margin_right = 477.0
+margin_bottom = 328.0
 
 [node name="right_decision" type="Control" parent="."]
 visible = false

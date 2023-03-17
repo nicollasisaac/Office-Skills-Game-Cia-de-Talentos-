@@ -9,6 +9,10 @@ func _ready():
 
 # ativar timer e ativar o _process(rafa andar) / Activate timer and activate _process (Rafa walks)
 func _on_botao_enter_pressed():
+	$btn_fases.visible = false
+	$botsobre.visible = false
+	$botcontroles.visible = false
+	
 	$Timer.start() 
 	#comecar process / inicialize process
 	set_process(true)
@@ -43,7 +47,6 @@ func _on_Timer_timeout():
 
 func _on_btn_fases_pressed():
 	$exemplo_button_sobre.visible = true
-
 
 func _on_botcontroles_pressed():
 	$exemplo_button_sobre.visible = true

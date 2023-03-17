@@ -18,6 +18,7 @@ func acionar_movimento_eli():
 
 # variáveis fase 1 - dialogo
 var final_dialogo = false
+var icone_mesa = false
 
 # variáveis fase 1 - animação
 var step2_eli = false

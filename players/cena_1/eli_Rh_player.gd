@@ -11,7 +11,7 @@ var stepEli = 1
 var velocityEli = Vector2() 
 
 # Velocidade de movimento do NPC / NPC movement speed.
-var speedEli = 50
+var speedEli = 80
 
 # Referência ao AnimationPlayer / AnimationPlayer reference 
 var animation_playerEli = null 
