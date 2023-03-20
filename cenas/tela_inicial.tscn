@@ -407,5 +407,8 @@ expand = true
 [connection signal="pressed" from="btn_fases" to="." method="_on_btn_fases_pressed"]
 [connection signal="pressed" from="botsobre" to="." method="_on_botsobre_pressed"]
 [connection signal="pressed" from="botcontroles" to="." method="_on_botcontroles_pressed"]
+[connection signal="pressed" from="fasestela/tutorial/tutorial_bot" to="." method="_on_tutorial_bot_pressed"]
+[connection signal="pressed" from="fasestela/fase1/fase1_bot" to="." method="_on_fase1_bot_pressed"]
+[connection signal="pressed" from="fasestela/fase2/fase2_bot" to="." method="_on_fase2_bot_pressed"]
 [connection signal="pressed" from="fasestela/sairfases" to="." method="_on_sairfases_pressed"]
 [connection signal="pressed" from="botsair" to="." method="_on_botsair_pressed"]
