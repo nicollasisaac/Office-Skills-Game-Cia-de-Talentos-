@@ -96,7 +96,7 @@ func _on_wrong_pressed():
 
 #Botão de proxima fase pressionado. [WIP] / Next level button [WIP]
 func _on_next_phase_pressed():
-	get_tree().change_scene("res://cenas/explicação2.tscn")
+	get_tree().change_scene("res://cenas/fase2_cenas/explicação2.tscn")
 
 #Botão de retorno a fase pressionado. / Return button pressed.
 func _on_back_phase_pressed():

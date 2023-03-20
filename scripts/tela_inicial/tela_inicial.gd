@@ -42,7 +42,7 @@ func _input(event):
 # função timer / Timer function
 func _on_Timer_timeout(): 
 	#quando timer finalizar executar função (trocar para proxima tela) / On timeout run function and change to next screen
-	get_tree().change_scene("res://cenas/cena_1.tscn")
+	get_tree().change_scene("res://cenas//fase1_cenas/explicação1.tscn")
 	
 
 func _on_btn_fases_pressed():
