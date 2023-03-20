@@ -75,10 +75,10 @@ func _on_wrong2_pressed():
 	$quest_decision.visible = false
 	$wrong_decision.visible = true
 
-# Botão de proximafase pressionado. [WIP] / Next level button [WIP]
+
 func _on_next_phase_pressed():
-	pass
-	#get_tree().change_scene("res://cenas/fase_2.tscn")
+	get_tree().change_scene("res://cenas/fase3_cenas/explicação3.tscn")
+
 
 func _on_LinkButton2_pressed():
 	pass # Replace with function body.

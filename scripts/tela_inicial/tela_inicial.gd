@@ -86,3 +86,6 @@ func _on_fase2_bot_pressed():
 
 func _on_fase3_bot_pressed():
 	get_tree().change_scene("res://cenas/fase3_cenas/explicação3.tscn")
+
+func _on_fase4_bot_pressed():
+	get_tree().change_scene("res://cenas/fase4_cenas/explicação4.tscn")
