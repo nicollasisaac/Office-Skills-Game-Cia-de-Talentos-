@@ -46,17 +46,31 @@ func _on_Timer_timeout():
 	
 
 func _on_btn_fases_pressed():
-	$exemplo_button_sobre.visible = true
+#	$exemplo_button_sobre.visible = true
+	$fasestela.visible = true
+
 
 func _on_botcontroles_pressed():
 	$exemplo_button_sobre.visible = true
 	$botsair.visible = true
+	$controlestela.visible = true
+	$btn_fases.visible = false
+	$botsobre.visible = false
+	$botcontroles.visible = false
 
 func _on_botsobre_pressed():
 	$exemplo_button_sobre.visible = true
 	$botsair.visible = true
+	$sobrenos.visible = true
 
 func _on_botsair_pressed():
 	$exemplo_button_sobre.visible = false
 	$botsair.visible = false 
+	$controlestela.visible = false
+	$btn_fases.visible = true
+	$botsobre.visible = true
+	$botcontroles.visible = true
+	$sobrenos.visible  = false
 
+func _on_sairfases_pressed():
+	$fasestela.visible = false
