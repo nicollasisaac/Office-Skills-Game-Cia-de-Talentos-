@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://assets/mapas/fase4.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo alto direita vermelho.jpeg" type="Texture" id=2]
@@ -8,6 +8,16 @@
 [ext_resource path="res://assets/Ui/chat_decision.png" type="Texture" id=6]
 [ext_resource path="res://assets/characters/Character_023.png" type="Texture" id=7]
 [ext_resource path="res://assets/Ui/back_transparent.png" type="Texture" id=8]
+[ext_resource path="res://cenas/fase4_cenas/fase_4.gd" type="Script" id=9]
+[ext_resource path="res://assets/buttons/fase4botp.png" type="Texture" id=10]
+[ext_resource path="res://assets/buttons/voltarfasebot.png" type="Texture" id=11]
+[ext_resource path="res://assets/buttons/voltardecisbot.png" type="Texture" id=12]
+[ext_resource path="res://assets/buttons/voltarfasebotp.png" type="Texture" id=13]
+[ext_resource path="res://assets/Ui/telaconteudoserro.png" type="Texture" id=14]
+[ext_resource path="res://assets/buttons/voltardecisbotp.png" type="Texture" id=15]
+[ext_resource path="res://assets/Ui/errou_conteúdo.png" type="Texture" id=16]
+[ext_resource path="res://assets/buttons/fase4bot.png" type="Texture" id=17]
+[ext_resource path="res://assets/Ui/telaconteudosacerto.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 317, 17 )
@@ -64,7 +74,16 @@ size = 18
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=14]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 30
+font_data = ExtResource( 5 )
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="cenario" type="Control" parent="."]
 margin_right = 40.0
@@ -155,7 +174,7 @@ margin_bottom = 137.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
 [node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog1"]
-position = Vector2( 6, 7 )
+position = Vector2( 4, 5 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140, 141.703, 137.615 )
 
@@ -258,7 +277,7 @@ margin_top = 283.0
 margin_right = 144.0
 margin_bottom = 323.0
 
-[node name="wrong2" type="Button" parent="quest_decision/quiz/right"]
+[node name="wrong" type="Button" parent="quest_decision/quiz/right"]
 margin_right = 435.0
 margin_bottom = 41.0
 align = 2
@@ -271,3 +290,104 @@ margin_bottom = 39.0
 custom_fonts/font = SubResource( 13 )
 text = "Você pergunta qual era a expectativa dela com esse projeto e mostra qual foi o seu entendimento do projeto. "
 autowrap = true
+
+[node name="wrong_decision" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FundoJogo21" type="Sprite" parent="wrong_decision"]
+position = Vector2( 320, 175 )
+scale = Vector2( 1.02969, 1.00688 )
+texture = ExtResource( 14 )
+
+[node name="img_wrong_decision" type="TextureRect" parent="wrong_decision"]
+margin_left = 34.0
+margin_top = 112.0
+margin_right = 636.0
+margin_bottom = 454.0
+texture = ExtResource( 16 )
+expand = true
+
+[node name="LinkButton" type="LinkButton" parent="wrong_decision"]
+margin_left = 54.0
+margin_top = 186.0
+margin_right = 486.0
+margin_bottom = 220.0
+focus_mode = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Clique aqui para acessar o conteúdo."
+underline = 1
+
+[node name="back_phase" type="TextureButton" parent="wrong_decision"]
+margin_left = 67.0
+margin_top = 254.0
+margin_right = 262.0
+margin_bottom = 297.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
+expand = true
+
+[node name="back_decision" type="TextureButton" parent="wrong_decision"]
+margin_left = 390.0
+margin_top = 254.0
+margin_right = 581.0
+margin_bottom = 294.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 15 )
+expand = true
+
+[node name="right_decision" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FundoJogo21" type="Sprite" parent="right_decision"]
+position = Vector2( 319, 180 )
+scale = Vector2( 1.01564, 1.03297 )
+texture = ExtResource( 18 )
+
+[node name="video_conteudo" type="VideoPlayer" parent="right_decision"]
+margin_left = 56.0
+margin_top = 136.0
+margin_right = 560.0
+margin_bottom = 304.0
+autoplay = true
+
+[node name="LinkButton2" type="LinkButton" parent="right_decision"]
+margin_left = 68.0
+margin_top = 185.0
+margin_right = 500.0
+margin_bottom = 219.0
+focus_mode = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Clique aqui para acessar o conteúdo."
+underline = 1
+
+[node name="next_phase" type="TextureButton" parent="right_decision"]
+margin_left = 382.0
+margin_top = 248.0
+margin_right = 459.0
+margin_bottom = 289.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 10 )
+expand = true
+
+[node name="back_phase" type="TextureButton" parent="right_decision"]
+margin_left = 112.0
+margin_top = 251.0
+margin_right = 307.0
+margin_bottom = 294.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
+expand = true
+
+[connection signal="pressed" from="quest_decision/quiz/quest/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/quest2/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/right/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="wrong_decision/back_phase" to="." method="_on_back_phase_pressed"]
+[connection signal="pressed" from="wrong_decision/back_decision" to="." method="_on_back_decision_pressed"]
+[connection signal="pressed" from="right_decision/next_phase" to="." method="_on_next_phase_pressed"]
+[connection signal="pressed" from="right_decision/back_phase" to="." method="_on_back_phase_pressed"]

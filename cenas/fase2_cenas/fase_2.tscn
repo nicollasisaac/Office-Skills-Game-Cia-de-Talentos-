@@ -539,7 +539,7 @@ margin_bottom = 40.0
 script = ExtResource( 5 )
 
 [node name="botcima" type="Sprite" parent="botTutoriais"]
-position = Vector2( -182, 64 )
+position = Vector2( -164, 73 )
 scale = Vector2( 3.0625, 3.0625 )
 texture = ExtResource( 4 )
 hframes = 8

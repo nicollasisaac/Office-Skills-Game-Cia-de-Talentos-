@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://assets/mapas/fase3.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo alto esquerda vermelho.jpeg" type="Texture" id=2]
@@ -12,6 +12,16 @@
 [ext_resource path="res://scripts/fase_3/fase3_claudia.gd" type="Script" id=10]
 [ext_resource path="res://scripts/fase_2/Dialog1.gd" type="Script" id=11]
 [ext_resource path="res://assets/aúdios/botões no pause.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/buttons/fase4botp.png" type="Texture" id=13]
+[ext_resource path="res://assets/buttons/voltarfasebot.png" type="Texture" id=14]
+[ext_resource path="res://assets/buttons/fase4bot.png" type="Texture" id=15]
+[ext_resource path="res://assets/buttons/voltardecisbot.png" type="Texture" id=16]
+[ext_resource path="res://assets/buttons/voltarfasebotp.png" type="Texture" id=17]
+[ext_resource path="res://assets/Ui/telaconteudoserro.png" type="Texture" id=18]
+[ext_resource path="res://assets/buttons/voltardecisbotp.png" type="Texture" id=19]
+[ext_resource path="res://assets/Ui/errou_conteúdo.png" type="Texture" id=20]
+[ext_resource path="res://assets/Ui/telaconteudosacerto.png" type="Texture" id=21]
+[ext_resource path="res://cenas/fase3_cenas/fase_3.gd" type="Script" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 88, 40 )
@@ -33,14 +43,6 @@ extents = Vector2( 92.5, 9.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 10, 41 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 18
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 8 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "andandobaixo"
@@ -224,6 +226,14 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="DynamicFont" id=8]
+size = 18
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 8 )
+
 [sub_resource type="Animation" id=24]
 resource_name = "movendo"
 length = 1.5
@@ -241,7 +251,16 @@ tracks/0/keys = {
 "values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
 }
 
+[sub_resource type="DynamicFont" id=25]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 30
+font_data = ExtResource( 5 )
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 22 )
 
 [node name="cenario" type="Control" parent="."]
 margin_right = 40.0
@@ -285,6 +304,54 @@ shape = SubResource( 6 )
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="cenario/cenafase3/StaticBody2D"]
 position = Vector2( 142, 15 )
 shape = SubResource( 7 )
+
+[node name="personagens" type="Node2D" parent="."]
+
+[node name="fase1_rafa_protagonista" type="KinematicBody2D" parent="personagens"]
+position = Vector2( 23, 171 )
+script = ExtResource( 7 )
+
+[node name="sprite" type="Sprite" parent="personagens/fase1_rafa_protagonista"]
+position = Vector2( -48, 127 )
+scale = Vector2( 2.24983, 2.24983 )
+texture = ExtResource( 9 )
+hframes = 16
+vframes = 4
+
+[node name="anim" type="AnimationPlayer" parent="personagens/fase1_rafa_protagonista"]
+anims/andandobaixo = SubResource( 10 )
+anims/andandocima = SubResource( 11 )
+anims/andandoladod = SubResource( 12 )
+anims/andandoladoe = SubResource( 13 )
+anims/idle = SubResource( 14 )
+anims/idlecima = SubResource( 15 )
+anims/parada = SubResource( 16 )
+
+[node name="collision" type="CollisionShape2D" parent="personagens/fase1_rafa_protagonista"]
+position = Vector2( -49, 131 )
+shape = SubResource( 17 )
+
+[node name="fase3_claudia" type="KinematicBody2D" parent="personagens"]
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="personagens/fase3_claudia"]
+position = Vector2( 665, 294 )
+scale = Vector2( 2.54167, 2.54167 )
+texture = ExtResource( 3 )
+hframes = 16
+vframes = 4
+frame = 16
+
+[node name="Collision" type="CollisionShape2D" parent="personagens/fase3_claudia"]
+position = Vector2( 665, 301 )
+shape = SubResource( 18 )
+
+[node name="anim" type="AnimationPlayer" parent="personagens/fase3_claudia"]
+anims/andandobaixo = SubResource( 19 )
+anims/andandocima = SubResource( 20 )
+anims/andandoladod = SubResource( 21 )
+anims/andandoladoe = SubResource( 22 )
+anims/idle = SubResource( 23 )
 
 [node name="quest_decision" type="Control" parent="."]
 visible = false
@@ -354,7 +421,7 @@ margin_top = 231.0
 margin_right = 144.0
 margin_bottom = 271.0
 
-[node name="wrong2" type="Button" parent="quest_decision/quiz/quest2"]
+[node name="wrong" type="Button" parent="quest_decision/quiz/quest2"]
 margin_right = 435.0
 margin_bottom = 41.0
 align = 2
@@ -396,54 +463,6 @@ margin_bottom = 73.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "Compre uma bebida na maquina de vendas."
-
-[node name="personagens" type="Node2D" parent="."]
-
-[node name="fase1_rafa_protagonista" type="KinematicBody2D" parent="personagens"]
-position = Vector2( 23, 171 )
-script = ExtResource( 7 )
-
-[node name="sprite" type="Sprite" parent="personagens/fase1_rafa_protagonista"]
-position = Vector2( -48, 127 )
-scale = Vector2( 2.24983, 2.24983 )
-texture = ExtResource( 9 )
-hframes = 16
-vframes = 4
-
-[node name="anim" type="AnimationPlayer" parent="personagens/fase1_rafa_protagonista"]
-anims/andandobaixo = SubResource( 10 )
-anims/andandocima = SubResource( 11 )
-anims/andandoladod = SubResource( 12 )
-anims/andandoladoe = SubResource( 13 )
-anims/idle = SubResource( 14 )
-anims/idlecima = SubResource( 15 )
-anims/parada = SubResource( 16 )
-
-[node name="collision" type="CollisionShape2D" parent="personagens/fase1_rafa_protagonista"]
-position = Vector2( -49, 131 )
-shape = SubResource( 17 )
-
-[node name="fase3_claudia" type="KinematicBody2D" parent="personagens"]
-script = ExtResource( 10 )
-
-[node name="Sprite" type="Sprite" parent="personagens/fase3_claudia"]
-position = Vector2( 665, 294 )
-scale = Vector2( 2.54167, 2.54167 )
-texture = ExtResource( 3 )
-hframes = 16
-vframes = 4
-frame = 16
-
-[node name="Collision" type="CollisionShape2D" parent="personagens/fase3_claudia"]
-position = Vector2( 665, 301 )
-shape = SubResource( 18 )
-
-[node name="anim" type="AnimationPlayer" parent="personagens/fase3_claudia"]
-anims/andandobaixo = SubResource( 19 )
-anims/andandocima = SubResource( 20 )
-anims/andandoladod = SubResource( 21 )
-anims/andandoladoe = SubResource( 22 )
-anims/idle = SubResource( 23 )
 
 [node name="dialogo_1" type="Control" parent="."]
 margin_left = 52.0
@@ -488,3 +507,104 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="dialogo_1/Dialog1"]
 stream = ExtResource( 12 )
+
+[node name="wrong_decision" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FundoJogo21" type="Sprite" parent="wrong_decision"]
+position = Vector2( 320, 175 )
+scale = Vector2( 1.02969, 1.00688 )
+texture = ExtResource( 18 )
+
+[node name="img_wrong_decision" type="TextureRect" parent="wrong_decision"]
+margin_left = 34.0
+margin_top = 112.0
+margin_right = 636.0
+margin_bottom = 454.0
+texture = ExtResource( 20 )
+expand = true
+
+[node name="LinkButton" type="LinkButton" parent="wrong_decision"]
+margin_left = 54.0
+margin_top = 186.0
+margin_right = 486.0
+margin_bottom = 220.0
+focus_mode = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "Clique aqui para acessar o conteúdo."
+underline = 1
+
+[node name="back_phase" type="TextureButton" parent="wrong_decision"]
+margin_left = 67.0
+margin_top = 254.0
+margin_right = 262.0
+margin_bottom = 297.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 17 )
+expand = true
+
+[node name="back_decision" type="TextureButton" parent="wrong_decision"]
+margin_left = 390.0
+margin_top = 254.0
+margin_right = 581.0
+margin_bottom = 294.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 19 )
+expand = true
+
+[node name="right_decision" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FundoJogo21" type="Sprite" parent="right_decision"]
+position = Vector2( 319, 180 )
+scale = Vector2( 1.01564, 1.03297 )
+texture = ExtResource( 21 )
+
+[node name="video_conteudo" type="VideoPlayer" parent="right_decision"]
+margin_left = 56.0
+margin_top = 136.0
+margin_right = 560.0
+margin_bottom = 304.0
+autoplay = true
+
+[node name="LinkButton2" type="LinkButton" parent="right_decision"]
+margin_left = 68.0
+margin_top = 185.0
+margin_right = 500.0
+margin_bottom = 219.0
+focus_mode = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 26 )
+text = "Clique aqui para acessar o conteúdo."
+underline = 1
+
+[node name="next_phase" type="TextureButton" parent="right_decision"]
+margin_left = 382.0
+margin_top = 248.0
+margin_right = 459.0
+margin_bottom = 289.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 13 )
+expand = true
+
+[node name="back_phase" type="TextureButton" parent="right_decision"]
+margin_left = 112.0
+margin_top = 251.0
+margin_right = 307.0
+margin_bottom = 294.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 17 )
+expand = true
+
+[connection signal="pressed" from="quest_decision/quiz/quest/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/quest2/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/right/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="wrong_decision/back_phase" to="." method="_on_back_phase_pressed"]
+[connection signal="pressed" from="wrong_decision/back_decision" to="." method="_on_back_decision_pressed"]
+[connection signal="pressed" from="right_decision/next_phase" to="." method="_on_next_phase_pressed"]
+[connection signal="pressed" from="right_decision/back_phase" to="." method="_on_back_phase_pressed"]
