@@ -1,11 +1,15 @@
 extends Node2D
 
+
+onready var positionRafa = get_node("Personagens/fase1_rafa_protagonista")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	pass
+	if $personagens/fase1_rafa_protagonista.position.x >= 395 && $personagens/fase1_rafa_protagonista.position.y <= 282:
+		$dialogo_1.visible = true
 
 func _on_wrong_pressed():
 	$quest_decision.visible = false
@@ -24,3 +28,4 @@ func _on_back_phase_pressed():
 func _on_back_decision_pressed():
 	$quest_decision.visible = true
 	$wrong_decision.visible = false
+
