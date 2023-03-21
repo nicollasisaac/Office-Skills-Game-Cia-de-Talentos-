@@ -8,8 +8,20 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if $personagens/fase1_rafa_protagonista.position.x >= 395 && $personagens/fase1_rafa_protagonista.position.y <= 282:
-		$dialogo_1.visible = true
+#	if $personagens/fase1_rafa_protagonista.position.x >= 414 && $personagens/fase1_rafa_protagonista.position.y <= -10:
+#		Global.bloquear_movimentos()
+#		$dialogo_1.visible = true
+#	if Global.final_dialogo1():
+#		$quest_decision.visible = true
+	if Global.final_dialogo1_fase3 == true:
+		$quest_decision.visible = true
+		$"missão".visible = false
+	
+	
+		
+	
+
+
 
 func _on_wrong_pressed():
 	$quest_decision.visible = false
@@ -29,3 +41,11 @@ func _on_back_decision_pressed():
 	$quest_decision.visible = true
 	$wrong_decision.visible = false
 
+
+
+func _on_Area2D_body_entered(body):
+	Global.bloquear_movimentos()
+	$dialogo_1.visible = true
+	$icone_mesa.visible = false
+#	$personagens/fase1_rafa_protagonista.position.x = 412
+#	$personagens/fase1_rafa_protagonista.position.y = -12

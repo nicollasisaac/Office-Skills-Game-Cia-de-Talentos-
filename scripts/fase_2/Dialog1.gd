@@ -62,9 +62,9 @@ func getDialog() -> Array:
 func nextPhrase() -> void:
 	# Verificando se todas as frases do diálogo foram exibidas / Checks if all dialog phrases were displayed.
 	if phraseNumFase4 >= len(dialogFase4):
+		Global.final_dialogo1_fase3 = true
 		queue_free()
 		Global.desbloquear_movimentos()
-		Global.show_dialog3 = false
 		return
 	
 	finishedFase4 = false
@@ -76,7 +76,7 @@ func nextPhrase() -> void:
 	# Exibindo a frase letra por letra com um tempo de espera / Displays phrase letter by letter with a wait time.
 	while $Text.visible_characters < len($Text.text):
 		$Text.visible_characters += 1
-		
+
 		$Timer.start()
 		yield($Timer,"timeout")
 	

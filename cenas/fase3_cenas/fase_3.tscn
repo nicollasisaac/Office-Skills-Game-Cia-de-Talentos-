@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://assets/mapas/fase3.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo alto esquerda vermelho.jpeg" type="Texture" id=2]
@@ -147,15 +147,30 @@ tracks/0/keys = {
 "values": [ 49 ]
 }
 
+[sub_resource type="Animation" id=30]
+resource_name = "idleladoe"
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17 ]
+}
+
 [sub_resource type="Animation" id=16]
 resource_name = "parada"
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 11.0
-height = 14.0
+height = 10.0
 
 [sub_resource type="CapsuleShape2D" id=18]
-height = 14.0
+height = 6.0
 
 [sub_resource type="Animation" id=19]
 resource_name = "andandobaixo"
@@ -213,6 +228,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=23]
 resource_name = "idle"
+length = 3.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -221,10 +237,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( -0.1, 0.8, 1.7, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 1, 17, 1, 33 ]
 }
 
 [sub_resource type="DynamicFont" id=8]
@@ -260,8 +276,6 @@ font_data = ExtResource( 5 )
 size = 30
 font_data = ExtResource( 5 )
 
-[sub_resource type="RectangleShape2D" id=27]
-
 [sub_resource type="Animation" id=28]
 resource_name = "cimabaixo"
 loop = true
@@ -277,6 +291,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 440, 160 ), Vector2( 440, 155 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 27.3523, 36.3045 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 22 )
@@ -309,7 +326,7 @@ position = Vector2( -221, 96 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="cenario/cenafase3/StaticBody2D"]
-position = Vector2( -89, -32 )
+position = Vector2( -89, -43 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="cenario/cenafase3/StaticBody2D"]
@@ -321,7 +338,7 @@ position = Vector2( 227.5, 49.5 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="cenario/cenafase3/StaticBody2D"]
-position = Vector2( 142, 15 )
+position = Vector2( 148, 15 )
 shape = SubResource( 7 )
 
 [node name="personagens" type="Node2D" parent="."]
@@ -344,6 +361,7 @@ anims/andandoladod = SubResource( 12 )
 anims/andandoladoe = SubResource( 13 )
 anims/idle = SubResource( 14 )
 anims/idlecima = SubResource( 15 )
+anims/idleladoe = SubResource( 30 )
 anims/parada = SubResource( 16 )
 
 [node name="collision" type="CollisionShape2D" parent="personagens/fase1_rafa_protagonista"]
@@ -354,15 +372,15 @@ shape = SubResource( 17 )
 script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="personagens/fase3_claudia"]
-position = Vector2( 664, 294 )
+position = Vector2( 391, 166 )
 scale = Vector2( 2.54167, 2.54167 )
 texture = ExtResource( 3 )
 hframes = 16
 vframes = 4
-frame = 16
+frame = 1
 
 [node name="Collision" type="CollisionShape2D" parent="personagens/fase3_claudia"]
-position = Vector2( 665, 301 )
+position = Vector2( 392, 177 )
 shape = SubResource( 18 )
 
 [node name="anim" type="AnimationPlayer" parent="personagens/fase3_claudia"]
@@ -475,13 +493,13 @@ text = "Você explica importáncia do compromisso, mas que pode entrar mais cedo
 autowrap = true
 
 [node name="missão" type="Label" parent="."]
-margin_left = 116.0
-margin_top = 59.0
-margin_right = 411.0
-margin_bottom = 73.0
+margin_left = 65.0
+margin_top = 61.0
+margin_right = 442.0
+margin_bottom = 75.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
-text = "Compre uma bebida na maquina de vendas."
+text = "Descanse e Compre uma bebida na maquina de vendas."
 
 [node name="dialogo_1" type="Control" parent="."]
 visible = false
@@ -622,25 +640,21 @@ texture_pressed = ExtResource( 17 )
 expand = true
 
 [node name="icone_mesa" type="Sprite" parent="."]
-position = Vector2( 440, 159.937 )
+position = Vector2( 440, 159.167 )
 rotation = 1.5708
 scale = Vector2( 0.162022, 0.165269 )
 texture = ExtResource( 23 )
 
-[node name="Area2D" type="Area2D" parent="icone_mesa"]
-visible = false
-position = Vector2( -994.428, 904.587 )
-rotation = -1.5708
-scale = Vector2( 6.48295, 6.94925 )
-monitoring = false
-
-[node name="collision" type="CollisionShape2D" parent="icone_mesa/Area2D"]
-position = Vector2( 139.533, 139.491 )
-shape = SubResource( 27 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="icone_mesa"]
 autoplay = "cimabaixo"
 anims/cimabaixo = SubResource( 28 )
+
+[node name="Area2D" type="Area2D" parent="icone_mesa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="icone_mesa/Area2D"]
+position = Vector2( -25.7167, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 29 )
 
 [connection signal="pressed" from="quest_decision/quiz/quest/wrong" to="." method="_on_wrong_pressed"]
 [connection signal="pressed" from="quest_decision/quiz/quest2/wrong" to="." method="_on_wrong_pressed"]
@@ -649,3 +663,4 @@ anims/cimabaixo = SubResource( 28 )
 [connection signal="pressed" from="wrong_decision/back_decision" to="." method="_on_back_decision_pressed"]
 [connection signal="pressed" from="right_decision/next_phase" to="." method="_on_next_phase_pressed"]
 [connection signal="pressed" from="right_decision/back_phase" to="." method="_on_back_phase_pressed"]
+[connection signal="body_entered" from="icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]
