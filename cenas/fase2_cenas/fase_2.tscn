@@ -519,6 +519,7 @@ scale = Vector2( 2.45816, 2.45816 )
 texture = SubResource( 45 )
 hframes = 16
 vframes = 4
+frame = 1
 
 [node name="anim" type="AnimationPlayer" parent="Personagens/fase2_andre"]
 anims/RESET = SubResource( 54 )
@@ -767,6 +768,7 @@ texture_pressed = ExtResource( 27 )
 expand = true
 
 [node name="quest_decision" type="Control" parent="."]
+visible = false
 margin_right = 640.0
 margin_bottom = 360.0
 
@@ -869,6 +871,7 @@ text = "Manda um email pedindo para André e para sua liderança formalizando o 
 autowrap = true
 
 [node name="right_decision2" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
