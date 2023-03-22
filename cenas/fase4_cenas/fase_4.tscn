@@ -1,23 +1,27 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://assets/mapas/fase4.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/fundo alto direita vermelho.jpeg" type="Texture" id=2]
-[ext_resource path="res://scripts/fase_2/Dialog1.gd" type="Script" id=3]
+[ext_resource path="res://cenas/fase4_cenas/Dialog1_0.gd" type="Script" id=3]
 [ext_resource path="res://assets/aúdios/botões no pause.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/fontes/VT323-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/Ui/chat_decision.png" type="Texture" id=6]
 [ext_resource path="res://assets/characters/Character_023.png" type="Texture" id=7]
 [ext_resource path="res://assets/Ui/back_transparent.png" type="Texture" id=8]
 [ext_resource path="res://scripts/fase_4/fase_4.gd" type="Script" id=9]
-[ext_resource path="res://assets/buttons/fase4botp.png" type="Texture" id=10]
+[ext_resource path="res://assets/buttons/fase5bot.png" type="Texture" id=10]
 [ext_resource path="res://assets/buttons/voltarfasebot.png" type="Texture" id=11]
 [ext_resource path="res://assets/buttons/voltardecisbot.png" type="Texture" id=12]
 [ext_resource path="res://assets/buttons/voltarfasebotp.png" type="Texture" id=13]
 [ext_resource path="res://assets/Ui/telaconteudoserro.png" type="Texture" id=14]
 [ext_resource path="res://assets/buttons/voltardecisbotp.png" type="Texture" id=15]
 [ext_resource path="res://assets/Ui/errou_conteúdo.png" type="Texture" id=16]
-[ext_resource path="res://assets/buttons/fase4bot.png" type="Texture" id=17]
 [ext_resource path="res://assets/Ui/telaconteudosacerto.png" type="Texture" id=18]
+[ext_resource path="res://assets/mapas/cadeiracostasfase4.png" type="Texture" id=19]
+[ext_resource path="res://assets/fontes/Stacked pixel.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/Ui/setacadeira.png" type="Texture" id=21]
+[ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=22]
+[ext_resource path="res://players/fase_2/fase2_rafa_protagonista.gd" type="Script" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 317, 17 )
@@ -44,13 +48,10 @@ extents = Vector2( 25, 10 )
 extents = Vector2( 25, 10 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 52, 43 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 14, 21 )
+extents = Vector2( 52, 46.5 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 24, 20.5 )
+extents = Vector2( 24, 24 )
 
 [sub_resource type="Animation" id=12]
 resource_name = "movendo"
@@ -69,6 +70,149 @@ tracks/0/keys = {
 "values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
 }
 
+[sub_resource type="Animation" id=19]
+resource_name = "andandobaixo"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "andandocima"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "andandoladod"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "andandoladoe"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "idle"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "idlecima"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 49 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "idleladoe"
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "parada"
+
+[sub_resource type="CapsuleShape2D" id=27]
+radius = 11.0
+height = 10.0
+
+[sub_resource type="Animation" id=16]
+resource_name = "cimabaixo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 539, 204 ), Vector2( 539, 200 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 27.3523, 36.3045 )
+
 [sub_resource type="DynamicFont" id=13]
 size = 18
 outline_color = Color( 0, 0, 0, 1 )
@@ -81,6 +225,9 @@ font_data = ExtResource( 5 )
 [sub_resource type="DynamicFont" id=15]
 size = 30
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 20 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 9 )
@@ -133,24 +280,21 @@ position = Vector2( 15, 80 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="cenario/cenafase4/StaticBody2D"]
-position = Vector2( 186, 78 )
+position = Vector2( 186, 74.5 )
 shape = SubResource( 9 )
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="cenario/cenafase4/StaticBody2D"]
-position = Vector2( 220, 1 )
-shape = SubResource( 10 )
-
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="cenario/cenafase4/StaticBody2D"]
-position = Vector2( 259, 55.5 )
+position = Vector2( 259, 52 )
 shape = SubResource( 11 )
 
 [node name="dialogo_1" type="Control" parent="."]
+visible = false
 margin_left = 52.0
 margin_top = -30.0
 margin_right = 92.0
 margin_bottom = 10.0
 
-[node name="Dialog1" type="ColorRect" parent="dialogo_1"]
+[node name="Dialog1_0" type="ColorRect" parent="dialogo_1"]
 margin_left = -47.0
 margin_top = 228.0
 margin_right = 111.0
@@ -159,34 +303,89 @@ color = Color( 0.223529, 0.25098, 0.27451, 1 )
 script = ExtResource( 3 )
 dialogPath = "res://dialogos/dialog7.tres"
 
-[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog1"]
+[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog1_0"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 88.0
 margin_bottom = 33.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog1"]
+[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog1_0"]
 margin_left = 7.0
 margin_top = 31.0
 margin_right = 125.0
 margin_bottom = 137.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog1"]
+[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog1_0"]
 position = Vector2( 4, 5 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140, 141.703, 137.615 )
 
-[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog1/Indicator"]
+[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog1_0/Indicator"]
 autoplay = "movendo"
 anims/movendo = SubResource( 12 )
 
-[node name="Timer" type="Timer" parent="dialogo_1/Dialog1"]
+[node name="Timer" type="Timer" parent="dialogo_1/Dialog1_0"]
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="dialogo_1/Dialog1"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="dialogo_1/Dialog1_0"]
 stream = ExtResource( 4 )
+
+[node name="personagens" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="personagens"]
+position = Vector2( 539, 267 )
+scale = Vector2( 2.79167, 2.95834 )
+texture = ExtResource( 7 )
+hframes = 16
+vframes = 4
+frame = 49
+
+[node name="cadeiracostas" type="Sprite" parent="personagens"]
+position = Vector2( 539, 287 )
+texture = ExtResource( 19 )
+
+[node name="fase1_rafa_protagonista" type="KinematicBody2D" parent="personagens"]
+position = Vector2( 23, 171 )
+script = ExtResource( 23 )
+
+[node name="sprite" type="Sprite" parent="personagens/fase1_rafa_protagonista"]
+position = Vector2( -43, -29 )
+scale = Vector2( 2.24983, 2.24983 )
+texture = ExtResource( 22 )
+hframes = 16
+vframes = 4
+
+[node name="anim" type="AnimationPlayer" parent="personagens/fase1_rafa_protagonista"]
+anims/andandobaixo = SubResource( 19 )
+anims/andandocima = SubResource( 20 )
+anims/andandoladod = SubResource( 21 )
+anims/andandoladoe = SubResource( 22 )
+anims/idle = SubResource( 23 )
+anims/idlecima = SubResource( 24 )
+anims/idleladoe = SubResource( 25 )
+anims/parada = SubResource( 26 )
+
+[node name="collision" type="CollisionShape2D" parent="personagens/fase1_rafa_protagonista"]
+position = Vector2( -43, -22 )
+shape = SubResource( 27 )
+
+[node name="icone_mesa" type="Sprite" parent="."]
+position = Vector2( 539, 201.905 )
+rotation = 1.5708
+scale = Vector2( 0.162022, 0.165269 )
+texture = ExtResource( 21 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="icone_mesa"]
+autoplay = "cimabaixo"
+anims/cimabaixo = SubResource( 16 )
+
+[node name="Area2D" type="Area2D" parent="icone_mesa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="icone_mesa/Area2D"]
+position = Vector2( -122.855, -96.8113 )
+shape = SubResource( 17 )
 
 [node name="quest_decision" type="Control" parent="."]
 visible = false
@@ -371,7 +570,7 @@ margin_left = 382.0
 margin_top = 248.0
 margin_right = 459.0
 margin_bottom = 289.0
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 10 )
 expand = true
 
@@ -384,6 +583,16 @@ texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 13 )
 expand = true
 
+[node name="missão" type="Label" parent="."]
+margin_left = 305.0
+margin_top = 41.0
+margin_right = 768.0
+margin_bottom = 54.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "converse com claudia"
+
+[connection signal="body_entered" from="icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="quest_decision/quiz/quest/wrong" to="." method="_on_wrong_pressed"]
 [connection signal="pressed" from="quest_decision/quiz/quest2/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="quest_decision/quiz/right/wrong" to="." method="_on_wrong_pressed"]

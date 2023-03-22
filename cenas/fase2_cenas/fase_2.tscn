@@ -1,12 +1,12 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://assets/mapas/CenaFase3.png" type="Texture" id=1]
+[ext_resource path="res://cenas/fase2_cenas/Dialog0.gd" type="Script" id=2]
 [ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=3]
 [ext_resource path="res://assets/buttons/Keyboard Letters and Symbols.png" type="Texture" id=4]
 [ext_resource path="res://scripts/fase_1/tutorial2.gd" type="Script" id=5]
 [ext_resource path="res://assets/fontes/VT323-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://scripts/fase_2/fase_2.gd" type="Script" id=7]
-[ext_resource path="res://scripts/fase_2/Dialog1.gd" type="Script" id=8]
 [ext_resource path="res://assets/Ui/fundo baixo esquerda vermelho.jpeg" type="Texture" id=9]
 [ext_resource path="res://assets/aúdios/botões no pause.wav" type="AudioStream" id=10]
 [ext_resource path="res://players/fase_2/fase2_rafa_protagonista.gd" type="Script" id=11]
@@ -391,24 +391,16 @@ tracks/0/keys = {
 "values": [ Vector2( 4, 5 ), Vector2( 4, 3 ), Vector2( 4, 5 ), Vector2( 4, 3 ) ]
 }
 
-[sub_resource type="DynamicFont" id=61]
-size = 30
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=62]
-size = 30
-font_data = ExtResource( 6 )
-
 [sub_resource type="DynamicFont" id=60]
 size = 18
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=63]
+[sub_resource type="DynamicFont" id=61]
 size = 30
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=64]
+[sub_resource type="DynamicFont" id=62]
 size = 30
 font_data = ExtResource( 6 )
 
@@ -634,136 +626,43 @@ margin_top = -30.0
 margin_right = 92.0
 margin_bottom = 10.0
 
-[node name="Dialog1" type="ColorRect" parent="dialogo_1"]
+[node name="Dialog0" type="ColorRect" parent="dialogo_1"]
 margin_left = 450.0
 margin_top = 197.0
 margin_right = 581.0
 margin_bottom = 347.0
 color = Color( 0.223529, 0.25098, 0.27451, 1 )
-script = ExtResource( 8 )
+script = ExtResource( 2 )
 dialogPath = "res://dialogos/dialog4.tres"
 
-[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog1"]
+[node name="Name" type="RichTextLabel" parent="dialogo_1/Dialog0"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 88.0
 margin_bottom = 33.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog1"]
+[node name="Text" type="RichTextLabel" parent="dialogo_1/Dialog0"]
 margin_left = 7.0
 margin_top = 31.0
 margin_right = 125.0
 margin_bottom = 137.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 
-[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog1"]
+[node name="Indicator" type="Polygon2D" parent="dialogo_1/Dialog0"]
 position = Vector2( -20, 4 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 145, 133, 135, 133, 140, 140, 141.703, 137.615 )
 
-[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog1/Indicator"]
+[node name="poligono" type="AnimationPlayer" parent="dialogo_1/Dialog0/Indicator"]
 autoplay = "movendo"
 anims/movendo = SubResource( 22 )
 
-[node name="Timer" type="Timer" parent="dialogo_1/Dialog1"]
+[node name="Timer" type="Timer" parent="dialogo_1/Dialog0"]
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="dialogo_1/Dialog1"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="dialogo_1/Dialog0"]
 stream = ExtResource( 10 )
-
-[node name="wrong_decision" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="FundoJogo21" type="Sprite" parent="wrong_decision"]
-position = Vector2( 320, 175 )
-scale = Vector2( 1.02969, 1.00688 )
-texture = ExtResource( 19 )
-
-[node name="img_wrong_decision" type="TextureRect" parent="wrong_decision"]
-margin_left = 34.0
-margin_top = 112.0
-margin_right = 636.0
-margin_bottom = 454.0
-texture = ExtResource( 24 )
-expand = true
-
-[node name="LinkButton" type="LinkButton" parent="wrong_decision"]
-margin_left = 54.0
-margin_top = 186.0
-margin_right = 486.0
-margin_bottom = 220.0
-focus_mode = 2
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 61 )
-text = "Clique aqui para acessar o conteúdo."
-underline = 1
-
-[node name="back_phase" type="TextureButton" parent="wrong_decision"]
-margin_left = 67.0
-margin_top = 254.0
-margin_right = 262.0
-margin_bottom = 297.0
-texture_normal = ExtResource( 20 )
-texture_pressed = ExtResource( 27 )
-expand = true
-
-[node name="back_decision" type="TextureButton" parent="wrong_decision"]
-margin_left = 390.0
-margin_top = 254.0
-margin_right = 581.0
-margin_bottom = 294.0
-texture_normal = ExtResource( 26 )
-texture_pressed = ExtResource( 21 )
-expand = true
-
-[node name="right_decision" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="FundoJogo21" type="Sprite" parent="right_decision"]
-position = Vector2( 319, 180 )
-scale = Vector2( 1.01564, 1.03297 )
-texture = ExtResource( 28 )
-
-[node name="video_conteudo" type="VideoPlayer" parent="right_decision"]
-margin_left = 56.0
-margin_top = 136.0
-margin_right = 560.0
-margin_bottom = 304.0
-autoplay = true
-
-[node name="LinkButton2" type="LinkButton" parent="right_decision"]
-margin_left = 68.0
-margin_top = 185.0
-margin_right = 500.0
-margin_bottom = 219.0
-focus_mode = 2
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 62 )
-text = "Clique aqui para acessar o conteúdo."
-underline = 1
-
-[node name="next_phase" type="TextureButton" parent="right_decision"]
-margin_left = 382.0
-margin_top = 248.0
-margin_right = 459.0
-margin_bottom = 289.0
-texture_normal = ExtResource( 30 )
-texture_pressed = ExtResource( 31 )
-expand = true
-
-[node name="back_phase" type="TextureButton" parent="right_decision"]
-margin_left = 112.0
-margin_top = 251.0
-margin_right = 307.0
-margin_bottom = 294.0
-texture_normal = ExtResource( 20 )
-texture_pressed = ExtResource( 27 )
-expand = true
 
 [node name="quest_decision" type="Control" parent="."]
 visible = false
@@ -868,63 +767,17 @@ custom_fonts/font = SubResource( 60 )
 text = "Manda um email pedindo para André e para sua liderança formalizando o ocorrido para ver o que deve ser feito."
 autowrap = true
 
-[node name="right_decision2" type="Control" parent="."]
+[node name="wrong_decision" type="Control" parent="."]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="FundoJogo21" type="Sprite" parent="right_decision2"]
-position = Vector2( 319, 180 )
-scale = Vector2( 1.01564, 1.03297 )
-texture = ExtResource( 28 )
-
-[node name="video_conteudo" type="VideoPlayer" parent="right_decision2"]
-margin_left = 56.0
-margin_top = 136.0
-margin_right = 560.0
-margin_bottom = 304.0
-autoplay = true
-
-[node name="LinkButton2" type="LinkButton" parent="right_decision2"]
-margin_left = 68.0
-margin_top = 185.0
-margin_right = 500.0
-margin_bottom = 219.0
-focus_mode = 2
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 63 )
-text = "Clique aqui para acessar o conteúdo."
-underline = 1
-
-[node name="next_phase" type="TextureButton" parent="right_decision2"]
-margin_left = 382.0
-margin_top = 248.0
-margin_right = 459.0
-margin_bottom = 289.0
-texture_normal = ExtResource( 30 )
-texture_pressed = ExtResource( 31 )
-expand = true
-
-[node name="back_phase" type="TextureButton" parent="right_decision2"]
-margin_left = 112.0
-margin_top = 251.0
-margin_right = 307.0
-margin_bottom = 294.0
-texture_normal = ExtResource( 20 )
-texture_pressed = ExtResource( 27 )
-expand = true
-
-[node name="wrong_decision2" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="FundoJogo21" type="Sprite" parent="wrong_decision2"]
+[node name="FundoJogo21" type="Sprite" parent="wrong_decision"]
 position = Vector2( 320, 175 )
 scale = Vector2( 1.02969, 1.00688 )
 texture = ExtResource( 19 )
 
-[node name="img_wrong_decision" type="TextureRect" parent="wrong_decision2"]
+[node name="img_wrong_decision" type="TextureRect" parent="wrong_decision"]
 margin_left = 34.0
 margin_top = 112.0
 margin_right = 636.0
@@ -932,18 +785,18 @@ margin_bottom = 454.0
 texture = ExtResource( 24 )
 expand = true
 
-[node name="LinkButton" type="LinkButton" parent="wrong_decision2"]
+[node name="LinkButton" type="LinkButton" parent="wrong_decision"]
 margin_left = 54.0
 margin_top = 186.0
 margin_right = 486.0
 margin_bottom = 220.0
 focus_mode = 2
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 61 )
 text = "Clique aqui para acessar o conteúdo."
 underline = 1
 
-[node name="back_phase" type="TextureButton" parent="wrong_decision2"]
+[node name="back_phase" type="TextureButton" parent="wrong_decision"]
 margin_left = 67.0
 margin_top = 254.0
 margin_right = 262.0
@@ -952,7 +805,7 @@ texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 27 )
 expand = true
 
-[node name="back_decision" type="TextureButton" parent="wrong_decision2"]
+[node name="back_decision" type="TextureButton" parent="wrong_decision"]
 margin_left = 390.0
 margin_top = 254.0
 margin_right = 581.0
@@ -961,15 +814,59 @@ texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 21 )
 expand = true
 
+[node name="right_decision" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FundoJogo21" type="Sprite" parent="right_decision"]
+position = Vector2( 319, 180 )
+scale = Vector2( 1.01564, 1.03297 )
+texture = ExtResource( 28 )
+
+[node name="video_conteudo" type="VideoPlayer" parent="right_decision"]
+margin_left = 56.0
+margin_top = 136.0
+margin_right = 560.0
+margin_bottom = 304.0
+autoplay = true
+
+[node name="LinkButton2" type="LinkButton" parent="right_decision"]
+margin_left = 68.0
+margin_top = 185.0
+margin_right = 500.0
+margin_bottom = 219.0
+focus_mode = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "Clique aqui para acessar o conteúdo."
+underline = 1
+
+[node name="next_phase" type="TextureButton" parent="right_decision"]
+margin_left = 382.0
+margin_top = 248.0
+margin_right = 459.0
+margin_bottom = 289.0
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
+expand = true
+
+[node name="back_phase" type="TextureButton" parent="right_decision"]
+margin_left = 112.0
+margin_top = 251.0
+margin_right = 307.0
+margin_bottom = 294.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 27 )
+expand = true
+
 [connection signal="body_entered" from="cenario/icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="quest_work/quiz/button_quiz" to="." method="_on_button_quiz_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/quest/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/quest2/wrong2" to="." method="_on_wrong2_pressed"]
+[connection signal="pressed" from="quest_decision/quiz/quest3/wrong2" to="." method="_on_wrong2_pressed"]
 [connection signal="pressed" from="wrong_decision/back_phase" to="." method="_on_back_phase_pressed"]
 [connection signal="pressed" from="wrong_decision/back_decision" to="." method="_on_back_decision_pressed"]
 [connection signal="pressed" from="right_decision/LinkButton2" to="." method="_on_LinkButton2_pressed"]
 [connection signal="pressed" from="right_decision/next_phase" to="." method="_on_next_phase_pressed"]
 [connection signal="pressed" from="right_decision/back_phase" to="." method="_on_back_phase_pressed"]
-[connection signal="pressed" from="quest_decision/quiz/quest/right" to="." method="_on_right_pressed"]
-[connection signal="pressed" from="quest_decision/quiz/quest2/wrong2" to="." method="_on_wrong2_pressed"]
-[connection signal="pressed" from="quest_decision/quiz/quest3/wrong2" to="." method="_on_wrong2_pressed"]
-[connection signal="pressed" from="right_decision2/next_phase" to="." method="_on_next_phase_pressed"]
-[connection signal="pressed" from="right_decision2/back_phase" to="." method="_on_back_phase_pressed"]

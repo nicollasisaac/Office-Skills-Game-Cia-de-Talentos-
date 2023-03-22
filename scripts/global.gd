@@ -32,8 +32,14 @@ var final_dialog2 = false
 var dialogo3_thomas = false
 var show_dialog3 = false
 
+#variaveis fase 2
+var final_dialogo1_fase2 = false
+
 # variaveis fase 3
 var final_dialogo1_fase3 = false
+
+#variaveis fase 4
+var final_dialogo1_fase4 = false
 
 # variáveis fase 1 - decisao
 var decisao1 = false
