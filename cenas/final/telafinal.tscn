@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Ui/Tela final jogo.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/fontes/Stacked pixel.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=3]
+[ext_resource path="res://cenas/final/telafinal.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "mexendo"
@@ -26,6 +27,7 @@ size = 36
 font_data = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="fundo" type="Sprite" parent="."]
 position = Vector2( 324.396, 183.5 )
@@ -38,9 +40,10 @@ scale = Vector2( 11.1458, 11.1458 )
 texture = ExtResource( 3 )
 hframes = 16
 vframes = 4
-frame = 17
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="rafa"]
+autoplay = "mexendo"
 anims/mexendo = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]

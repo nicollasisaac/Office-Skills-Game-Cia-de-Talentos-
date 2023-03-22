@@ -44,3 +44,11 @@ var final_dialogo1_fase4 = false
 # variáveis fase 1 - decisao
 var decisao1 = false
 var show_desicion = false
+
+#variaveis fase 5
+var card1mexe = false
+var card2mexe = false
+var card3mexe = false
+var card4mexe = false
+var card5mexe = false
+var card6mexe = false

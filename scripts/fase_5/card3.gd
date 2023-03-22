@@ -11,6 +11,7 @@ func _ready():
 func _process(delta):
 	if(mouseIn && Input.is_action_pressed("click")):
 		set_position(get_viewport().get_mouse_position())
+		Global.card3mexe = true
 	pass
 
 
