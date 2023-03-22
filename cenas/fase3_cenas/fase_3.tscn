@@ -660,6 +660,10 @@ shape = SubResource( 29 )
 stream = ExtResource( 24 )
 autoplay = true
 
+[node name="botsaudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
 [connection signal="pressed" from="quest_decision/quiz/quest/wrong" to="." method="_on_wrong_pressed"]
 [connection signal="pressed" from="quest_decision/quiz/quest2/wrong" to="." method="_on_wrong_pressed"]
 [connection signal="pressed" from="quest_decision/quiz/right/right" to="." method="_on_right_pressed"]

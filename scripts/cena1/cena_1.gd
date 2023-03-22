@@ -43,4 +43,4 @@ func _physics_process(delta):
 		
 	# trocar para fase 1 / changes to phase 1
 	if $protagonistaPlayer.position.x >= 640: 
-		get_tree().change_scene("res://cenas//fase1_cenas/fase_1.tscn")
+		get_tree().change_scene("res://cenas//fase1_cenas/explicação1.tscn")
