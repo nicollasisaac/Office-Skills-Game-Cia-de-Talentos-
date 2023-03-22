@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/fase_1/tutorial2.gd" type="Script" id=5]
 [ext_resource path="res://assets/fontes/VT323-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://scripts/fase_2/fase_2.gd" type="Script" id=7]
+[ext_resource path="res://assets/aúdios/Music_Game_-_5.mp3" type="AudioStream" id=8]
 [ext_resource path="res://assets/Ui/fundo baixo esquerda vermelho.jpeg" type="Texture" id=9]
 [ext_resource path="res://assets/aúdios/botões no pause.wav" type="AudioStream" id=10]
 [ext_resource path="res://players/fase_2/fase2_rafa_protagonista.gd" type="Script" id=11]
@@ -22,7 +23,6 @@
 [ext_resource path="res://assets/buttons/voltardecisbotp.png" type="Texture" id=21]
 [ext_resource path="res://assets/Ui/back_transparent.png" type="Texture" id=23]
 [ext_resource path="res://assets/Ui/errou_conteúdo.png" type="Texture" id=24]
-[ext_resource path="res://assets/aúdios/music_below.mp3" type="AudioStream" id=25]
 [ext_resource path="res://assets/buttons/voltardecisbot.png" type="Texture" id=26]
 [ext_resource path="res://assets/buttons/voltarfasebotp.png" type="Texture" id=27]
 [ext_resource path="res://assets/Ui/telaconteudosacerto.png" type="Texture" id=28]
@@ -616,10 +616,6 @@ margin_right = 414.0
 margin_bottom = 224.0
 text = "começar o trabalho"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 25 )
-autoplay = true
-
 [node name="dialogo_1" type="Control" parent="."]
 margin_left = 52.0
 margin_top = -30.0
@@ -859,6 +855,10 @@ margin_bottom = 294.0
 texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 27 )
 expand = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
 [connection signal="body_entered" from="cenario/icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="quest_work/quiz/button_quiz" to="." method="_on_button_quiz_pressed"]
