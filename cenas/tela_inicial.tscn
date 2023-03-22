@@ -133,6 +133,7 @@ autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -20.0
 
 [node name="exemplo_button_sobre" type="Sprite" parent="."]
 visible = false

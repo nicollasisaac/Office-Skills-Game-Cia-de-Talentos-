@@ -23,13 +23,9 @@ func _on_right_pressed():
 	$right_decision.visible = true
 	Global.final_dialogo1_fase4 = false
 
-
-
-
 func _on_back_phase_pressed():
 	get_tree().reload_current_scene()
 	Global.final_dialogo1_fase4 = false
-
 
 func _on_back_decision_pressed():
 	$quest_decision.visible = true
