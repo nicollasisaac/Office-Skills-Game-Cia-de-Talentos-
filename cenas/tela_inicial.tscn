@@ -418,5 +418,6 @@ autoplay = true
 [connection signal="pressed" from="fasestela/fase2/fase2_bot" to="." method="_on_fase2_bot_pressed"]
 [connection signal="pressed" from="fasestela/fase3/fase3_bot" to="." method="_on_fase3_bot_pressed"]
 [connection signal="pressed" from="fasestela/fase4/fase4_bot" to="." method="_on_fase4_bot_pressed"]
+[connection signal="pressed" from="fasestela/fase5/fase5_bot" to="." method="_on_fase5_bot_pressed"]
 [connection signal="pressed" from="fasestela/sairfases" to="." method="_on_sairfases_pressed"]
 [connection signal="pressed" from="botsair" to="." method="_on_botsair_pressed"]

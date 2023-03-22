@@ -106,3 +106,8 @@ func _on_fase3_bot_pressed():
 func _on_fase4_bot_pressed():
 	get_tree().change_scene("res://cenas/fase4_cenas/explicação4.tscn")
 	$botsaudio.play()
+
+#bot para abrir fase 5 na tela de fases / level 5 button on levels screen		
+func _on_fase5_bot_pressed():
+	get_tree().change_scene("res://cenas/fase5_cenas/explicação5.tscn")
+	$botsaudio.play()
