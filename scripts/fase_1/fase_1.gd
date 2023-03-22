@@ -83,29 +83,35 @@ func _on_button_quiz_pressed():
 	$objects_cenario/papel_trabalho2.visible = true
 	Global.npc_thomas_active = true
 	Global.dialogo3_thomas = true
+	$botsaudio.play()
 
 # Se a pessoa clicar na opção certa o usuário será levado para tela de feedback / When player presses correct answers, feedback is displayed.
 func _on_right_pressed():
 	$quest_decision.visible = false
 	$right_decision.visible = true
+	$botsaudio.play()
 
 # Botão "incorreto pressionado". / Wrong button pressed.
 func _on_wrong_pressed():
 	$quest_decision.visible = false
 	$wrong_decision.visible = true
+	$botsaudio.play()
 
 #Botão de proxima fase pressionado. [WIP] / Next level button [WIP]
 func _on_next_phase_pressed():
 	get_tree().change_scene("res://cenas/fase2_cenas/explicação2.tscn")
+	$botsaudio.play()
 
 #Botão de retorno a fase pressionado. / Return button pressed.
 func _on_back_phase_pressed():
 	get_tree().reload_current_scene()
+	$botsaudio.play()
 
 #Botão de retorno a decisão pressionado. / Return button pressed.
 func _on_back_decision_pressed():
 	$quest_decision.visible = true
 	$wrong_decision.visible = false
+	$botsaudio.play()
 
 # Texto com link conectado que leva para o conteúdo / Text with a connected link that takes to the content
 func _on_LinkButton_pressed():

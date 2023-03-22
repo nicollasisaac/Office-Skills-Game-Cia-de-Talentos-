@@ -1140,6 +1140,10 @@ expand = true
 stream = ExtResource( 22 )
 autoplay = true
 
+[node name="botsaudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 26 )
+autoplay = true
+
 [connection signal="body_entered" from="cenario/icone_mesa/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="quest_work/quiz/button_quiz" to="." method="_on_button_quiz_pressed"]
 [connection signal="pressed" from="quest_decision/quiz/quest/wrong" to="." method="_on_wrong_pressed"]

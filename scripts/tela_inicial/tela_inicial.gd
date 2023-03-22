@@ -48,6 +48,7 @@ func _on_Timer_timeout():
 func _on_btn_fases_pressed():
 #	$exemplo_button_sobre.visible = true
 	$fasestela.visible = true
+	$botsaudio.play()
 
 
 func _on_botcontroles_pressed():
@@ -57,11 +58,14 @@ func _on_botcontroles_pressed():
 	$btn_fases.visible = false
 	$botsobre.visible = false
 	$botcontroles.visible = false
+	$botsaudio.play()
 
 func _on_botsobre_pressed():
 	$exemplo_button_sobre.visible = true
 	$botsair.visible = true
 	$sobrenos.visible = true
+	$botsaudio.play()
+	
 
 func _on_botsair_pressed():
 	$exemplo_button_sobre.visible = false
@@ -71,21 +75,27 @@ func _on_botsair_pressed():
 	$botsobre.visible = true
 	$botcontroles.visible = true
 	$sobrenos.visible  = false
+	$botsaudio.play()
 
 func _on_sairfases_pressed():
 	$fasestela.visible = false
 
 func _on_tutorial_bot_pressed():
 	get_tree().change_scene("res://cenas/fase1_cenas/cena_1.tscn")
-
+	$botsaudio.play()
+	
 func _on_fase1_bot_pressed():
 	get_tree().change_scene("res://cenas/fase1_cenas/explicação1.tscn")
-
+	$botsaudio.play()
+	
 func _on_fase2_bot_pressed():
 	get_tree().change_scene("res://cenas/fase2_cenas/explicação2.tscn")
+	$botsaudio.play()
 
 func _on_fase3_bot_pressed():
 	get_tree().change_scene("res://cenas/fase3_cenas/explicação3.tscn")
-
+	$botsaudio.play()
+	
 func _on_fase4_bot_pressed():
 	get_tree().change_scene("res://cenas/fase4_cenas/explicação4.tscn")
+	$botsaudio.play()
