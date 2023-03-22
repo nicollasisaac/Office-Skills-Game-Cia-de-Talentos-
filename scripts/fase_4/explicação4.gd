@@ -14,3 +14,4 @@ func _on_LinkButton_pressed():
 # Botão que leva o jogador à próxima fase / Button that takes the player to the next phase
 func _on_Button_pressed():
 	get_tree().change_scene("res://cenas/fase4_cenas/fase_4.tscn")
+	$botsaudio.play()

@@ -44,13 +44,13 @@ func _on_Timer_timeout():
 	#quando timer finalizar executar função (trocar para proxima tela) / On timeout run function and change to next screen
 	get_tree().change_scene("res://cenas/fase1_cenas/cena_1.tscn")
 	
-
+#bot para abrir tela de fases / level screen button
 func _on_btn_fases_pressed():
 #	$exemplo_button_sobre.visible = true
 	$fasestela.visible = true
 	$botsaudio.play()
 
-
+#bot para abrir tela de controles / control screen button
 func _on_botcontroles_pressed():
 	$exemplo_button_sobre.visible = true
 	$botsair.visible = true
@@ -60,13 +60,14 @@ func _on_botcontroles_pressed():
 	$botcontroles.visible = false
 	$botsaudio.play()
 
+#bot para abrir tela "sobre nós" / about screen button
 func _on_botsobre_pressed():
 	$exemplo_button_sobre.visible = true
 	$botsair.visible = true
 	$sobrenos.visible = true
 	$botsaudio.play()
 	
-
+#bot para fechar telas no menu / exit button on menu screen
 func _on_botsair_pressed():
 	$exemplo_button_sobre.visible = false
 	$botsair.visible = false 
@@ -77,25 +78,31 @@ func _on_botsair_pressed():
 	$sobrenos.visible  = false
 	$botsaudio.play()
 
+#sair tela de fases / exit level screen
 func _on_sairfases_pressed():
 	$fasestela.visible = false
 
+#bot para abrir tutorial na tela de fases / tutorial level button on levels screen
 func _on_tutorial_bot_pressed():
 	get_tree().change_scene("res://cenas/fase1_cenas/cena_1.tscn")
 	$botsaudio.play()
-	
+
+#bot para abrir fase 1 na tela de fases / level 1 button on levels screen	
 func _on_fase1_bot_pressed():
 	get_tree().change_scene("res://cenas/fase1_cenas/explicação1.tscn")
 	$botsaudio.play()
 	
+#bot para abrir fase 2 na tela de fases / level 2 button on levels screen	
 func _on_fase2_bot_pressed():
 	get_tree().change_scene("res://cenas/fase2_cenas/explicação2.tscn")
 	$botsaudio.play()
 
+#bot para abrir fase 3 na tela de fases / level 3 button on levels screen	
 func _on_fase3_bot_pressed():
 	get_tree().change_scene("res://cenas/fase3_cenas/explicação3.tscn")
 	$botsaudio.play()
 	
+#bot para abrir fase 4 na tela de fases / level 4 button on levels screen		
 func _on_fase4_bot_pressed():
 	get_tree().change_scene("res://cenas/fase4_cenas/explicação4.tscn")
 	$botsaudio.play()

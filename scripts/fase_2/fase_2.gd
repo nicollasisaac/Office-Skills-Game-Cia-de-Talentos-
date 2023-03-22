@@ -88,14 +88,14 @@ func _on_back_decision_pressed():
 func _on_LinkButton_pressed():
 	OS.shell_open("https://www.youtube.com/watch?v=BtahWGGipqg")
 
-
+#resposta incorreta selecionada
 func _on_wrong2_pressed():
 	$quest_decision.visible = false
 	$wrong_decision.visible = true
 	Global.final_dialogo1_fase2 = false
 
 
-
+#bot de proxima fase pressionado
 func _on_next_phase_pressed():
 	get_tree().change_scene("res://cenas/fase3_cenas/explicação3.tscn")
 
