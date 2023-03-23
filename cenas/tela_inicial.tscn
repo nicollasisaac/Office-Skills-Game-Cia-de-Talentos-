@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/tela_inicial/tela_inicial.gd" type="Script" id=1]
 [ext_resource path="res://assets/Ui/inicio_novo.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://assets/fontes/Stacked pixel.ttf" type="DynamicFontData" id=36]
 [ext_resource path="res://assets/Ui/notastela.png" type="Texture" id=37]
 [ext_resource path="res://assets/aúdios/botões no pause.wav" type="AudioStream" id=38]
+[ext_resource path="res://assets/Ui/fase5tela.png" type="Texture" id=39]
 
 [sub_resource type="Animation" id=4]
 resource_name = "Idle"
@@ -182,7 +183,6 @@ anims/andarembora = SubResource( 2 )
 anims/olharlados = SubResource( 1 )
 
 [node name="fasestela" type="Sprite" parent="."]
-visible = false
 position = Vector2( 315, 183 )
 scale = Vector2( 1.02656, 1.03297 )
 texture = ExtResource( 18 )
@@ -278,19 +278,19 @@ texture_pressed = ExtResource( 27 )
 expand = true
 
 [node name="fase5" type="Sprite" parent="fasestela"]
-position = Vector2( 54.532, 88.8175 )
-scale = Vector2( 0.0596687, 0.0586503 )
-texture = ExtResource( 24 )
+position = Vector2( 59.3716, 87.1753 )
+scale = Vector2( 0.0486866, 0.0491129 )
+texture = ExtResource( 39 )
 
 [node name="fase5_bot" type="TextureButton" parent="fasestela/fase5"]
 anchor_left = 0.449
 anchor_top = 0.5
 anchor_right = 0.449
 anchor_bottom = 0.5
-margin_left = -1199.78
-margin_top = 9.39551
-margin_right = -417.783
-margin_bottom = 376.396
+margin_left = -1465.03
+margin_top = 38.5
+margin_right = -455.027
+margin_bottom = 512.5
 texture_normal = ExtResource( 28 )
 texture_pressed = ExtResource( 29 )
 expand = true
