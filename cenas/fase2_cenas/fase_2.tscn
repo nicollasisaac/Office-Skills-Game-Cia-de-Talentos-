@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://assets/mapas/CenaFase3.png" type="Texture" id=1]
 [ext_resource path="res://cenas/fase2_cenas/Dialog0.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/Ui/telaconteudoserro.png" type="Texture" id=19]
 [ext_resource path="res://assets/buttons/voltarfasebot.png" type="Texture" id=20]
 [ext_resource path="res://assets/buttons/voltardecisbotp.png" type="Texture" id=21]
+[ext_resource path="res://assets/fontes/Stacked pixel.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://assets/Ui/back_transparent.png" type="Texture" id=23]
 [ext_resource path="res://assets/Ui/errou_conteúdo.png" type="Texture" id=24]
 [ext_resource path="res://assets/buttons/voltardecisbot.png" type="Texture" id=26]
@@ -372,7 +373,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 6 )
+font_data = ExtResource( 22 )
 
 [sub_resource type="Animation" id=22]
 resource_name = "movendo"
@@ -554,13 +555,13 @@ anims/idleBaixo = SubResource( 11 )
 anims/pressBaixo = SubResource( 12 )
 
 [node name="textTutorial" type="Label" parent="botTutoriais"]
-margin_left = 170.0
+margin_left = 143.0
 margin_top = -3.0
-margin_right = 440.0
+margin_right = 519.0
 margin_bottom = 37.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 13 )
-text = "Vá até a cafeteira ao lado do ar condicionado."
+text = "caminhe para a cafeteira ao lado do ar condicionado."
 align = 1
 valign = 1
 

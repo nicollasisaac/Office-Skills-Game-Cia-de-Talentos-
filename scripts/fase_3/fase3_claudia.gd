@@ -1,6 +1,6 @@
 extends KinematicBody2D
 # "speed" é a velocidade do personagem, e speedauto é a velocidade da animação do personagem / "Speed" is the character speed and "speedauto" is the speed of the character automovement.
-var speedAutoClaudia = 50
+var speedAutoClaudia = 0
 
 # Velocity é uma variável que armazena a velocidade atual do objeto na direção x. / Velocity is the actual velocity of the object on direction x." é uma variável que armazena a velocidade atual do objeto na direção x 
 var velocityClaudia = Vector2()
