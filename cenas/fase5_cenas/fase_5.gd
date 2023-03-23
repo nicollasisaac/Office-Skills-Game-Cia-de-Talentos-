@@ -14,7 +14,7 @@ func _process(delta):
 		$botfim.visible = true
 		
 
-
+#botão para tela final / final scene  button
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://cenas/final/telafinal.tscn")
 
