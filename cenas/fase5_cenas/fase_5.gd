@@ -17,3 +17,7 @@ func _process(delta):
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://cenas/final/telafinal.tscn")
+
+
+func _on_Area2D_area_entered(area):
+	pass # Replace with function body.

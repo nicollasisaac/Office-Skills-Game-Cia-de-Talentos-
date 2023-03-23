@@ -155,4 +155,5 @@ expand = true
 [connection signal="mouse_exited" from="card5/Area2D" to="card5" method="_on_Area2D_mouse_exited"]
 [connection signal="mouse_entered" from="card6/Area2D" to="card6" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="card6/Area2D" to="card6" method="_on_Area2D_mouse_exited"]
+[connection signal="area_entered" from="primeiro/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="botfim" to="." method="_on_TextureButton_pressed"]
