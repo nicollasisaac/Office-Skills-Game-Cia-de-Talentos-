@@ -183,6 +183,7 @@ anims/andarembora = SubResource( 2 )
 anims/olharlados = SubResource( 1 )
 
 [node name="fasestela" type="Sprite" parent="."]
+visible = false
 position = Vector2( 315, 183 )
 scale = Vector2( 1.02656, 1.03297 )
 texture = ExtResource( 18 )
