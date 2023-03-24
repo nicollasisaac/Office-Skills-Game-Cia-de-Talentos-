@@ -14,12 +14,12 @@ func _process(delta):
 		Global.card5mexe = true
 	pass
 
-#quando o mouse entrar na area determinada ativar "mousein" 
+#quando o mouse entrar na area determinada ativar "mousein"  / when mouse enters area mousein = true
 func _on_Area2D_mouse_entered():
 	mouseIn = true
 	pass
 
-#quando o mouse sair na area determinada desativar "mousein" 
+#quando o mouse sair na area determinada desativar "mousein"  / when mouse exit mousein = false
 func _on_Area2D_mouse_exited():
 	mouseIn = false
 	pass

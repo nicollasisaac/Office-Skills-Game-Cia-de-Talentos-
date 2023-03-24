@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/Ui/fase5fundo.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/card1.png" type="Texture" id=2]
@@ -9,13 +9,14 @@
 [ext_resource path="res://assets/Ui/card4.png" type="Texture" id=7]
 [ext_resource path="res://assets/Ui/card5.png" type="Texture" id=8]
 [ext_resource path="res://assets/Ui/card6.png" type="Texture" id=9]
-[ext_resource path="res://cenas/fase5_cenas/fase_5.gd" type="Script" id=10]
+[ext_resource path="res://scripts/fase_5/fase_5.gd" type="Script" id=10]
 [ext_resource path="res://scripts/fase_5/card3.gd" type="Script" id=11]
 [ext_resource path="res://scripts/fase_5/card4.gd" type="Script" id=12]
 [ext_resource path="res://scripts/fase_5/card5.gd" type="Script" id=13]
 [ext_resource path="res://scripts/fase_5/card6.gd" type="Script" id=14]
 [ext_resource path="res://assets/buttons/botfim.png" type="Texture" id=15]
 [ext_resource path="res://assets/buttons/botfimp.png" type="Texture" id=16]
+[ext_resource path="res://assets/aúdios/Music_Game_-_5.mp3" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 111.189, 32.7027 )
@@ -142,6 +143,10 @@ margin_bottom = 357.0
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 16 )
 expand = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
 
 [connection signal="mouse_entered" from="card1/Area2D" to="card1" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="card1/Area2D" to="card1" method="_on_Area2D_mouse_exited"]

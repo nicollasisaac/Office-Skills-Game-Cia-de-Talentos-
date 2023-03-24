@@ -3,10 +3,12 @@ extends Node2D
 
 
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
 
 
-
-#quando todos cards forem movimentados aparecer botão de fim / when all cards have been moved show final screen button.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Global.card1mexe == true and Global.card2mexe == true and Global.card3mexe == true and Global.card4mexe == true and Global.card5mexe == true and Global.card6mexe == true:
 		$botfim.visible = true

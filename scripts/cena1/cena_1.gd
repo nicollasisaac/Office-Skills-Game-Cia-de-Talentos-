@@ -27,14 +27,17 @@ func _process(delta):
 func _physics_process(delta): 
 	$dialogo.visible = false 
 	
+	#aparecer dialogo quando jogador chegar em determinada posição / show dialog when player reaches position
 	if $protagonistaPlayer.position.x >= 360: 
 		$dialogo.visible = true 
 	
+	# quando  movimentos bloqueados nao aparecer botões de tutorial / when  movements locked, don't show tutorial buttons.
 	if Global.bloqueio:
 		$botTutorials/botesquerda.visible = false
 		$botTutorials/botdireita.visible = false
 		$botTutorials/bottab.visible = false
 	
+	#se não estiver bloqueado mostrar tutoriais / if unlocked show button tutorials
 	if not Global.bloqueio:
 		$botTutorials/botesquerda.visible = true
 		$botTutorials/botdireita.visible = true
