@@ -41,6 +41,7 @@ func _process(delta):
 	if ganhou == 6:
 		$botfim.visible = true
 
+
 # Função para definir o offset
 func _on_card1_button_down():
 	clicando1 = true
