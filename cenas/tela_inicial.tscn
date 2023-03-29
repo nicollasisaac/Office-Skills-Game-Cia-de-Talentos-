@@ -165,6 +165,14 @@ margin_bottom = 333.0
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 11 )
 
+[node name="botcontroles" type="TextureButton" parent="."]
+margin_left = 1.0
+margin_top = 327.0
+margin_right = 118.0
+margin_bottom = 367.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+
 [node name="RafaProtagonista" type="Sprite" parent="."]
 position = Vector2( 317, 215 )
 scale = Vector2( 12.9697, 12.9697 )
@@ -415,18 +423,11 @@ expand = true
 stream = ExtResource( 38 )
 autoplay = true
 
-[node name="botcontroles" type="TextureButton" parent="."]
-margin_left = 1.0
-margin_top = 327.0
-margin_right = 118.0
-margin_bottom = 367.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-
 [connection signal="pressed" from="botao_enter" to="." method="_on_botao_enter_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="btn_fases" to="." method="_on_btn_fases_pressed"]
 [connection signal="pressed" from="botsobre" to="." method="_on_botsobre_pressed"]
+[connection signal="pressed" from="botcontroles" to="." method="_on_botcontroles_pressed"]
 [connection signal="pressed" from="fasestela/tutorial/tutorial_bot" to="." method="_on_tutorial_bot_pressed"]
 [connection signal="pressed" from="fasestela/fase1/fase1_bot" to="." method="_on_fase1_bot_pressed"]
 [connection signal="pressed" from="fasestela/fase2/fase2_bot" to="." method="_on_fase2_bot_pressed"]
@@ -436,4 +437,3 @@ texture_pressed = ExtResource( 13 )
 [connection signal="pressed" from="fasestela/sairfases" to="." method="_on_sairfases_pressed"]
 [connection signal="pressed" from="sobrenos/inteli" to="." method="_on_inteli_pressed"]
 [connection signal="pressed" from="botsair" to="." method="_on_botsair_pressed"]
-[connection signal="pressed" from="botcontroles" to="." method="_on_botcontroles_pressed"]
