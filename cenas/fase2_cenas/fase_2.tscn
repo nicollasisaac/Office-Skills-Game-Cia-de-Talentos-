@@ -311,7 +311,6 @@ radius = 13.0
 height = 14.0
 
 [sub_resource type="CapsuleShape2D" id=63]
-height = 8.0
 
 [sub_resource type="Animation" id=9]
 resource_name = "idleCima"

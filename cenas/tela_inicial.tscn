@@ -148,7 +148,6 @@ scale = Vector2( 1.01563, 1.02473 )
 texture = ExtResource( 9 )
 
 [node name="btn_fases" type="TextureButton" parent="."]
-visible = false
 margin_left = 2.0
 margin_top = 260.0
 margin_right = 71.0
