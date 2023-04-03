@@ -1,6 +1,6 @@
 [gd_scene load_steps=86 format=2]
 
-[ext_resource path="res://assets/6_Office_Designs/cenario_cena_2_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/mapas/fundoattfase1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Ui/chat_decision.png" type="Texture" id=2]
 [ext_resource path="res://assets/characters/rafaProtagonista.png" type="Texture" id=3]
 [ext_resource path="res://assets/buttons/Keyboard Letters and Symbols.png" type="Texture" id=4]
