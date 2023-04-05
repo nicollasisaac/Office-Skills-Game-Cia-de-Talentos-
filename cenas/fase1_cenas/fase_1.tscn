@@ -18,7 +18,7 @@
 [ext_resource path="res://assets/Ui/background_transparent.jpg" type="Texture" id=16]
 [ext_resource path="res://assets/3_Modern_Office_Shadowless/4_Modern_Office_singles/48x48/Modern_Office_Singles_48x48_154.png" type="Texture" id=17]
 [ext_resource path="res://players/fase_1/fase_1_thomas.gd" type="Script" id=18]
-[ext_resource path="res://assets/Ui/fundo alto direita vermelho.jpeg" type="Texture" id=19]
+[ext_resource path="res://assets/Ui/fundonovocimad.jpeg" type="Texture" id=19]
 [ext_resource path="res://scripts/fase_1/fase_1_dialog3.gd" type="Script" id=20]
 [ext_resource path="res://assets/buttons/fase2bot.png" type="Texture" id=21]
 [ext_resource path="res://assets/aúdios/Music_Game_-_5.mp3" type="AudioStream" id=22]
