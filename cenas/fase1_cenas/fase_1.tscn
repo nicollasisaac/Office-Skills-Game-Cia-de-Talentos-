@@ -666,7 +666,7 @@ anims/cimabaixo = SubResource( 48 )
 [node name="npc_1" type="KinematicBody2D" parent="Personagens"]
 
 [node name="Sprite" type="Sprite" parent="Personagens/npc_1"]
-position = Vector2( 68, 111 )
+position = Vector2( 86, 110 )
 scale = Vector2( 2.58333, 2.58333 )
 texture = ExtResource( 36 )
 hframes = 16
@@ -678,7 +678,7 @@ autoplay = "idle"
 anims/idle = SubResource( 51 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/npc_1"]
-position = Vector2( 68, 121 )
+position = Vector2( 86, 124 )
 shape = SubResource( 52 )
 
 [node name="eli_Rh_player" type="KinematicBody2D" parent="Personagens"]
